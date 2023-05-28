@@ -1,0 +1,8 @@
+
+{{< include _math.qmd >}}
+
+# Apresentação {.unnumbered}
+
+Anotações sobre @dorst07:_geomet.
+
+

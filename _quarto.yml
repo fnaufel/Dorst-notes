@@ -1,0 +1,45 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Geometric Algebra for Computer Science"
+  subtitle: "Leo Dorst, Daniel Fontijne, Stephen Mann"
+  author: "Fernando Náufel"
+  date: now
+  output-file: dorst-notes
+  search: true
+  repo-url: https://github.com/fnaufel/dorst-notes
+  repo-actions: [edit]
+  downloads: [pdf]
+  date-format: "DD/MM/YYYY HH:mm"
+  sharing: 
+    - twitter
+    - facebook
+    - linkedin
+  chapters:
+    - index.qmd
+    - references.qmd
+
+bibliography: bibliography.bib
+
+comments:
+  hypothesis: true
+
+format:
+  html:
+    theme: 
+      - journal
+      - _custom.scss
+  pdf:
+    documentclass: scrreprt
+    fig-pos: htb
+    keep-tex: true
+    filters: 
+      - filters/dollar.py3
+      - filters/hl.py3
+    include-in-header: 
+      - _preamble.tex
+    include-before-body:  
+      - _before-body.tex
+
