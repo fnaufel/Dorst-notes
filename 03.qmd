@@ -1,0 +1,69 @@
+
+{{< include _math.qmd >}}
+
+{{< include _sympy.qmd >}}
+
+# METRIC PRODUCTS OF SUBSPACES
+
+## Resumo {.unnumbered}
+
+![](figures/inner-products-dorst.jpg)
+
+## SIZING UP SUBSPACES
+
+### METRICS, NORMS, AND ANGLES
+
+* Dada a definição de um produto interno, podemos definir
+
+  * A [norma]{.hl} de um vetor $\vet a$ como
+  
+    $$
+    || \vet a ||^2 = \vet a \cdot \vet a
+    $$
+    
+  * O [cosseno do ângulo]{.hl} entre dois vetores $\vet a$ e $\vet b$ como
+  
+    $$
+    \cos \theta = \frac{\vet a \cdot \vet b}{|| \vet a ||\; ||\vet b ||}
+    $$
+    
+* Este capítulo generaliza o produto interno para *blades* e multivetores.
+
+
+### DEFINITION OF THE SCALAR PRODUCT $\star$
+
+* Por enquanto, definir o produto interno de dois *blades* [de mesma graduação]{.hl}.
+
+* O resultado sempre vai ser um [escalar]{.hl}.
+
+* Generaliza o produto escalar de vetores (que, afinal, são 1-*blades*).
+
+::: {.callout-note}
+
+## Definição: produto interno de dois $k$-*blades*
+
+Considere 
+
+$$
+\begin{aligned}
+  \vet A &= \vet a_1 \wedge \vet a_2 \wedge \cdots \wedge \vet a_k \\
+  \vet B &= \vet b_1 \wedge \vet b_2 \wedge \cdots \wedge \vet b_k
+\end{aligned}
+$$
+
+O produto escalar $\vet A \star \vet B$ é definido como
+
+$$
+
+$$
+
+:::
+
+
+* Exemplo:
+
+```{python}
+#| output: asis
+show(S('n')**2)
+```
+

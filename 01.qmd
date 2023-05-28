@@ -1,0 +1,7 @@
+
+{{< include _math.qmd >}}
+
+# WHY GEOMETRIC ALGEBRA?
+
+
+???

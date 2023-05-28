@@ -19,6 +19,9 @@ book:
     - linkedin
   chapters:
     - index.qmd
+    - 01.qmd
+    - 02.qmd
+    - 03.qmd
     - references.qmd
 
 bibliography: bibliography.bib
@@ -28,18 +31,22 @@ comments:
 
 format:
   html:
+    toc-depth: 3
+    number-depth: 3
     theme: 
       - journal
       - _custom.scss
-  pdf:
-    documentclass: scrreprt
-    fig-pos: htb
-    keep-tex: true
-    filters: 
-      - filters/dollar.py3
-      - filters/hl.py3
-    include-in-header: 
-      - _preamble.tex
-    include-before-body:  
-      - _before-body.tex
+  # pdf:
+  #   documentclass: scrreprt
+  #   toc-depth: 3
+  #   number-depth: 3
+  #   fig-pos: htb
+  #   keep-tex: true
+  #   # filters: 
+  #   #   - filters/dollar.py3
+  #   #   - filters/hl.py3
+  #   include-in-header: 
+  #     - _preamble.tex
+  #   include-before-body:  
+  #     - _before-body.tex
 

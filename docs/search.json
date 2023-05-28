@@ -7,6 +7,34 @@
     "text": "Apresentação\nAnotações sobre Dorst, Fontijne, e Mann (2007).\n\n\n\n\nDorst, Leo, Daniel Fontijne, e Stephen Mann. 2007. Geometric Algebra for Computer Science: an Object-oriented Approach to Geometry. The Morgan Kaufmann Series em Computer Graphics. Morgan Kaufmann. https://geometricalgebra.org/."
   },
   {
+    "objectID": "01.html",
+    "href": "01.html",
+    "title": "1  WHY GEOMETRIC ALGEBRA?",
+    "section": "",
+    "text": "???"
+  },
+  {
+    "objectID": "02.html",
+    "href": "02.html",
+    "title": "2  SPANNING ORIENTED SUBSPACES",
+    "section": "",
+    "text": "???"
+  },
+  {
+    "objectID": "03.html#resumo",
+    "href": "03.html#resumo",
+    "title": "3  METRIC PRODUCTS OF SUBSPACES",
+    "section": "Resumo",
+    "text": "Resumo"
+  },
+  {
+    "objectID": "03.html#sizing-up-subspaces",
+    "href": "03.html#sizing-up-subspaces",
+    "title": "3  METRIC PRODUCTS OF SUBSPACES",
+    "section": "3.1 SIZING UP SUBSPACES",
+    "text": "3.1 SIZING UP SUBSPACES\n\n3.1.1 METRICS, NORMS, AND ANGLES\n\nDada a definição de um produto interno, podemos definir\n\nA norma de um vetor \\(\\mathbf{a}\\) como\n\\[\n|| \\mathbf{a} ||^2 = \\mathbf{a} \\cdot \\mathbf{a}\n\\]\nO cosseno do ângulo entre dois vetores \\(\\mathbf{a}\\) e \\(\\mathbf{b}\\) como\n\\[\n\\cos \\theta = \\frac{\\mathbf{a} \\cdot \\mathbf{b}}{|| \\mathbf{a} ||\\; ||\\mathbf{b} ||}\n\\]\n\nEste capítulo generaliza o produto interno para blades e multivetores.\n\n\n\n3.1.2 DEFINITION OF THE SCALAR PRODUCT \\(\\star\\)\n\nPor enquanto, definir o produto interno de dois blades de mesma graduação.\nO resultado sempre vai ser um escalar.\nGeneraliza o produto escalar de vetores (que, afinal, são 1-blades).\n\n\n\n\n\n\n\nDefinição: produto interno de dois \\(k\\)-blades\n\n\n\nConsidere\n\\[\n\\begin{aligned}\n  \\mathbf{A} &= \\mathbf{a}_1 \\wedge \\mathbf{a}_2 \\wedge \\cdots \\wedge \\mathbf{a}_k \\\\\n  \\mathbf{B} &= \\mathbf{b}_1 \\wedge \\mathbf{b}_2 \\wedge \\cdots \\wedge \\mathbf{b}_k\n\\end{aligned}\n\\]\nO produto escalar \\(\\mathbf{A} \\star \\mathbf{B}\\) é definido como\n$$\n$$\n\n\n\nExemplo:\n\n\\[\nn^{2}\n\\]"
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referências",

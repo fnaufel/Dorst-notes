@@ -1,0 +1,13 @@
+
+```{r echo=FALSE}
+# Mostly sympy expressions will be output by code chunks:
+knitr::opts_chunk$set(
+  echo = FALSE,
+  output = 'asis'
+)
+```
+
+```{python}
+from sympy import *
+show = lambda x: print('$$\n%s\n$$\n' % latex(x))
+```
