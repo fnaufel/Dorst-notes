@@ -173,6 +173,8 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#metrics-norms-and-angles" id="toc-metrics-norms-and-angles" class="nav-link" data-scroll-target="#metrics-norms-and-angles"><span class="header-section-number">3.1.1</span> METRICS, NORMS, AND ANGLES</a></li>
   <li><a href="#definition-of-the-scalar-product" id="toc-definition-of-the-scalar-product" class="nav-link" data-scroll-target="#definition-of-the-scalar-product"><span class="header-section-number">3.1.2</span> DEFINITION OF THE SCALAR PRODUCT <span class="math inline">\(*\)</span></a></li>
+  <li><a href="#the-squared-norm-of-a-subspace" id="toc-the-squared-norm-of-a-subspace" class="nav-link" data-scroll-target="#the-squared-norm-of-a-subspace"><span class="header-section-number">3.1.3</span> THE SQUARED NORM OF A SUBSPACE</a></li>
+  <li><a href="#the-angle-between-subspaces" id="toc-the-angle-between-subspaces" class="nav-link" data-scroll-target="#the-angle-between-subspaces"><span class="header-section-number">3.1.4</span> THE ANGLE BETWEEN SUBSPACES</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fnaufel/dorst-notes/edit/main/03.qmd" class="toc-action">Editar essa página</a></p></div></div></nav>
@@ -262,22 +264,95 @@ Definição: produto interno de dois <span class="math inline">\(k\)</span>-<em>
 <p><img src="figures/exemplo-prod-blades.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
 </figure>
 </div></li>
+</ul>
+</section>
+<section id="the-squared-norm-of-a-subspace" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="the-squared-norm-of-a-subspace"><span class="header-section-number">3.1.3</span> THE SQUARED NORM OF A SUBSPACE</h3>
+<ul>
 <li><p>A <span class="hl">norma</span> de um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span> usa o produto escalar entre <span class="math inline">\(\mathbf{A}\)</span> e seu <span class="hl">reverso</span> <span class="math inline">\(\widetilde{\mathbf{A}}\)</span>:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/exemplo-norma-blade.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
 </figure>
 </div></li>
+<li><p>Parecido com o que acontece com números complexos, onde o quadrado da norma é o produto entre o número complexo <span class="hl">e seu conjugado</span>:</p>
+<p><span class="math display">\[
+z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
+\]</span></p></li>
+</ul>
+</section>
+<section id="the-angle-between-subspaces" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="the-angle-between-subspaces"><span class="header-section-number">3.1.4</span> THE ANGLE BETWEEN SUBSPACES</h3>
+<ul>
 <li><p>O <span class="hl">cosseno</span> do ângulo entre dois <em>blades</em> <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> usa o produto escalar entre <span class="math inline">\(\mathbf{A}\)</span> e o <span class="hl">reverso</span> <span class="math inline">\(\widetilde{\mathbf{B}}\)</span>:</p>
 <p><span class="math display">\[
 \cos \theta = \frac{\mathbf{A} * \widetilde{\mathbf{B}}}{||\mathbf{A}||\;||\mathbf{B}||}
 \]</span></p></li>
+<li><p>De novo, temos a semelhança com números complexos, onde o produto <span class="math inline">\(z_1 \cdot \overline{z_2}\)</span>, tais que o argumento de <span class="math inline">\(z_1\)</span> é <span class="math inline">\(\alpha\)</span> e o argumento de <span class="math inline">\(z_2\)</span> é <span class="math inline">\(\beta\)</span>, resulta em um número complexo <span class="math inline">\(z_3\)</span> cujo argumento é <span class="math inline">\(\alpha - \beta\)</span>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/angulo-entre-complexos.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/angulo-entre-complexos.svg" class="img-fluid figure-img"></p>
+</figure>
+</div></li>
 <li><p>Em <span class="math inline">\(\mathbb{R}^2\)</span>, no geral, <span class="math inline">\(\mathbf{A} * \widetilde{\mathbf{B}} = ||\mathbf{A}||\;||\mathbf{B}||\)</span>, e o ângulo é sempre zero:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/prod-escalar-blades-r2-geral.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
 </figure>
 </div></li>
+<li><p>Em <span class="math inline">\(\mathbb{R}^3\)</span>:</p>
+<ul>
+<li><p><span class="math inline">\(\mathbf{A} = \mathbf{a}_1 \wedge \mathbf{a}_2\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathbf{B} = \mathbf{b}_1 \wedge \mathbf{b}_2\)</span>.</p></li>
+<li><p>Queremos calcular <span class="math inline">\(\mathbf{A} * \widetilde{\mathbf{B}}\)</span>.</p></li>
+<li><p>O primeiro passo é achar um vetor <span class="math inline">\(\mathbf{c}\)</span> que seja <span class="hl">fator comum</span> entre os dois <em>blades</em>.</p></li>
+<li><p>Para facilitar, escolhemos <span class="math inline">\(\mathbf{c}\)</span> com <span class="hl"><span class="math inline">\(||\mathbf{c}|| = 1\)</span></span>.</p></li>
+<li><p>Fatoramos <span class="math inline">\(\mathbf{A} = \mathbf{a} \wedge \mathbf{c}\)</span>, com <span class="hl"><span class="math inline">\(\mathbf{a} \perp \mathbf{c}\)</span></span>.</p></li>
+<li><p>Fatoramos <span class="math inline">\(\mathbf{B} = \mathbf{b} \wedge \mathbf{c}\)</span>, com <span class="hl"><span class="math inline">\(\mathbf{b} \perp \mathbf{c}\)</span></span>.</p></li>
+<li><p>Situação atual:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/angulo-entre-blades-fig-dorst.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div></li>
+<li><p>Daí,</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/derivacao-angulo-dois-blades-r3.png" class="img-fluid figure-img" style="width:40.0%"></p>
+</figure>
+</div></li>
+</ul></li>
+<li><p>Em <span class="math inline">\(\mathbb{R}^n, n &gt; 3\)</span> (caso geral):</p>
+<ul>
+<li><p>Depois de separar todos os fatores comuns, o resultado é</p>
+<ol type="1">
+<li><p>Apenas escalares, e o ângulo é zero, ou</p></li>
+<li><p>Apenas vetores, e o ângulo entre os <em>blades</em> é o ângulo entre estes vetores, ou</p></li>
+<li><p><span class="math inline">\(k\)</span>-<em>blades</em> disjuntos (<span class="math inline">\(k \geq 2\)</span>), e o cosseno é o produto dos cossenos das <span class="hl">duas rotações ortogonais necessárias</span> para alinhar os <em>blades</em> originais. Se uma destas rotações for de <span class="math inline">\(90\)</span> graus, o cosseno é zero.</p></li>
+</ol></li>
+</ul></li>
+<li><p>Exemplo Dorst, p.&nbsp;70:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  A &amp;= \mathbf{e}_{1} \wedge \mathbf{e}_{3} \\
+  B &amp;= (\cos\alpha\;\mathbf{e}_{1} - \text{sen}\,\alpha\;\mathbf{e}_{2})
+    \wedge (\cos\beta\;\mathbf{e}_{3} - \text{sen}\,\beta\;\mathbf{e}_{4})
+\end{aligned}
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/exemplo-dorst-p-70.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<ul>
+<li><p>Como <span class="math inline">\(\mathbf{A} \wedge \mathbf{B}\)</span> tem grau <span class="math inline">\(4\)</span>, com <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> ambos de grau <span class="math inline">\(2\)</span>, <span class="hl"><span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> são disjuntos</span>.</p></li>
+<li><p>??? Detalhar este exemplo. Contas. Diagrama.</p></li>
+</ul></li>
 </ul>
 
 

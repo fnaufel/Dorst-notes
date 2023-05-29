@@ -62,9 +62,21 @@ O produto escalar $\bl A * \bl B$ é definido como
 
   ![](figures/exemplo-prod-blades.jpg){fig-align="center" width=60%}
 
+
+### THE SQUARED NORM OF A SUBSPACE
+
 * A [norma]{.hl} de um *blade* $\bl A$ usa o produto escalar entre $\bl A$ e seu [reverso]{.hl} $\rev{\bl A}$:
 
   ![](figures/exemplo-norma-blade.jpg){fig-align="center" width=60%}
+
+* Parecido com o que acontece com números complexos, onde o quadrado da norma é o produto entre o número complexo [e seu conjugado]{.hl}:
+
+  $$
+  z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
+  $$
+
+
+### THE ANGLE BETWEEN SUBSPACES
 
 * O [cosseno]{.hl} do ângulo entre dois *blades* $\bl A$ e $\bl B$ usa o produto escalar entre $\bl A$ e o [reverso]{.hl} $\rev{\bl B}$:
 
@@ -72,6 +84,62 @@ O produto escalar $\bl A * \bl B$ é definido como
   \cos \theta = \frac{\bl A * \rev{\bl B}}{||\bl A||\;||\bl B||}
   $$
 
+* De novo, temos a semelhança com números complexos, onde o produto $z_1 \cdot \overline{z_2}$, tais que o argumento de $z_1$ é $\alpha$ e o argumento de $z_2$ é $\beta$, resulta em um número complexo $z_3$ cujo argumento é $\alpha - \beta$:
+
+  ![](figures/angulo-entre-complexos.jpg){fig-align="center"}
+
+  ![](figures/angulo-entre-complexos.svg){fig-align="center"}
+
 * Em $\reais^2$, no geral, $\bl A * \rev{\bl B} = ||\bl A||\;||\bl B||$, e o ângulo é sempre zero:
 
   ![](figures/prod-escalar-blades-r2-geral.jpg){fig-align="center" width=60%}
+
+* Em $\reais^3$:
+
+  * $\bl A = \vet a_1 \wedge \vet a_2$.
+  
+  * $\bl B = \vet b_1 \wedge \vet b_2$.
+  
+  * Queremos calcular $\bl A * \rev{\bl B}$.
+  
+  * O primeiro passo é achar um vetor $\vet c$ que seja [fator comum]{.hl} entre os dois *blades*.
+  
+  * Para facilitar, escolhemos $\vet c$ com [$||\vet c|| = 1$]{.hl}.
+  
+  * Fatoramos $\bl A = \vet a \wedge \vet c$, com [$\vet a \perp \vet c$]{.hl}.
+  
+  * Fatoramos $\bl B = \vet b \wedge \vet c$, com [$\vet b \perp \vet c$]{.hl}.
+  
+  * Situação atual:
+  
+    ![](figures/angulo-entre-blades-fig-dorst.png){width=60% fig-align="center"}
+  
+  * Daí,
+  
+    ![](figures/derivacao-angulo-dois-blades-r3.png){width=40% fig-align="center"}
+  
+* Em $\reais^n, n > 3$ (caso geral):
+
+  * Depois de separar todos os fatores comuns, o resultado é
+  
+    1. Apenas escalares, e o ângulo é zero, ou
+    
+    1. Apenas vetores, e o ângulo entre os *blades* é o ângulo entre estes vetores, ou
+    
+    1. $k$-*blades* disjuntos ($k \geq 2$), e o cosseno é o produto dos cossenos das [duas rotações ortogonais necessárias]{.hl} para alinhar os *blades* originais. Se uma destas rotações for de $90$ graus, o cosseno é zero.
+    
+* Exemplo Dorst, p. 70:
+
+  $$
+  \begin{aligned}
+    A &= \ve1 \wedge \ve3 \\
+    B &= (\cos\alpha\;\ve1 - \sen\alpha\;\ve2) 
+      \wedge (\cos\beta\;\ve3 - \sen\beta\;\ve4)
+  \end{aligned}
+  $$
+
+  ![](figures/exemplo-dorst-p-70.jpg){width=80% fig-align="center"}
+  
+  * Como $\bl A \wedge \bl B$ tem grau $4$, com $\bl A$ e $\bl B$ ambos de grau $2$, [$\bl A$ e $\bl B$ são disjuntos]{.hl}.
+  
+  * ??? Detalhar este exemplo. Contas. Diagrama.
