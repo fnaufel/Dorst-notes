@@ -11,7 +11,7 @@ book:
   search: true
   repo-url: https://github.com/fnaufel/dorst-notes
   repo-actions: [edit]
-  downloads: [pdf]
+  # downloads: [pdf]
   date-format: "DD/MM/YYYY HH:mm"
   sharing: 
     - twitter

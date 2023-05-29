@@ -93,9 +93,8 @@ ul.task-list li input[type="checkbox"] {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Geometric Algebra for Computer Science</a> 
-        <div class="sidebar-tools-main tools-wide">
+        <div class="sidebar-tools-main">
     <a href="https://github.com/fnaufel/dorst-notes" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./dorst-notes.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
     <div class="dropdown">
       <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -173,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sizing-up-subspaces" id="toc-sizing-up-subspaces" class="nav-link" data-scroll-target="#sizing-up-subspaces"><span class="header-section-number">3.1</span> SIZING UP SUBSPACES</a>
   <ul class="collapse">
   <li><a href="#metrics-norms-and-angles" id="toc-metrics-norms-and-angles" class="nav-link" data-scroll-target="#metrics-norms-and-angles"><span class="header-section-number">3.1.1</span> METRICS, NORMS, AND ANGLES</a></li>
-  <li><a href="#definition-of-the-scalar-product-star" id="toc-definition-of-the-scalar-product-star" class="nav-link" data-scroll-target="#definition-of-the-scalar-product-star"><span class="header-section-number">3.1.2</span> DEFINITION OF THE SCALAR PRODUCT <span class="math inline">\(\star\)</span></a></li>
+  <li><a href="#definition-of-the-scalar-product" id="toc-definition-of-the-scalar-product" class="nav-link" data-scroll-target="#definition-of-the-scalar-product"><span class="header-section-number">3.1.2</span> DEFINITION OF THE SCALAR PRODUCT <span class="math inline">\(*\)</span></a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fnaufel/dorst-notes/edit/main/03.qmd" class="toc-action">Editar essa página</a></p></div></div></nav>
@@ -224,8 +223,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Este capítulo generaliza o produto interno para <em>blades</em> e multivetores.</p></li>
 </ul>
 </section>
-<section id="definition-of-the-scalar-product-star" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="definition-of-the-scalar-product-star"><span class="header-section-number">3.1.2</span> DEFINITION OF THE SCALAR PRODUCT <span class="math inline">\(\star\)</span></h3>
+<section id="definition-of-the-scalar-product" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="definition-of-the-scalar-product"><span class="header-section-number">3.1.2</span> DEFINITION OF THE SCALAR PRODUCT <span class="math inline">\(*\)</span></h3>
 <ul>
 <li><p>Por enquanto, definir o produto interno de dois <em>blades</em> <span class="hl">de mesma graduação</span>.</p></li>
 <li><p>O resultado sempre vai ser um <span class="hl">escalar</span>.</p></li>
@@ -248,17 +247,38 @@ Definição: produto interno de dois <span class="math inline">\(k\)</span>-<em>
   \mathbf{B} &amp;= \mathbf{b}_1 \wedge \mathbf{b}_2 \wedge \cdots \wedge \mathbf{b}_k
 \end{aligned}
 \]</span></p>
-<p>O produto escalar <span class="math inline">\(\mathbf{A} \star \mathbf{B}\)</span> é definido como</p>
-<p>$$</p>
-<p>$$</p>
+<p>O produto escalar <span class="math inline">\(\mathbf{A} * \mathbf{B}\)</span> é definido como</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/produto-escalar-k-blades.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <ul>
-<li>Exemplo:</li>
-</ul>
+<li><p>Exemplo:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/exemplo-prod-blades.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div></li>
+<li><p>A <span class="hl">norma</span> de um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span> usa o produto escalar entre <span class="math inline">\(\mathbf{A}\)</span> e seu <span class="hl">reverso</span> <span class="math inline">\(\widetilde{\mathbf{A}}\)</span>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/exemplo-norma-blade.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div></li>
+<li><p>O <span class="hl">cosseno</span> do ângulo entre dois <em>blades</em> <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> usa o produto escalar entre <span class="math inline">\(\mathbf{A}\)</span> e o <span class="hl">reverso</span> <span class="math inline">\(\widetilde{\mathbf{B}}\)</span>:</p>
 <p><span class="math display">\[
-n^{2}
-\]</span></p>
+\cos \theta = \frac{\mathbf{A} * \widetilde{\mathbf{B}}}{||\mathbf{A}||\;||\mathbf{B}||}
+\]</span></p></li>
+<li><p>Em <span class="math inline">\(\mathbb{R}^2\)</span>, no geral, <span class="math inline">\(\mathbf{A} * \widetilde{\mathbf{B}} = ||\mathbf{A}||\;||\mathbf{B}||\)</span>, e o ângulo é sempre zero:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/prod-escalar-blades-r2-geral.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div></li>
+</ul>
 
 
 </section>

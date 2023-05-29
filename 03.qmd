@@ -30,7 +30,7 @@
 * Este capítulo generaliza o produto interno para *blades* e multivetores.
 
 
-### DEFINITION OF THE SCALAR PRODUCT $\star$
+### DEFINITION OF THE SCALAR PRODUCT $*$
 
 * Por enquanto, definir o produto interno de dois *blades* [de mesma graduação]{.hl}.
 
@@ -46,24 +46,32 @@ Considere
 
 $$
 \begin{aligned}
-  \vet A &= \vet a_1 \wedge \vet a_2 \wedge \cdots \wedge \vet a_k \\
-  \vet B &= \vet b_1 \wedge \vet b_2 \wedge \cdots \wedge \vet b_k
+  \bl A &= \vet a_1 \wedge \vet a_2 \wedge \cdots \wedge \vet a_k \\
+  \bl B &= \vet b_1 \wedge \vet b_2 \wedge \cdots \wedge \vet b_k
 \end{aligned}
 $$
 
-O produto escalar $\vet A \star \vet B$ é definido como
+O produto escalar $\bl A * \bl B$ é definido como
 
-$$
-
-$$
+![](figures/produto-escalar-k-blades.png){fig-align="center"}
 
 :::
 
 
 * Exemplo:
 
-```{python}
-#| output: asis
-show(S('n')**2)
-```
+  ![](figures/exemplo-prod-blades.jpg){fig-align="center" width=60%}
 
+* A [norma]{.hl} de um *blade* $\bl A$ usa o produto escalar entre $\bl A$ e seu [reverso]{.hl} $\rev{\bl A}$:
+
+  ![](figures/exemplo-norma-blade.jpg){fig-align="center" width=60%}
+
+* O [cosseno]{.hl} do ângulo entre dois *blades* $\bl A$ e $\bl B$ usa o produto escalar entre $\bl A$ e o [reverso]{.hl} $\rev{\bl B}$:
+
+  $$
+  \cos \theta = \frac{\bl A * \rev{\bl B}}{||\bl A||\;||\bl B||}
+  $$
+
+* Em $\reais^2$, no geral, $\bl A * \rev{\bl B} = ||\bl A||\;||\bl B||$, e o ângulo é sempre zero:
+
+  ![](figures/prod-escalar-blades-r2-geral.jpg){fig-align="center" width=60%}
