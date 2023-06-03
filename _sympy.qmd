@@ -9,5 +9,16 @@ knitr::opts_chunk$set(
 
 ```{python}
 from sympy import *
-show = lambda x: print('$$\n%s\n$$\n' % latex(x))
+from galgebra.ga import Ga
+import galgebra.printer
+
+# tell sympy to use our printing by default
+init_printing(
+  latex_printer=galgebra.printer.latex, 
+  use_latex='mathjax'
+)
+
+show = lambda x: print(f'\n$${x}$$\n\n')
+tex = latex
 ```
+

@@ -75,6 +75,64 @@ O produto escalar $\bl A * \bl B$ é definido como
   z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
   $$
 
+* Usando [sympy](https://www.sympy.org/en/index.html) e [o pacote galgebra](https://galgebra.readthedocs.io/en/latest/index.html), com a seguinte inicialização:
+
+    ```{python eval=FALSE, echo=TRUE}
+    from sympy import *
+    from galgebra.ga import Ga
+    import galgebra.printer
+    
+    # tell sympy to use our printing by default
+    init_printing(
+      latex_printer=galgebra.printer.latex, 
+      use_latex='mathjax'
+    )
+    
+    show = lambda x: print(f'\n$${x}$$\n\n')
+    tex = latex
+    ```
+
+
+
+* No geral, em $\reais^2$:
+
+    ```{python echo=TRUE}
+    # Álgebra 2D
+    xy = (x, y) = symbols('x y', real=True)
+    g2 = Ga('e_1 e_2', g=[1, 1], coords=xy)
+    e1, e2 = g2.mv()
+    
+    a, b, c, d = symbols('a b c d', real=True)
+    
+    # Blade A
+    a1 = a*e1 + b*e2
+    a2 = c*e1 + d*e2
+    A = a1 ^ a2
+    
+    show(fr'''
+    \begin{{aligned}}
+      a_1   &= {tex(a1)} \\
+      a_2   &= {tex(a2)} \\
+      A     &= {tex(A)} \\
+      |A|^2 &= {tex(A.norm2())}
+    \end{{aligned}}
+    ''')
+    ```
+
+* Detalhando o determinante:
+
+    ```{python echo=TRUE}
+    D = (a**2 + b**2) * (c**2 + d**2) - (a*c + b*d)**2
+    
+    show(fr'''
+    \begin{{aligned}}
+    |A|^2 &= {tex(D)} \\
+    &= {tex(expand(D))} \\
+    &= {tex(factor(D))}
+    \end{{aligned}}
+    ''')
+    ```
+
 
 ### THE ANGLE BETWEEN SUBSPACES
 
