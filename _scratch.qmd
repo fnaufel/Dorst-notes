@@ -149,3 +149,36 @@
 
 * As figuras parecem diferenciar planos (que são infinitos) e bivetores (que têm, associados a eles, áreas finitas). Mais adiante, vamos ver que, em algumas aplicações, [podemos interpretar um bivetor como representando o plano no qual ele está contido]{.hl}; em outras aplicações, [podemos interpretar um bivetor como uma porção finita do plano]{.hl}.
 
+
+
+## R3
+
+    ```{python}
+    a1, a2, a3 = symbols('a1:4')
+    a = [a1, a2, a3]
+    
+    angulo = Function('cos', real=True)
+    
+    M1 = Matrix(
+      [
+        [x * y for y in a] for x in a
+      ]
+    )
+    
+    M2 = Matrix( 
+      [ 
+        [ 
+          abs(a[i]) * abs(a[j]) if i == j else abs(a[i]) * abs(a[j]) * angulo(a[min(i,j)], a[max(i,j)]) 
+          for j in range(3) 
+        ] for i in range(3) 
+      ] 
+    )
+
+    show(r'''
+    \begin{aligned}
+      |A|^2 &= A * \widetilde A \\
+      &= \det $M1 \\
+      &= \det $M2
+    \end{aligned}
+    ''')
+    ```

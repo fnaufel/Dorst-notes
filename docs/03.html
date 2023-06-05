@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -308,70 +274,68 @@ Definição: produto interno de dois <span class="math inline">\(k\)</span>-<em>
 <figure class="figure">
 <p><img src="figures/exemplo-norma-blade.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
 </figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Números complexos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Isto é parecido com o que acontece com números complexos, onde o quadrado da norma de um complexo <span class="math inline">\(z\)</span> é o produto entre <span class="math inline">\(z\)</span> <span class="hl">e seu conjugado</span>:</p>
+<p><span class="math display">\[
+  z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
+  \]</span></p>
+</div>
 </div></li>
-<li><p>Parecido com o que acontece com números complexos, onde o quadrado da norma é o produto entre o número complexo <span class="hl">e seu conjugado</span>:</p>
-<p><span class="math display">\[
-z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
-\]</span></p></li>
-<li><p>Usando <a href="https://www.sympy.org/en/index.html">sympy</a> e <a href="https://galgebra.readthedocs.io/en/latest/index.html">o pacote galgebra</a>, com a seguinte inicialização:</p>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> galgebra.ga <span class="im">import</span> Ga</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> galgebra.printer</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># tell sympy to use our printing by default</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>init_printing(</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  latex_printer<span class="op">=</span>galgebra.printer.latex, </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  use_latex<span class="op">=</span><span class="st">'mathjax'</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>show <span class="op">=</span> <span class="kw">lambda</span> x: <span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">$$</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">$$</span><span class="ch">\n\n</span><span class="ss">'</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>tex <span class="op">=</span> latex</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>No geral, em <span class="math inline">\(\mathbb{R}^2\)</span>:</p>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Álgebra 2D</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>xy <span class="op">=</span> (x, y) <span class="op">=</span> symbols(<span class="st">'x y'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>g2 <span class="op">=</span> Ga(<span class="st">'e_1 e_2'</span>, g<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">1</span>], coords<span class="op">=</span>xy)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>e1, e2 <span class="op">=</span> g2.mv()</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>a, b, c, d <span class="op">=</span> symbols(<span class="st">'a b c d'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Blade A</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> a<span class="op">*</span>e1 <span class="op">+</span> b<span class="op">*</span>e2</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>a2 <span class="op">=</span> c<span class="op">*</span>e1 <span class="op">+</span> d<span class="op">*</span>e2</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> a1 <span class="op">^</span> a2</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>show(<span class="vs">fr'''</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="vs">\begin</span><span class="ch">{{</span><span class="vs">aligned</span><span class="ch">}}</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="vs">  a_1   &amp;= </span><span class="sc">{</span>tex(a1)<span class="sc">}</span><span class="vs"> \\</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="vs">  a_2   &amp;= </span><span class="sc">{</span>tex(a2)<span class="sc">}</span><span class="vs"> \\</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="vs">  A     &amp;= </span><span class="sc">{</span>tex(A)<span class="sc">}</span><span class="vs"> \\</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="vs">  |A|^2 &amp;= </span><span class="sc">{</span>tex(A.norm2())<span class="sc">}</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="vs">\end</span><span class="ch">{{</span><span class="vs">aligned</span><span class="ch">}}</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="vs">'''</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
   \begin{aligned}
-    a_1   &amp;= a \mathbf{e}_{1} + b \mathbf{e}_{2} \\
-    a_2   &amp;= c \mathbf{e}_{1} + d \mathbf{e}_{2} \\
-    A     &amp;= \left ( a d - b c\right ) \mathbf{e}_{1}\wedge \mathbf{e}_{2} \\
-    |A|^2 &amp;= a^{2} d^{2} - 2 a b c d + b^{2} c^{2}
+    v     &amp;= a \mathbf{e}_{1} + b \mathbf{e}_{2} \\
+    w    &amp;= c \mathbf{e}_{1} + d \mathbf{e}_{2} \\
+    A     &amp;= v \wedge w = \left ( a d - b c\right ) \mathbf{e}_{1}\wedge \mathbf{e}_{2} \\
+    |A|^2 &amp;= A * \widetilde A = \left(a d - b c\right)^{2}
   \end{aligned}
   \]</span></p></li>
-<li><p>Detalhando o determinante:</p>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> (a<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">**</span><span class="dv">2</span>) <span class="op">*</span> (c<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> d<span class="op">**</span><span class="dv">2</span>) <span class="op">-</span> (a<span class="op">*</span>c <span class="op">+</span> b<span class="op">*</span>d)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>show(<span class="vs">fr'''</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="vs">\begin</span><span class="ch">{{</span><span class="vs">aligned</span><span class="ch">}}</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="vs">|A|^2 &amp;= </span><span class="sc">{</span>tex(D)<span class="sc">}</span><span class="vs"> \\</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="vs">&amp;= </span><span class="sc">{</span>tex(expand(D))<span class="sc">}</span><span class="vs"> \\</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="vs">&amp;= </span><span class="sc">{</span>tex(factor(D))<span class="sc">}</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="vs">\end</span><span class="ch">{{</span><span class="vs">aligned</span><span class="ch">}}</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="vs">'''</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<li><p>Detalhando o determinante de duas maneiras::</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/determinante-duas-maneiras-r2.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div></li>
+<li><p>No geral, em <span class="math inline">\(\mathbb{R}^3\)</span>, usando as coordenadas:</p>
 <p><span class="math display">\[
   \begin{aligned}
-  |A|^2 &amp;= \left(a^{2} + b^{2}\right) \left(c^{2} + d^{2}\right) - \left(a c + b d\right)^{2} \\
-  &amp;= a^{2} d^{2} - 2 a b c d + b^{2} c^{2} \\
-  &amp;= \left(a d - b c\right)^{2}
+    u   &amp;= a \mathbf{e}_{1} + b \mathbf{e}_{2} + c \mathbf{e}_{3} \\
+    v   &amp;= d \mathbf{e}_{1} + e \mathbf{e}_{2} + f \mathbf{e}_{3} \\
+    w   &amp;= g \mathbf{e}_{1} + h \mathbf{e}_{2} + i \mathbf{e}_{3} \\
+    A   &amp;= u \wedge v \wedge v = \left ( a e i - a f h - b d i + b f g + c d h - c e g\right ) \mathbf{e}_{1}\wedge \mathbf{e}_{2}\wedge \mathbf{e}_{3} \\
+    |A|^2 &amp;= A * \widetilde A = \left(a e i - a f h - b d i + b f g + c d h - c e g\right)^{2}
   \end{aligned}
-  \]</span></p></li>
+  \]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/determinante-coords-r3.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p>O valor da última linha é o quadrado do volume do paralelepípedo formado por <span class="math inline">\(\mathbf{u}, \mathbf{v}\)</span>, e <span class="math inline">\(\mathbf{w}\)</span>.</p></li>
+<li><p>Agora usando módulos e ângulos:</p>
+<p><span class="math display">\[
+  \begin{aligned}
+    |A|^2 &amp;= A * \widetilde A \\
+    &amp;= \det \left[\begin{matrix}u^{2} &amp; u v &amp; u w\\u v &amp; v^{2} &amp; v w\\u w &amp; v w &amp; w^{2}\end{matrix}\right] \\
+    &amp;= \det \left[\begin{matrix}\left|{u}\right|^{2} &amp; \cos{\left(u,v \right)} \left|{u}\right| \left|{v}\right| &amp; \cos{\left(u,w \right)} \left|{u}\right| \left|{w}\right|\\\cos{\left(u,v \right)} \left|{u}\right| \left|{v}\right| &amp; \left|{v}\right|^{2} &amp; \cos{\left(v,w \right)} \left|{v}\right| \left|{w}\right|\\\cos{\left(u,w \right)} \left|{u}\right| \left|{w}\right| &amp; \cos{\left(v,w \right)} \left|{v}\right| \left|{w}\right| &amp; \left|{w}\right|^{2}\end{matrix}\right]
+  \end{aligned}
+  \]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/determinante-coords-r3-angulos.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
+</figure>
+</div>
+<p>O valor da última linha é o quadrado do volume do paralelepípedo formado por <span class="math inline">\(\mathbf{u}, \mathbf{v}\)</span>, e <span class="math inline">\(\mathbf{w}\)</span>.</p></li>
 </ul>
 </section>
 <section id="the-angle-between-subspaces" class="level3" data-number="3.1.4">
@@ -381,7 +345,18 @@ z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
 <p><span class="math display">\[
 \cos \theta = \frac{\mathbf{A} * \widetilde{\mathbf{B}}}{||\mathbf{A}||\;||\mathbf{B}||}
 \]</span></p></li>
-<li><p>De novo, temos a semelhança com números complexos, onde o produto <span class="math inline">\(z_1 \cdot \overline{z_2}\)</span>, tais que o argumento de <span class="math inline">\(z_1\)</span> é <span class="math inline">\(\alpha\)</span> e o argumento de <span class="math inline">\(z_2\)</span> é <span class="math inline">\(\beta\)</span>, resulta em um número complexo <span class="math inline">\(z_3\)</span> cujo argumento é <span class="math inline">\(\alpha - \beta\)</span>:</p>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Números complexos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>De novo, temos a semelhança com números complexos, onde o produto <span class="math inline">\(z_1 \cdot \overline{z_2}\)</span>, tais que o argumento de <span class="math inline">\(z_1\)</span> é <span class="math inline">\(\alpha\)</span> e o argumento de <span class="math inline">\(z_2\)</span> é <span class="math inline">\(\beta\)</span>, resulta em um número complexo <span class="math inline">\(z_3\)</span> cujo argumento é <span class="math inline">\(\alpha - \beta\)</span>:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/angulo-entre-complexos.jpg" class="img-fluid figure-img"></p>
@@ -391,7 +366,10 @@ z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
 <figure class="figure">
 <p><img src="figures/angulo-entre-complexos.svg" class="img-fluid figure-img"></p>
 </figure>
-</div></li>
+</div>
+</div>
+</div>
+<ul>
 <li><p>Em <span class="math inline">\(\mathbb{R}^2\)</span>, no geral, <span class="math inline">\(\mathbf{A} * \widetilde{\mathbf{B}} = ||\mathbf{A}||\;||\mathbf{B}||\)</span>, e o ângulo é sempre zero:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

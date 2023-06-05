@@ -69,34 +69,22 @@ O produto escalar $\bl A * \bl B$ é definido como
 
   ![](figures/exemplo-norma-blade.jpg){fig-align="center" width=60%}
 
-* Parecido com o que acontece com números complexos, onde o quadrado da norma é o produto entre o número complexo [e seu conjugado]{.hl}:
-
-  $$
-  z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
-  $$
-
-* Usando [sympy](https://www.sympy.org/en/index.html) e [o pacote galgebra](https://galgebra.readthedocs.io/en/latest/index.html), com a seguinte inicialização:
-
-    ```{python eval=FALSE, echo=TRUE}
-    from sympy import *
-    from galgebra.ga import Ga
-    import galgebra.printer
-    
-    # tell sympy to use our printing by default
-    init_printing(
-      latex_printer=galgebra.printer.latex, 
-      use_latex='mathjax'
-    )
-    
-    show = lambda x: print(f'\n$${x}$$\n\n')
-    tex = latex
-    ```
-
+  ::: {.callout-note}
+  
+  ## Números complexos
+  
+  Isto é parecido com o que acontece com números complexos, onde o quadrado da norma de um complexo $z$ é o produto entre $z$ [e seu conjugado]{.hl}:
+  
+    $$
+    z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
+    $$
+  
+  :::
 
 
 * No geral, em $\reais^2$:
 
-    ```{python echo=TRUE}
+    ```{python}
     # Álgebra 2D
     xy = (x, y) = symbols('x y', real=True)
     g2 = Ga('e_1 e_2', g=[1, 1], coords=xy)
@@ -108,30 +96,138 @@ O produto escalar $\bl A * \bl B$ é definido como
     a1 = a*e1 + b*e2
     a2 = c*e1 + d*e2
     A = a1 ^ a2
+    Anorm2 = A.norm2()
+    Anorm2factored = factor(Anorm2)
     
-    show(fr'''
-    \begin{{aligned}}
-      a_1   &= {tex(a1)} \\
-      a_2   &= {tex(a2)} \\
-      A     &= {tex(A)} \\
-      |A|^2 &= {tex(A.norm2())}
-    \end{{aligned}}
+    show(r'''
+    \begin{aligned}
+      v     &= $a1 \\
+      w    &= $a2 \\
+      A     &= v \wedge w = $A \\
+      |A|^2 &= A * \widetilde A = $Anorm2factored
+    \end{aligned}
     ''')
     ```
 
-* Detalhando o determinante:
+* Detalhando o determinante de duas maneiras::
 
-    ```{python echo=TRUE}
-    D = (a**2 + b**2) * (c**2 + d**2) - (a*c + b*d)**2
+  ![](figures/determinante-duas-maneiras-r2.jpg){width=80% fig-align="center"}
+
+* No geral, em $\reais^3$, usando as coordenadas:
+
+    ```{python}
+    xyz = (x, y, z) = symbols('x y z', real=True)
+    g3 = Ga('e_1 e_2 e_3', g=[1, 1, 1], coords=xyz)
+    e1, e2, e3 = g3.mv()
     
-    show(fr'''
-    \begin{{aligned}}
-    |A|^2 &= {tex(D)} \\
-    &= {tex(expand(D))} \\
-    &= {tex(factor(D))}
-    \end{{aligned}}
+    a, b, c, d, e, f, g, h, i = symbols('a b c d e f g h i', real=True)
+    a1 = a*e1 + b*e2 + c*e3
+    a2 = d*e1 + e*e2 + f*e3
+    a3 = g*e1 + h*e2 + i*e3
+    
+    A = a1^a2^a3
+    Anorm2 = A.norm2()
+    Anorm2factored = factor(Anorm2)
+    
+    show(r'''
+    \begin{aligned}
+      u   &= $a1 \\
+      v   &= $a2 \\
+      w   &= $a3 \\
+      A   &= u \wedge v \wedge v = $A \\
+      |A|^2 &= A * \widetilde A = $Anorm2factored
+    \end{aligned}
     ''')
     ```
+
+    ```{python eval=FALSE}
+    uu = a**2 + b**2 + c**2
+    vv = d**2 + e**2 + f**2
+    ww = g**2 + h**2 + i**2
+    uv = a*d + b*e + c*f
+    uw = a*g + b*h + c*i
+    vw = d*g + e*h + f*i
+    
+    d = uu*vv*ww + 2*uv*vw*uw - uu*vw*vw - vv*uw*uw - ww*uv*uv
+    dd = expand(d)
+    nn = simplify(expand(Anorm2factored))
+    dd == nn
+    ```
+
+  ![](figures/determinante-coords-r3.jpg){width=80% fig-align="center"}
+
+  O valor da última linha é o quadrado do volume do paralelepípedo formado por $\vet u, \vet v$, e $\vet w$.
+  
+* Agora usando módulos e ângulos:
+  
+    ```{python}
+    u, v, w = symbols('u v w')
+    a = [u, v, w]
+    
+    angulo = Function('cos', real=True)
+    
+    M1 = Matrix(
+      [
+        [x * y for y in a] for x in a
+      ]
+    )
+    
+    M2 = Matrix( 
+      [ 
+        [ 
+          abs(a[i]) * abs(a[j]) if i == j else abs(a[i]) * abs(a[j]) * angulo(a[min(i,j)], a[max(i,j)]) 
+          for j in range(3) 
+        ] for i in range(3) 
+      ] 
+    )
+
+    show(r'''
+    \begin{aligned}
+      |A|^2 &= A * \widetilde A \\
+      &= \det $M1 \\
+      &= \det $M2
+    \end{aligned}
+    ''')
+    ```
+  
+    ```{python eval=FALSE}
+    d = M2.det()
+    
+    d_manual = abs(u)**2 * abs(v)**2 * abs(w)**2
+    pp = 1 - angulo(u,v)**2 - angulo(u,w)**2 - angulo(v, w)**2 +  2*angulo(u,v)*angulo(u,w)*angulo(v,w)
+    
+    d_manual = d_manual * pp
+    
+    expand(d) == expand(d_manual)
+    ```
+
+  ![](figures/determinante-coords-r3-angulos.jpg){width=40% fig-align="center"}
+
+  O valor da última linha é o quadrado do volume do paralelepípedo formado por $\vet u, \vet v$, e $\vet w$.
+
+    ```{python eval=FALSE}
+    from sympy.vector import CoordSys3D
+    N = CoordSys3D('N')
+    
+    a, b, c, d, e, f, g, h, i = symbols('a b c d e f g h i', real=True)
+    
+    u = a*N.i + b*N.j + c*N.k
+    v = d*N.i + e*N.j + f*N.k
+    w = g*N.i + h*N.j + i*N.k
+    vxw = v.cross(w)
+    
+    cuv = u.dot(v) / (u.magnitude() * v.magnitude())
+    cuw = u.dot(w) / (u.magnitude() * w.magnitude())
+    cvw = v.dot(w) / (v.magnitude() * w.magnitude())
+    s2vw = 1 - cvw**2
+    cuvxw = u.dot(vxw) / (u.magnitude() * vxw.magnitude())
+    
+    lhs = s2vw * cuvxw**2
+    rhs = 1 - cuv**2 - cuw**2 - cvw**2 + 2*cuv*cuw*cvw
+    
+    factor(lhs) == factor(rhs)
+    ```
+  
 
 
 ### THE ANGLE BETWEEN SUBSPACES
@@ -142,11 +238,18 @@ O produto escalar $\bl A * \bl B$ é definido como
   \cos \theta = \frac{\bl A * \rev{\bl B}}{||\bl A||\;||\bl B||}
   $$
 
-* De novo, temos a semelhança com números complexos, onde o produto $z_1 \cdot \overline{z_2}$, tais que o argumento de $z_1$ é $\alpha$ e o argumento de $z_2$ é $\beta$, resulta em um número complexo $z_3$ cujo argumento é $\alpha - \beta$:
+::: {.callout-note}
+
+## Números complexos
+
+De novo, temos a semelhança com números complexos, onde o produto $z_1 \cdot \overline{z_2}$, tais que o argumento de $z_1$ é $\alpha$ e o argumento de $z_2$ é $\beta$, resulta em um número complexo $z_3$ cujo argumento é $\alpha - \beta$:
 
   ![](figures/angulo-entre-complexos.jpg){fig-align="center"}
 
   ![](figures/angulo-entre-complexos.svg){fig-align="center"}
+
+:::
+
 
 * Em $\reais^2$, no geral, $\bl A * \rev{\bl B} = ||\bl A||\;||\bl B||$, e o ângulo é sempre zero:
 
