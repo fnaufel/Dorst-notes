@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -176,6 +210,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-squared-norm-of-a-subspace" id="toc-the-squared-norm-of-a-subspace" class="nav-link" data-scroll-target="#the-squared-norm-of-a-subspace"><span class="header-section-number">3.1.3</span> THE SQUARED NORM OF A SUBSPACE</a></li>
   <li><a href="#the-angle-between-subspaces" id="toc-the-angle-between-subspaces" class="nav-link" data-scroll-target="#the-angle-between-subspaces"><span class="header-section-number">3.1.4</span> THE ANGLE BETWEEN SUBSPACES</a></li>
   </ul></li>
+  <li><a href="#from-scalar-product-to-contraction" id="toc-from-scalar-product-to-contraction" class="nav-link" data-scroll-target="#from-scalar-product-to-contraction"><span class="header-section-number">3.2</span> FROM SCALAR PRODUCT TO CONTRACTION</a>
+  <ul class="collapse">
+  <li><a href="#implicit-definition-of-contraction-rfloor" id="toc-implicit-definition-of-contraction-rfloor" class="nav-link" data-scroll-target="#implicit-definition-of-contraction-rfloor"><span class="header-section-number">3.2.1</span> IMPLICIT DEFINITION OF CONTRACTION <span class="math inline">\(\rfloor\)</span></a></li>
+  <li><a href="#computing-the-contraction-explicitly" id="toc-computing-the-contraction-explicitly" class="nav-link" data-scroll-target="#computing-the-contraction-explicitly"><span class="header-section-number">3.2.2</span> COMPUTING THE CONTRACTION EXPLICITLY</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fnaufel/dorst-notes/edit/main/03.qmd" class="toc-action">Editar essa página</a></p></div></div></nav>
     </div>
@@ -200,7 +239,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <div class="hidden">
-
+% reais % seno
+% vetor
+% vetor e_i
+% blade
+<p>% reverso % contração à esq % contração à dir</p>
 </div>
 <section id="resumo" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumo">Resumo</h2>
@@ -274,69 +317,23 @@ Definição: produto interno de dois <span class="math inline">\(k\)</span>-<em>
 <figure class="figure">
 <p><img src="figures/exemplo-norma-blade.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
 </figure>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Números complexos
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Isto é parecido com o que acontece com números complexos, onde o quadrado da norma de um complexo <span class="math inline">\(z\)</span> é o produto entre <span class="math inline">\(z\)</span> <span class="hl">e seu conjugado</span>:</p>
-<p><span class="math display">\[
-  z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
-  \]</span></p>
-</div>
 </div></li>
-<li><p>No geral, em <span class="math inline">\(\mathbb{R}^2\)</span>:</p>
+<li><p>Parecido com o que acontece com números complexos, onde o quadrado da norma é o produto entre o número complexo <span class="hl">e seu conjugado</span>:</p>
 <p><span class="math display">\[
-  \begin{aligned}
-    v     &amp;= a \mathbf{e}_{1} + b \mathbf{e}_{2} \\
-    w    &amp;= c \mathbf{e}_{1} + d \mathbf{e}_{2} \\
-    A     &amp;= v \wedge w = \left ( a d - b c\right ) \mathbf{e}_{1}\wedge \mathbf{e}_{2} \\
-    |A|^2 &amp;= A * \widetilde A = \left(a d - b c\right)^{2}
-  \end{aligned}
-  \]</span></p></li>
-<li><p>Detalhando o determinante de duas maneiras::</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/determinante-duas-maneiras-r2.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
-</figure>
-</div></li>
-<li><p>No geral, em <span class="math inline">\(\mathbb{R}^3\)</span>, usando as coordenadas:</p>
-<p><span class="math display">\[
-  \begin{aligned}
-    u   &amp;= a \mathbf{e}_{1} + b \mathbf{e}_{2} + c \mathbf{e}_{3} \\
-    v   &amp;= d \mathbf{e}_{1} + e \mathbf{e}_{2} + f \mathbf{e}_{3} \\
-    w   &amp;= g \mathbf{e}_{1} + h \mathbf{e}_{2} + i \mathbf{e}_{3} \\
-    A   &amp;= u \wedge v \wedge v = \left ( a e i - a f h - b d i + b f g + c d h - c e g\right ) \mathbf{e}_{1}\wedge \mathbf{e}_{2}\wedge \mathbf{e}_{3} \\
-    |A|^2 &amp;= A * \widetilde A = \left(a e i - a f h - b d i + b f g + c d h - c e g\right)^{2}
-  \end{aligned}
-  \]</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/determinante-coords-r3.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-<p>O valor da última linha é o quadrado do volume do paralelepípedo formado por <span class="math inline">\(\mathbf{u}, \mathbf{v}\)</span>, e <span class="math inline">\(\mathbf{w}\)</span>.</p></li>
-<li><p>Agora usando módulos e ângulos:</p>
-<p><span class="math display">\[
-  \begin{aligned}
-    |A|^2 &amp;= A * \widetilde A \\
-    &amp;= \det \left[\begin{matrix}u^{2} &amp; u v &amp; u w\\u v &amp; v^{2} &amp; v w\\u w &amp; v w &amp; w^{2}\end{matrix}\right] \\
-    &amp;= \det \left[\begin{matrix}\left|{u}\right|^{2} &amp; \cos{\left(u,v \right)} \left|{u}\right| \left|{v}\right| &amp; \cos{\left(u,w \right)} \left|{u}\right| \left|{w}\right|\\\cos{\left(u,v \right)} \left|{u}\right| \left|{v}\right| &amp; \left|{v}\right|^{2} &amp; \cos{\left(v,w \right)} \left|{v}\right| \left|{w}\right|\\\cos{\left(u,w \right)} \left|{u}\right| \left|{w}\right| &amp; \cos{\left(v,w \right)} \left|{v}\right| \left|{w}\right| &amp; \left|{w}\right|^{2}\end{matrix}\right]
-  \end{aligned}
-  \]</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/determinante-coords-r3-angulos.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
-</figure>
-</div>
-<p>O valor da última linha é o quadrado do volume do paralelepípedo formado por <span class="math inline">\(\mathbf{u}, \mathbf{v}\)</span>, e <span class="math inline">\(\mathbf{w}\)</span>.</p></li>
+z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
+\]</span></p></li>
+<li><p>No geral, em <span class="math inline">\(\mathbb{R}^2\)</span>:</p></li>
 </ul>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Álgebra 2D</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>xy <span class="op">=</span> (x, y) <span class="op">=</span> symbols(<span class="st">'x y'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>g2 <span class="op">=</span> Ga(<span class="st">'e_1 e_2'</span>, g<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">1</span>], coords<span class="op">=</span>xy)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>e1, e2 <span class="op">=</span> g2.mv()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> g2.mv(<span class="st">'a_1'</span>, <span class="st">'vector'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>a2 <span class="op">=</span> g2.mv(<span class="st">'a_2'</span>, <span class="st">'vector'</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> a1 <span class="op">^</span> a2</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>show(<span class="vs">fr'A = </span><span class="sc">{</span>A<span class="sc">}</span><span class="vs">'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[A = (a_1__x*a_2__y - a_1__y*a_2__x)*e_1^e_2\]</span></p>
 </section>
 <section id="the-angle-between-subspaces" class="level3" data-number="3.1.4">
 <h3 data-number="3.1.4" class="anchored" data-anchor-id="the-angle-between-subspaces"><span class="header-section-number">3.1.4</span> THE ANGLE BETWEEN SUBSPACES</h3>
@@ -345,18 +342,7 @@ Números complexos
 <p><span class="math display">\[
 \cos \theta = \frac{\mathbf{A} * \widetilde{\mathbf{B}}}{||\mathbf{A}||\;||\mathbf{B}||}
 \]</span></p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Números complexos
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>De novo, temos a semelhança com números complexos, onde o produto <span class="math inline">\(z_1 \cdot \overline{z_2}\)</span>, tais que o argumento de <span class="math inline">\(z_1\)</span> é <span class="math inline">\(\alpha\)</span> e o argumento de <span class="math inline">\(z_2\)</span> é <span class="math inline">\(\beta\)</span>, resulta em um número complexo <span class="math inline">\(z_3\)</span> cujo argumento é <span class="math inline">\(\alpha - \beta\)</span>:</p>
+<li><p>De novo, temos a semelhança com números complexos, onde o produto <span class="math inline">\(z_1 \cdot \overline{z_2}\)</span>, tais que o argumento de <span class="math inline">\(z_1\)</span> é <span class="math inline">\(\alpha\)</span> e o argumento de <span class="math inline">\(z_2\)</span> é <span class="math inline">\(\beta\)</span>, resulta em um número complexo <span class="math inline">\(z_3\)</span> cujo argumento é <span class="math inline">\(\alpha - \beta\)</span>:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/angulo-entre-complexos.jpg" class="img-fluid figure-img"></p>
@@ -366,10 +352,7 @@ Números complexos
 <figure class="figure">
 <p><img src="figures/angulo-entre-complexos.svg" class="img-fluid figure-img"></p>
 </figure>
-</div>
-</div>
-</div>
-<ul>
+</div></li>
 <li><p>Em <span class="math inline">\(\mathbb{R}^2\)</span>, no geral, <span class="math inline">\(\mathbf{A} * \widetilde{\mathbf{B}} = ||\mathbf{A}||\;||\mathbf{B}||\)</span>, e o ângulo é sempre zero:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -404,10 +387,10 @@ Números complexos
 <ol type="1">
 <li><p>Apenas escalares, e o ângulo é zero, ou</p></li>
 <li><p>Apenas vetores, e o ângulo entre os <em>blades</em> é o ângulo entre estes vetores, ou</p></li>
-<li><p><span class="math inline">\(k\)</span>-<em>blades</em> disjuntos (<span class="math inline">\(k \geq 2\)</span>), e o cosseno é o produto dos cossenos das <span class="hl">duas rotações ortogonais necessárias</span> para alinhar os <em>blades</em> originais. Se uma destas rotações for de <span class="math inline">\(90\)</span> graus, o cosseno é zero.</p></li>
+<li><p><span class="math inline">\(k\)</span>-<em>blades</em> disjuntos (<span class="math inline">\(k \geq 2\)</span>), e o cosseno é o produto dos cossenos das <span class="hl">duas ou mais rotações em planos ortogonais necessárias</span> para alinhar os <em>blades</em> originais. Se uma destas rotações for de <span class="math inline">\(90\)</span> graus, o cosseno é zero.</p></li>
 </ol></li>
 </ul></li>
-<li><p>Exemplo Dorst, p.&nbsp;70:</p>
+<li><p>Exemplo Dorst, p.&nbsp;70 <span class="hl">(em <span class="math inline">\(\mathbb{R}^4\)</span>)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
   A &amp;= \mathbf{e}_{1} \wedge \mathbf{e}_{3} \\
@@ -422,8 +405,121 @@ Números complexos
 </div>
 <ul>
 <li><p>Como <span class="math inline">\(\mathbf{A} \wedge \mathbf{B}\)</span> tem grau <span class="math inline">\(4\)</span>, com <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> ambos de grau <span class="math inline">\(2\)</span>, <span class="hl"><span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> são disjuntos</span>.</p></li>
-<li><p>??? Detalhar este exemplo. Contas. Diagrama.</p></li>
+<li><p>O <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span> está no plano <span class="math inline">\(XZ\)</span>.</p></li>
+<li><p>O <em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> é definido por dois vetores:</p>
+<p><span class="math display">\[
+\mathbf{B} = \mathbf{b}_1 \wedge \mathbf{b}_2
+\]</span></p>
+<p>onde</p>
+<ul>
+<li><p><span class="math inline">\(\mathbf{b}_1\)</span> é o vetor <span class="math inline">\(\mathbf{e}_{1}\)</span> rotacionado de <span class="math inline">\(\alpha\)</span> no plano <span class="math inline">\(XY\)</span>;</p></li>
+<li><p><span class="math inline">\(\mathbf{b}_2\)</span> é o vetor <span class="math inline">\(\mathbf{e}_{3}\)</span> rotacionado de <span class="math inline">\(\beta\)</span> no plano <span class="math inline">\(ZW\)</span> (onde <span class="math inline">\(W\)</span> é o eixo correspondente a <span class="math inline">\(\mathbf{e}_{4}\)</span>).</p></li>
 </ul></li>
+<li><p>Verifique que <span class="math inline">\(||\mathbf{A}|| = ||\mathbf{B}|| = 1\)</span>.</p></li>
+<li><p>Calculando <span class="math inline">\(\mathbf{A} * \widetilde{\mathbf{B}}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \mathbf{A} * \widetilde{\mathbf{B}}
+  &amp;= (\mathbf{e}_{1} \wedge \mathbf{e}_{3}) *
+    (\cos\alpha\;\mathbf{e}_{1} - \text{sen}\,\alpha\;\mathbf{e}_{2})
+    \wedge (\cos\beta\;\mathbf{e}_{3} - \text{sen}\,\beta\;\mathbf{e}_{4}) \\
+  &amp;= \begin{vmatrix}
+     \mathbf{e}_{1} \cdot (\cos\alpha\;\mathbf{e}_{1} - \text{sen}\,\alpha\;\mathbf{e}_{2}) &amp;
+     \mathbf{e}_{1} \cdot (\cos\beta\;\mathbf{e}_{3} - \text{sen}\,\beta\;\mathbf{e}_{4}) \\
+     \mathbf{e}_{3} \cdot (\cos\alpha\;\mathbf{e}_{1} - \text{sen}\,\alpha\;\mathbf{e}_{2}) &amp;
+     \mathbf{e}_{3} \cdot (\cos\beta\;\mathbf{e}_{3} - \text{sen}\,\beta\;\mathbf{e}_{4})
+     \end{vmatrix} \\
+  &amp;= \begin{vmatrix}
+     \cos\alpha &amp; 0 \\
+     0 &amp; \cos\beta
+     \end{vmatrix} \\
+  &amp;= \cos\alpha\;\cos\beta
+\end{aligned}
+\]</span></p></li>
+<li><p>Se <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\beta\)</span> for <span class="math inline">\(90\)</span> graus, os <em>blades</em> <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> são considerados ortogonais.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Rotações em planos, não em torno de eixos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Você deve estar acostumado a pensar em uma rotação como algo que acontece <span class="hl">em torno de um eixo</span>.</p>
+<p>Isto acontece por causa da nossa experiência no espaço tridimensional em que vivemos.</p>
+<p>Mas isto é problemático, pois</p>
+<ol type="1">
+<li><p>Em <span class="math inline">\(\mathbb{R}^2\)</span>, o eixo de qualquer rotação não está contido no espaço!</p></li>
+<li><p>Em <span class="math inline">\(\mathbb{R}^n\)</span>, com <span class="math inline">\(n \geq 4\)</span>, uma rotação pode se dar em torno de mais de um eixo ao mesmo tempo!</p></li>
+</ol>
+<p>Em álgebra geométrica, o costume é pensar em rotações como ocorrendo <span class="hl">em planos</span>. Isto evita os problemas acima e trata rotações de maneira uniforme em qualquer número de dimensões.</p>
+<p>Em todos os casos, <span class="hl">o plano no qual se dá a rotação é representado por um bivetor</span>.</p>
+<p>Mais adiante, vamos abordar rotações em mais detalhes.</p>
+</div>
+</div></li>
+</ul>
+</section>
+</section>
+<section id="from-scalar-product-to-contraction" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="from-scalar-product-to-contraction"><span class="header-section-number">3.2</span> FROM SCALAR PRODUCT TO CONTRACTION</h2>
+<ul>
+<li><p>O produto escalar de dois <em>blades</em> <span class="hl">de mesmo grau</span> sempre resulta em um <span class="hl">escalar</span>, como já diz o nome.</p></li>
+<li><p>Este escalar reflete as magnitudes e as direções relativas dos dois <em>blades</em>.</p></li>
+<li><p>Agora, vamos generalizar a idéia para <em>blades</em> <span class="hl">de graus diferentes</span>.</p></li>
+<li><p>O resultado é o <span class="hl">produto interno</span>.</p></li>
+<li><p>Mas, em vez de definir o produto interno, alguns livros preferem trabalhar com as operações de <span class="hl">contração</span> à esquerda (<span class="math inline">\(\rfloor\)</span>) e à direita (<span class="math inline">\(\lfloor\)</span>).</p></li>
+<li><p>As contrações <span class="hl">generalizam o produto escalar</span>: se <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> têm o mesmo grau, então</p>
+<p><span class="math display">\[
+\mathbf{A} \rfloor\mathbf{B} = \mathbf{A} \lfloor\mathbf{B} = \mathbf{A} * \mathbf{B}
+\]</span></p></li>
+</ul>
+<section id="implicit-definition-of-contraction-rfloor" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="implicit-definition-of-contraction-rfloor"><span class="header-section-number">3.2.1</span> IMPLICIT DEFINITION OF CONTRACTION <span class="math inline">\(\rfloor\)</span></h3>
+<ul>
+<li><p>Um primeiro exemplo:</p>
+<ul>
+<li><p><span class="math inline">\(\mathbf{B}\)</span> é um <span class="math inline">\(2\)</span>-<em>blade</em>;</p></li>
+<li><p><span class="math inline">\(\mathbf{a}\)</span> é um vetor no mesmo plano que <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
+<li><p>A contração de <span class="math inline">\(\mathbf{a}\)</span> sobre <span class="math inline">\(\mathbf{B}\)</span>, escrita como <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span>, é o vetor em vermelho na <a href="#fig-contr-vetor">Figura&nbsp;<span>3.1</span></a>.</p>
+<div id="fig-contr-vetor" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/contr_vetor_blade.png" class="img-fluid figure-img" style="width:50.0%" alt="Contração."></p>
+<figcaption class="figure-caption">Figura&nbsp;3.1: Contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span></figcaption>
+</figure>
+</div></li>
+<li><p>Imagine que o vetor <span class="math inline">\(\mathbf{a}\)</span> foi “contraído”, levando consigo, nesta contração, a dimensão de <span class="math inline">\(\mathbf{B}\)</span> correspondente à direção de <span class="math inline">\(\mathbf{a}\)</span>.</p></li>
+<li><p>O resultado é um vetor ortogonal a <span class="math inline">\(\mathbf{a}\)</span>, contido no plano de <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
+<li><p>Informalmente, <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span> é o que resta em <span class="math inline">\(\mathbf{B}\)</span> depois que <span class="math inline">\(\mathbf{a}\)</span> é retirado.</p></li>
+<li><p>Em breve, vamos ver como calcular a magnitude de <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span>.</p></li>
+</ul></li>
+<li><p>Outro exemplo, onde agora <span class="math inline">\(\mathbf{a}\)</span> não está no plano de <span class="math inline">\(\mathbf{B}\)</span>:</p>
+<ul>
+<li><p>A <a href="#fig-contr-vetor-2">Figura&nbsp;<span>3.2</span></a> mostra a situação.</p>
+<div id="fig-contr-vetor-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/contr_vector_blade2.png" class="img-fluid figure-img" style="width:50.0%" alt="contração de vetor sobre blade"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.2: Contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span></figcaption>
+</figure>
+</div></li>
+<li><p>O resultado continua sendo um vetor ortogonal a <span class="math inline">\(\mathbf{a}\)</span>, contido no plano de <span class="math inline">\(\mathbf{B}\)</span>, mas sua magnitude é menor do que na <a href="#fig-contr-vetor">Figura&nbsp;<span>3.1</span></a>.</p></li>
+<li><p>Vamos ver, em breve, que apenas a componente de <span class="math inline">\(\mathbf{a}\)</span> paralela a <span class="math inline">\(\mathbf{B}\)</span> — i.e., a projeção de <span class="math inline">\(\mathbf{a}\)</span> sobre o plano de <span class="math inline">\(\mathbf{B}\)</span> — é levada em consideração no cálculo da contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span>. Isto condiz com a idéia de produto interno, cujo valor aumenta à medida que o ângulo entre dois objetos aumenta.</p></li>
+<li><p>No caso extremo, se <span class="math inline">\(\mathbf{a}\)</span> for ortogonal a <span class="math inline">\(\mathbf{B}\)</span>, a contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span> será nula, como mostra a <a href="#fig-contr-nula">Figura&nbsp;<span>3.3</span></a>. De novo, é o esperado, uma vez que o produto interno deve ser nulo quando os objetos são ortogonais.</p>
+<div id="fig-contr-nula" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/contr-nula.png" class="img-fluid figure-img" style="width:50.0%" alt="contração de vetor sobre blade"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.3: Contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}= 0\)</span></figcaption>
+</figure>
+</div></li>
+</ul></li>
+</ul>
+</section>
+<section id="computing-the-contraction-explicitly" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="computing-the-contraction-explicitly"><span class="header-section-number">3.2.2</span> COMPUTING THE CONTRACTION EXPLICITLY</h3>
+<ul>
+<li>Graus dos operandos e do resultado.???</li>
 </ul>
 
 

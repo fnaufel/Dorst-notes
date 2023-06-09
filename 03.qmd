@@ -69,166 +69,25 @@ O produto escalar $\bl A * \bl B$ é definido como
 
   ![](figures/exemplo-norma-blade.jpg){fig-align="center" width=60%}
 
-  ::: {.callout-note}
-  
-  ## Números complexos
-  
-  Isto é parecido com o que acontece com números complexos, onde o quadrado da norma de um complexo $z$ é o produto entre $z$ [e seu conjugado]{.hl}:
-  
-    $$
-    z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
-    $$
-  
-  :::
+* Parecido com o que acontece com números complexos, onde o quadrado da norma é o produto entre o número complexo [e seu conjugado]{.hl}:
 
+  $$
+  z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
+  $$
 
 * No geral, em $\reais^2$:
 
-    ```{python}
-    # Álgebra 2D
-    xy = (x, y) = symbols('x y', real=True)
-    g2 = Ga('e_1 e_2', g=[1, 1], coords=xy)
-    e1, e2 = g2.mv()
-    
-    a, b, c, d = symbols('a b c d', real=True)
-    
-    # Blade A
-    a1 = a*e1 + b*e2
-    a2 = c*e1 + d*e2
-    A = a1 ^ a2
-    Anorm2 = A.norm2()
-    Anorm2factored = factor(Anorm2)
-    
-    show(r'''
-    \begin{aligned}
-      v     &= $a1 \\
-      w    &= $a2 \\
-      A     &= v \wedge w = $A \\
-      |A|^2 &= A * \widetilde A = $Anorm2factored
-    \end{aligned}
-    ''')
-    ```
+```{python echo=TRUE}
+# Álgebra 2D
+xy = (x, y) = symbols('x y', real=True)
+g2 = Ga('e_1 e_2', g=[1, 1], coords=xy)
+e1, e2 = g2.mv()
 
-* Detalhando o determinante de duas maneiras::
-
-  ![](figures/determinante-duas-maneiras-r2.jpg){width=80% fig-align="center"}
-
-* No geral, em $\reais^3$, usando as coordenadas:
-
-    ```{python}
-    xyz = (x, y, z) = symbols('x y z', real=True)
-    g3 = Ga('e_1 e_2 e_3', g=[1, 1, 1], coords=xyz)
-    e1, e2, e3 = g3.mv()
-    
-    a, b, c, d, e, f, g, h, i = symbols('a b c d e f g h i', real=True)
-    a1 = a*e1 + b*e2 + c*e3
-    a2 = d*e1 + e*e2 + f*e3
-    a3 = g*e1 + h*e2 + i*e3
-    
-    A = a1^a2^a3
-    Anorm2 = A.norm2()
-    Anorm2factored = factor(Anorm2)
-    
-    show(r'''
-    \begin{aligned}
-      u   &= $a1 \\
-      v   &= $a2 \\
-      w   &= $a3 \\
-      A   &= u \wedge v \wedge v = $A \\
-      |A|^2 &= A * \widetilde A = $Anorm2factored
-    \end{aligned}
-    ''')
-    ```
-
-    ```{python eval=FALSE}
-    uu = a**2 + b**2 + c**2
-    vv = d**2 + e**2 + f**2
-    ww = g**2 + h**2 + i**2
-    uv = a*d + b*e + c*f
-    uw = a*g + b*h + c*i
-    vw = d*g + e*h + f*i
-    
-    d = uu*vv*ww + 2*uv*vw*uw - uu*vw*vw - vv*uw*uw - ww*uv*uv
-    dd = expand(d)
-    nn = simplify(expand(Anorm2factored))
-    dd == nn
-    ```
-
-  ![](figures/determinante-coords-r3.jpg){width=80% fig-align="center"}
-
-  O valor da última linha é o quadrado do volume do paralelepípedo formado por $\vet u, \vet v$, e $\vet w$.
-  
-* Agora usando módulos e ângulos:
-  
-    ```{python}
-    u, v, w = symbols('u v w')
-    a = [u, v, w]
-    
-    angulo = Function('cos', real=True)
-    
-    M1 = Matrix(
-      [
-        [x * y for y in a] for x in a
-      ]
-    )
-    
-    M2 = Matrix( 
-      [ 
-        [ 
-          abs(a[i]) * abs(a[j]) if i == j else abs(a[i]) * abs(a[j]) * angulo(a[min(i,j)], a[max(i,j)]) 
-          for j in range(3) 
-        ] for i in range(3) 
-      ] 
-    )
-
-    show(r'''
-    \begin{aligned}
-      |A|^2 &= A * \widetilde A \\
-      &= \det $M1 \\
-      &= \det $M2
-    \end{aligned}
-    ''')
-    ```
-  
-    ```{python eval=FALSE}
-    d = M2.det()
-    
-    d_manual = abs(u)**2 * abs(v)**2 * abs(w)**2
-    pp = 1 - angulo(u,v)**2 - angulo(u,w)**2 - angulo(v, w)**2 +  2*angulo(u,v)*angulo(u,w)*angulo(v,w)
-    
-    d_manual = d_manual * pp
-    
-    expand(d) == expand(d_manual)
-    ```
-
-  ![](figures/determinante-coords-r3-angulos.jpg){width=40% fig-align="center"}
-
-  O valor da última linha é o quadrado do volume do paralelepípedo formado por $\vet u, \vet v$, e $\vet w$.
-
-    ```{python eval=FALSE}
-    from sympy.vector import CoordSys3D
-    N = CoordSys3D('N')
-    
-    a, b, c, d, e, f, g, h, i = symbols('a b c d e f g h i', real=True)
-    
-    u = a*N.i + b*N.j + c*N.k
-    v = d*N.i + e*N.j + f*N.k
-    w = g*N.i + h*N.j + i*N.k
-    vxw = v.cross(w)
-    
-    cuv = u.dot(v) / (u.magnitude() * v.magnitude())
-    cuw = u.dot(w) / (u.magnitude() * w.magnitude())
-    cvw = v.dot(w) / (v.magnitude() * w.magnitude())
-    s2vw = 1 - cvw**2
-    cuvxw = u.dot(vxw) / (u.magnitude() * vxw.magnitude())
-    
-    lhs = s2vw * cuvxw**2
-    rhs = 1 - cuv**2 - cuw**2 - cvw**2 + 2*cuv*cuw*cvw
-    
-    factor(lhs) == factor(rhs)
-    ```
-  
-
+a1 = g2.mv('a_1', 'vector')
+a2 = g2.mv('a_2', 'vector')
+A = a1 ^ a2
+show(fr'A = {A}')
+```
 
 ### THE ANGLE BETWEEN SUBSPACES
 
@@ -238,18 +97,11 @@ O produto escalar $\bl A * \bl B$ é definido como
   \cos \theta = \frac{\bl A * \rev{\bl B}}{||\bl A||\;||\bl B||}
   $$
 
-::: {.callout-note}
-
-## Números complexos
-
-De novo, temos a semelhança com números complexos, onde o produto $z_1 \cdot \overline{z_2}$, tais que o argumento de $z_1$ é $\alpha$ e o argumento de $z_2$ é $\beta$, resulta em um número complexo $z_3$ cujo argumento é $\alpha - \beta$:
+* De novo, temos a semelhança com números complexos, onde o produto $z_1 \cdot \overline{z_2}$, tais que o argumento de $z_1$ é $\alpha$ e o argumento de $z_2$ é $\beta$, resulta em um número complexo $z_3$ cujo argumento é $\alpha - \beta$:
 
   ![](figures/angulo-entre-complexos.jpg){fig-align="center"}
 
   ![](figures/angulo-entre-complexos.svg){fig-align="center"}
-
-:::
-
 
 * Em $\reais^2$, no geral, $\bl A * \rev{\bl B} = ||\bl A||\;||\bl B||$, e o ângulo é sempre zero:
 
@@ -287,9 +139,9 @@ De novo, temos a semelhança com números complexos, onde o produto $z_1 \cdot \
     
     1. Apenas vetores, e o ângulo entre os *blades* é o ângulo entre estes vetores, ou
     
-    1. $k$-*blades* disjuntos ($k \geq 2$), e o cosseno é o produto dos cossenos das [duas rotações ortogonais necessárias]{.hl} para alinhar os *blades* originais. Se uma destas rotações for de $90$ graus, o cosseno é zero.
+    1. $k$-*blades* disjuntos ($k \geq 2$), e o cosseno é o produto dos cossenos das [duas ou mais rotações em planos ortogonais necessárias]{.hl} para alinhar os *blades* originais. Se uma destas rotações for de $90$ graus, o cosseno é zero.
     
-* Exemplo Dorst, p. 70:
+* Exemplo Dorst, p. 70 [(em $\reais^4$)]{.hl}:
 
   $$
   \begin{aligned}
@@ -303,4 +155,149 @@ De novo, temos a semelhança com números complexos, onde o produto $z_1 \cdot \
   
   * Como $\bl A \wedge \bl B$ tem grau $4$, com $\bl A$ e $\bl B$ ambos de grau $2$, [$\bl A$ e $\bl B$ são disjuntos]{.hl}.
   
-  * ??? Detalhar este exemplo. Contas. Diagrama.
+  * O *blade* $\bl A$ está no plano $XZ$.
+  
+  * O *blade* $\bl B$ é definido por dois vetores:
+  
+    $$
+    \bl B = \vet b_1 \wedge \vet b_2
+    $$
+    
+    onde 
+    
+    * $\vet b_1$ é o vetor $\ve1$ rotacionado de $\alpha$ no plano $XY$;
+    
+    * $\vet b_2$ é o vetor $\ve3$ rotacionado de $\beta$ no plano $ZW$ (onde $W$ é o eixo correspondente a $\ve4$).
+    
+  * Verifique que $||\bl A|| = ||\bl B|| = 1$.
+
+  * Calculando $\bl A * \widetilde{\bl B}$:
+  
+    $$
+    \begin{aligned}
+      \bl A * \widetilde{\bl B}
+      &= (\ve1 \wedge \ve3) * 
+        (\cos\alpha\;\ve1 - \sen\alpha\;\ve2) 
+        \wedge (\cos\beta\;\ve3 - \sen\beta\;\ve4) \\
+      &= \begin{vmatrix}
+         \ve1 \cdot (\cos\alpha\;\ve1 - \sen\alpha\;\ve2) &
+         \ve1 \cdot (\cos\beta\;\ve3 - \sen\beta\;\ve4) \\
+         \ve3 \cdot (\cos\alpha\;\ve1 - \sen\alpha\;\ve2) &
+         \ve3 \cdot (\cos\beta\;\ve3 - \sen\beta\;\ve4)
+         \end{vmatrix} \\
+      &= \begin{vmatrix}
+         \cos\alpha & 0 \\
+         0 & \cos\beta 
+         \end{vmatrix} \\
+      &= \cos\alpha\;\cos\beta
+    \end{aligned}
+    $$
+
+  * Se $\alpha$ ou $\beta$ for $90$ graus, os *blades* $\bl A$ e $\bl B$ são considerados ortogonais.
+  
+  
+  ::: {.callout-note}
+
+  ## Rotações em planos, não em torno de eixos
+  
+  Você deve estar acostumado a pensar em uma rotação como algo que acontece [em torno de um eixo]{.hl}. 
+  
+  Isto acontece por causa da nossa experiência no espaço tridimensional em que vivemos.
+  
+  Mas isto é problemático, pois
+  
+  1. Em $\reais^2$, o eixo de qualquer rotação não está contido no espaço!
+  
+  1. Em $\reais^n$, com $n \geq 4$, uma rotação pode se dar em torno de mais de um eixo ao mesmo tempo!
+  
+  Em álgebra geométrica, o costume é pensar em rotações como ocorrendo [em planos]{.hl}. Isto evita os problemas acima e trata rotações de maneira uniforme em qualquer número de dimensões. 
+  
+  Em todos os casos, [o plano no qual se dá a rotação é representado por um bivetor]{.hl}.
+  
+  Mais adiante, vamos abordar rotações em mais detalhes.
+  
+  :::
+
+
+## FROM SCALAR PRODUCT TO CONTRACTION
+
+* O produto escalar de dois *blades* [de mesmo grau]{.hl} sempre resulta em um [escalar]{.hl}, como já diz o nome.
+
+* Este escalar reflete as magnitudes e as direções relativas dos dois *blades*.
+
+* Agora, vamos generalizar a idéia para *blades* [de graus diferentes]{.hl}.
+
+* O resultado é o [produto interno]{.hl}.
+
+* Mas, em vez de definir o produto interno, alguns livros preferem trabalhar com as operações de [contração]{.hl} à esquerda ($\lc$) e à direita ($\rc$).
+
+* As contrações [generalizam o produto escalar]{.hl}: se $\bl A$ e $\bl B$ têm o mesmo grau, então
+
+  $$
+  \bl A \lc \bl B = \bl A \rc \bl B = \bl A * \bl B
+  $$
+
+
+### IMPLICIT DEFINITION OF CONTRACTION $\lc$
+
+* Um primeiro exemplo: 
+
+  * $\bl B$ é um $2$-*blade*;
+  
+  * $\vet a$ é um vetor no mesmo plano que $\bl B$.
+  
+  * A contração de $\vet a$ sobre $\bl B$, escrita como $\vet a \lc \bl B$, é o vetor em vermelho na @fig-contr-vetor.
+  
+    ![Contração $\vet a \lc \bl B$](figures/contr_vetor_blade.png){fig-alt="Contração." #fig-contr-vetor width=50% fig-align="center"}
+
+  * Imagine que o vetor $\vet a$ foi "contraído", levando consigo, nesta contração, a dimensão de $\bl B$ correspondente à direção de $\vet a$.
+  
+  * O resultado é um vetor ortogonal a $\vet a$, contido no plano de $\bl B$.
+  
+  * Informalmente, $\vet a \lc \bl B$ é o que resta em $\bl B$ depois que $\vet a$ é retirado.
+  
+  * Em breve, vamos ver como calcular a magnitude de $\vet a \lc \bl B$.
+
+```{python eval=FALSE}
+# Álgebra 2D
+xy = (x, y) = symbols('x y', real=True)
+g2 = Ga('e_1 e_2', g=[1, 1], coords=xy)
+e1, e2 = g2.mv()
+
+a1, a2, b = symbols('a_1 a_2 b', real=True)
+
+a = a1*e1 + a2*e2
+B = b*(e1^e2)
+acontrB = a < B
+prod = (a ^ acontrB)
+
+show(r'''
+\begin{aligned}
+  \vet a &=  $a \\
+  \bl B &=  $B \\
+  \vet a \lc \bl B &= $acontrB \\
+  \vet a \wedge (\vet a \lc \bl B) &= $prod
+\end{aligned}
+''')
+```
+
+* Outro exemplo, onde agora $\vet a$ não está no plano de $\bl B$:
+
+  * A @fig-contr-vetor-2 mostra a situação.
+  
+    ![Contração $\vet a \lc \bl B$](figures/contr_vector_blade2.png){fig-alt="contração de vetor sobre blade" #fig-contr-vetor-2 width=50% fig-align="center"}
+    
+  * O resultado continua sendo um vetor ortogonal a $\vet a$, contido no plano de $\bl B$, mas sua magnitude é menor do que na @fig-contr-vetor.
+  
+  * Vamos ver, em breve, que apenas a componente de $\vet a$ paralela a $\bl B$ --- i.e., a projeção de $\vet a$ sobre o plano de $\bl B$ --- é levada em consideração no cálculo da contração $\vet a \lc \bl B$. Isto condiz com a idéia de produto interno, cujo valor aumenta à medida que o ângulo entre dois objetos aumenta.
+  
+  * No caso extremo, se $\vet a$ for ortogonal a $\bl B$, a contração $\vet a \lc \bl B$ será nula, como mostra a @fig-contr-nula. De novo, é o esperado, uma vez que o produto interno deve ser nulo quando os objetos são ortogonais.
+  
+    ![Contração $\vet a \lc \bl B= 0$](figures/contr-nula.png){fig-alt="contração de vetor sobre blade" #fig-contr-nula width=50% fig-align="center"}
+  
+
+### COMPUTING THE CONTRACTION EXPLICITLY
+
+* Graus dos operandos e do resultado.???
+
+

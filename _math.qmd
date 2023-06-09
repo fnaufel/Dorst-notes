@@ -1,9 +1,11 @@
 
 ::: {.hidden}
-\providecommand{\reais}{\mathbb{R}}
-\providecommand{\sen}{\text{sen}\,}
-\providecommand{\vet}[1]{\mathbf{#1}}
-\providecommand{\bl}[1]{\mathbf{#1}}
-\providecommand{\rev}[1]{\widetilde{#1}}
-\providecommand{\ve}[1]{\vet{e}_{#1}}
+\providecommand{\reais}{\mathbb{R}}           % reais
+\providecommand{\sen}{\text{sen}\,}           % seno
+\providecommand{\vet}[1]{\mathbf{#1}}         % vetor
+\providecommand{\ve}[1]{\vet{e}_{#1}}         % vetor e_i
+\providecommand{\bl}[1]{\mathbf{#1}}          % blade
+\providecommand{\rev}[1]{\widetilde{#1}}      % reverso
+\providecommand{\lc}{\rfloor}                 % contração à esq
+\providecommand{\rc}{\lfloor}                 % contração à dir
 :::
