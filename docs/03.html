@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -322,18 +288,7 @@ Definição: produto interno de dois <span class="math inline">\(k\)</span>-<em>
 <p><span class="math display">\[
 z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
 \]</span></p></li>
-<li><p>No geral, em <span class="math inline">\(\mathbb{R}^2\)</span>:</p></li>
 </ul>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Álgebra 2D</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>xy <span class="op">=</span> (x, y) <span class="op">=</span> symbols(<span class="st">'x y'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>g2 <span class="op">=</span> Ga(<span class="st">'e_1 e_2'</span>, g<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">1</span>], coords<span class="op">=</span>xy)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>e1, e2 <span class="op">=</span> g2.mv()</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> g2.mv(<span class="st">'a_1'</span>, <span class="st">'vector'</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>a2 <span class="op">=</span> g2.mv(<span class="st">'a_2'</span>, <span class="st">'vector'</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> a1 <span class="op">^</span> a2</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>show(<span class="vs">fr'A = </span><span class="sc">{</span>A<span class="sc">}</span><span class="vs">'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><span class="math display">\[A = (a_1__x*a_2__y - a_1__y*a_2__x)*e_1^e_2\]</span></p>
 </section>
 <section id="the-angle-between-subspaces" class="level3" data-number="3.1.4">
 <h3 data-number="3.1.4" class="anchored" data-anchor-id="the-angle-between-subspaces"><span class="header-section-number">3.1.4</span> THE ANGLE BETWEEN SUBSPACES</h3>

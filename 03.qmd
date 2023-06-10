@@ -75,19 +75,6 @@ O produto escalar $\bl A * \bl B$ é definido como
   z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
   $$
 
-* No geral, em $\reais^2$:
-
-```{python echo=TRUE}
-# Álgebra 2D
-xy = (x, y) = symbols('x y', real=True)
-g2 = Ga('e_1 e_2', g=[1, 1], coords=xy)
-e1, e2 = g2.mv()
-
-a1 = g2.mv('a_1', 'vector')
-a2 = g2.mv('a_2', 'vector')
-A = a1 ^ a2
-show(fr'A = {A}')
-```
 
 ### THE ANGLE BETWEEN SUBSPACES
 
