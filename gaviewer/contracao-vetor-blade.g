@@ -92,3 +92,61 @@ batch contr_vetor_blade_3()
 	}
 
 }
+
+
+batch contr_3d()
+{
+	batch init();
+
+	init(0);
+    grey_canvas(1);
+	set_point_size(0);
+    fontsizeinit(0);
+    camori = -0.21 + 0.74*e2^e3 + 0.37*e3^e1 + 0.51*e1^e2;
+    campos = 0.63*e1 + 0.27*e2 + 6.10*e3;
+
+    // 3-Blade C
+    blc = show(alpha(dm4(blue(e1^e2^e3)), 0.35));
+    blclabel = 1.05*(e2 + e3);
+    label(blclabel, "\center{\eqn{\bold{C}}}");
+
+    // 2-Blade B
+    blb = show(dm3(green((e1 + e3) ^ e2)));
+    blblabel = 1.2*e2;
+    label(blblabel, "\center{\eqn{\bold{B}}}");
+
+    // B contracted on C
+    bcc = show(red(blb . blc));
+    bcclabel = 1.2*bcc;
+    label(bcclabel, "\center{\eqn{\bold{B \lc C}}}");
+    
+}
+
+
+batch contr_3d_vetor()
+{
+	batch init();
+
+	init(0);
+    grey_canvas(1);
+	set_point_size(0);
+    fontsizeinit(0);
+    camori = -0.13 + 0.63*e2^e3 + 0.62*e3^e1 + 0.45*e1^e2;
+    campos = 0.63*e1 + 0.27*e2 + 5.00*e3;
+
+    // 3-Blade B
+    blb = show(alpha(dm4(blue(e1^e2^e3)), 0.35));
+    blblabel = 1.05*(e2 + e3);
+    label(blblabel, "\center{\eqn{\bold{B}}}");
+
+    // vector a
+    a = show(green(1.2*e2));
+    alabel = 1.05*a;
+    label(alabel, "\center{\eqn{\bold{a}}}");
+
+    // contraction
+    acb = show(dm3(red(-a . blb)));
+    acblabel = 1.3*e1;
+    label(acblabel, "\center{\eqn{\bold{a \lc B}}}");
+    
+}

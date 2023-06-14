@@ -237,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="definition-of-the-scalar-product" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="definition-of-the-scalar-product"><span class="header-section-number">3.1.2</span> DEFINITION OF THE SCALAR PRODUCT <span class="math inline">\(*\)</span></h3>
 <ul>
-<li><p>Por enquanto, definir o produto interno de dois <em>blades</em> <span class="hl">de mesma graduação</span>.</p></li>
+<li><p>Por enquanto, vamos definir o produto interno de dois <em>blades</em> <span class="hl">de mesma graduação</span>.</p></li>
 <li><p>O resultado sempre vai ser um <span class="hl">escalar</span>.</p></li>
 <li><p>Generaliza o produto escalar de vetores (que, afinal, são 1-<em>blades</em>).</p></li>
 </ul>
@@ -308,7 +308,7 @@ z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
 <p><img src="figures/angulo-entre-complexos.svg" class="img-fluid figure-img"></p>
 </figure>
 </div></li>
-<li><p>Em <span class="math inline">\(\mathbb{R}^2\)</span>, no geral, <span class="math inline">\(\mathbf{A} * \widetilde{\mathbf{B}} = ||\mathbf{A}||\;||\mathbf{B}||\)</span>, e o ângulo é sempre zero:</p>
+<li><p>Em <span class="math inline">\(\mathbb{R}^2\)</span>, no geral, para dois 2-<em>blades</em> <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span>, temos que <span class="math inline">\(\mathbf{A} * \widetilde{\mathbf{B}} = ||\mathbf{A}||\;||\mathbf{B}||\)</span>, e o ângulo é sempre zero:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/prod-escalar-blades-r2-geral.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
@@ -469,13 +469,30 @@ Rotações em planos, não em torno de eixos
 </figure>
 </div></li>
 </ul></li>
+<li><p>Mais um exemplo, agora em <span class="math inline">\(\mathbb{R}^3\)</span>: a <a href="#fig-2-on-3">Figura&nbsp;<span>3.4</span></a> mostra, em vermelho, o resultado da contração do <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> sobre o <span class="math inline">\(3\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{C}\)</span>.</p>
+<div id="fig-2-on-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/contr-2-blade-on-3-blade.png" class="img-fluid figure-img" style="width:60.0%" alt="contração de 2-blade sobre 3-blade"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.4: Contração de <span class="math inline">\(2\)</span>-<em>blade</em> sobre <span class="math inline">\(3\)</span>-<em>blade</em></figcaption>
+</figure>
+</div></li>
+<li><p>Ainda em <span class="math inline">\(\mathbb{R}^3\)</span>, a <a href="#fig-1-on-3">Figura&nbsp;<span>3.5</span></a> mostra o resultado da contração do vetor <span class="math inline">\(\mathbf{a}\)</span> sobre o <span class="math inline">\(3\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{B}\)</span>.</p>
+<div id="fig-1-on-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/contr-vector-on-3-blade.png" class="img-fluid figure-img" style="width:60.0%" alt="contração de vetor sobre 3-blade"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.5: Contração de vetor sobre <span class="math inline">\(3\)</span>-<em>blade</em></figcaption>
+</figure>
+</div></li>
+<li><p>A partir destes exemplos, observe que</p>
+<ul>
+<li><p>O resultado da contração à esquerda sempre está contido no operando do lado direito.</p></li>
+<li><p>O resultado da contração à esquerda sempre é ortogonal ao operando do lado esquerdo.</p></li>
+<li><p>O resultado da contração à esquerda sempre tem o grau igual à diferença entre os graus dos operandos (grau do operando direito menos o grau do operando esquerdo).</p></li>
+</ul></li>
 </ul>
 </section>
 <section id="computing-the-contraction-explicitly" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="computing-the-contraction-explicitly"><span class="header-section-number">3.2.2</span> COMPUTING THE CONTRACTION EXPLICITLY</h3>
-<ul>
-<li>Graus dos operandos e do resultado.???</li>
-</ul>
 
 
 </section>

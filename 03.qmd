@@ -32,7 +32,7 @@
 
 ### DEFINITION OF THE SCALAR PRODUCT $*$
 
-* Por enquanto, definir o produto interno de dois *blades* [de mesma graduação]{.hl}.
+* Por enquanto, vamos definir o produto interno de dois *blades* [de mesma graduação]{.hl}.
 
 * O resultado sempre vai ser um [escalar]{.hl}.
 
@@ -90,7 +90,7 @@ O produto escalar $\bl A * \bl B$ é definido como
 
   ![](figures/angulo-entre-complexos.svg){fig-align="center"}
 
-* Em $\reais^2$, no geral, $\bl A * \rev{\bl B} = ||\bl A||\;||\bl B||$, e o ângulo é sempre zero:
+* Em $\reais^2$, no geral, para dois 2-*blades* $\bl A$ e $\bl B$, temos que $\bl A * \rev{\bl B} = ||\bl A||\;||\bl B||$, e o ângulo é sempre zero:
 
   ![](figures/prod-escalar-blades-r2-geral.jpg){fig-align="center" width=60%}
 
@@ -281,10 +281,25 @@ show(r'''
   * No caso extremo, se $\vet a$ for ortogonal a $\bl B$, a contração $\vet a \lc \bl B$ será nula, como mostra a @fig-contr-nula. De novo, é o esperado, uma vez que o produto interno deve ser nulo quando os objetos são ortogonais.
   
     ![Contração $\vet a \lc \bl B= 0$](figures/contr-nula.png){fig-alt="contração de vetor sobre blade" #fig-contr-nula width=50% fig-align="center"}
+
+* Mais um exemplo, agora em $\reais^3$: a @fig-2-on-3 mostra, em vermelho, o resultado da contração do $2$-*blade* $\bl B$ sobre o $3$-*blade* $\bl C$.
+
+  ![Contração de $2$-*blade* sobre $3$-*blade*](figures/contr-2-blade-on-3-blade.png){fig-alt="contração de 2-blade sobre 3-blade" #fig-2-on-3 width=60% fig-align="center"}
+
+* Ainda em $\reais^3$, a @fig-1-on-3 mostra o resultado da contração do vetor $\vet a$ sobre o $3$-*blade* $\bl B$.
+
+  ![Contração de vetor sobre $3$-*blade*](figures/contr-vector-on-3-blade.png){fig-alt="contração de vetor sobre 3-blade" #fig-1-on-3 width=60% fig-align="center"}
+
+* A partir destes exemplos, observe que
+
+  * O resultado da contração à esquerda sempre está contido no operando do lado direito.
+
+  * O resultado da contração à esquerda sempre é ortogonal ao operando do lado esquerdo.
   
+  * O resultado da contração à esquerda sempre tem o grau igual à diferença entre os graus dos operandos (grau do operando direito menos o grau do operando esquerdo).
+
 
 ### COMPUTING THE CONTRACTION EXPLICITLY
 
-* Graus dos operandos e do resultado.???
 
 
