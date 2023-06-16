@@ -150,3 +150,45 @@ batch contr_3d_vetor()
     label(acblabel, "\center{\eqn{\bold{a \lc B}}}");
     
 }
+
+
+batch magnitude_contr()
+{
+	batch init();
+
+	init(0);
+    grey_canvas(1);
+	set_point_size(0);
+    fontsizeinit(0);
+    camori = 0.73 + 0.58*e2^e3 + 0.25*e3^e1 + 0.27*e1^e2;
+    campos = 0.63*e1 + 0.27*e2 + 4.00*e3;
+
+    // Blade B
+    B = show(alpha(dm3(blue(e1^e2)), 0.4));
+    label_B = 1.02*(e1 + e2);
+    label(label_B, "\center{\eqn{\bold{B}}}");
+
+    // vetor x
+    teta = pi/3;
+    x = show(green(cos(teta)*e1 + sin(teta)*e3));
+    label_x = 1.05*x;
+    label(label_x, "\center{\eqn{\bold{x}}}");
+
+    // Ângulo
+    l_ang = 0.05*e1 + 0.09*e3;
+    label(l_ang, "\center{)}");
+    l_ang2 = l_ang + 0.02*e1 + 0.05*e3;
+    label(l_ang2, "\center{\ws\eqn{\theta}}");
+    
+    // projeção de x sobre B
+    proj = show(blue(cos(teta)*e1));
+    label_proj = 0.6*proj - 0.06*e2 - 0.07*e3;
+    label(label_proj, "\center{\eqn{||\bold{x}||\ws \regular{cos}\ws \theta \ws \bold{e_{1}}}}");
+
+    // contração
+    c = show(red(x . B));
+    label_c = 1.04*c - 0.02*e1 + 0.15*e3;
+    label(label_c, "\center{\eqn{\bold{x \lc B}}}");
+
+
+}

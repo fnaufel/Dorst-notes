@@ -8,4 +8,5 @@
 \providecommand{\rev}[1]{\widetilde{#1}}      % reverso
 \providecommand{\lc}{\rfloor}                 % contração à esq
 \providecommand{\rc}{\lfloor}                 % contração à dir
+\providecommand{\grau}{\text{grau}}           % grau
 :::

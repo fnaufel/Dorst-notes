@@ -73,7 +73,6 @@ batch init(Modeltype)
 	fontsizeinit(RES1400);    // change for different screen sizes
 	set_point_size(0.05);
 	set_line_width(2.0);
-	cmd("hide \"controls\"");
 }
 // init(2); // default startup with conformal model
 

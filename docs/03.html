@@ -178,9 +178,11 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#from-scalar-product-to-contraction" id="toc-from-scalar-product-to-contraction" class="nav-link" data-scroll-target="#from-scalar-product-to-contraction"><span class="header-section-number">3.2</span> FROM SCALAR PRODUCT TO CONTRACTION</a>
   <ul class="collapse">
-  <li><a href="#implicit-definition-of-contraction-rfloor" id="toc-implicit-definition-of-contraction-rfloor" class="nav-link" data-scroll-target="#implicit-definition-of-contraction-rfloor"><span class="header-section-number">3.2.1</span> IMPLICIT DEFINITION OF CONTRACTION <span class="math inline">\(\rfloor\)</span></a></li>
+  <li><a href="#sec-implicit-def-contr" id="toc-sec-implicit-def-contr" class="nav-link" data-scroll-target="#sec-implicit-def-contr"><span class="header-section-number">3.2.1</span> IMPLICIT DEFINITION OF CONTRACTION <span class="math inline">\(\rfloor\)</span></a></li>
   <li><a href="#computing-the-contraction-explicitly" id="toc-computing-the-contraction-explicitly" class="nav-link" data-scroll-target="#computing-the-contraction-explicitly"><span class="header-section-number">3.2.2</span> COMPUTING THE CONTRACTION EXPLICITLY</a></li>
+  <li><a href="#algebraic-subtleties" id="toc-algebraic-subtleties" class="nav-link" data-scroll-target="#algebraic-subtleties"><span class="header-section-number">3.2.3</span> ALGEBRAIC SUBTLETIES</a></li>
   </ul></li>
+  <li><a href="#geometric-interpretation-of-the-contraction" id="toc-geometric-interpretation-of-the-contraction" class="nav-link" data-scroll-target="#geometric-interpretation-of-the-contraction"><span class="header-section-number">3.3</span> GEOMETRIC INTERPRETATION OF THE CONTRACTION</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fnaufel/dorst-notes/edit/main/03.qmd" class="toc-action">Editar essa página</a></p></div></div></nav>
     </div>
@@ -209,7 +211,7 @@ ul.task-list li input[type="checkbox"] {
 % vetor
 % vetor e_i
 % blade
-<p>% reverso % contração à esq % contração à dir</p>
+<p>% reverso % contração à esq % contração à dir % grau</p>
 </div>
 <section id="resumo" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumo">Resumo</h2>
@@ -431,8 +433,8 @@ Rotações em planos, não em torno de eixos
 \mathbf{A} \rfloor\mathbf{B} = \mathbf{A} \lfloor\mathbf{B} = \mathbf{A} * \mathbf{B}
 \]</span></p></li>
 </ul>
-<section id="implicit-definition-of-contraction-rfloor" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="implicit-definition-of-contraction-rfloor"><span class="header-section-number">3.2.1</span> IMPLICIT DEFINITION OF CONTRACTION <span class="math inline">\(\rfloor\)</span></h3>
+<section id="sec-implicit-def-contr" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="sec-implicit-def-contr"><span class="header-section-number">3.2.1</span> IMPLICIT DEFINITION OF CONTRACTION <span class="math inline">\(\rfloor\)</span></h3>
 <ul>
 <li><p>Um primeiro exemplo:</p>
 <ul>
@@ -460,7 +462,7 @@ Rotações em planos, não em torno de eixos
 </figure>
 </div></li>
 <li><p>O resultado continua sendo um vetor ortogonal a <span class="math inline">\(\mathbf{a}\)</span>, contido no plano de <span class="math inline">\(\mathbf{B}\)</span>, mas sua magnitude é menor do que na <a href="#fig-contr-vetor">Figura&nbsp;<span>3.1</span></a>.</p></li>
-<li><p>Vamos ver, em breve, que apenas a componente de <span class="math inline">\(\mathbf{a}\)</span> paralela a <span class="math inline">\(\mathbf{B}\)</span> — i.e., a projeção de <span class="math inline">\(\mathbf{a}\)</span> sobre o plano de <span class="math inline">\(\mathbf{B}\)</span> — é levada em consideração no cálculo da contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span>. Isto condiz com a idéia de produto interno, cujo valor aumenta à medida que o ângulo entre dois objetos aumenta.</p></li>
+<li><p>Vamos ver, em breve, que apenas a componente de <span class="math inline">\(\mathbf{a}\)</span> paralela a <span class="math inline">\(\mathbf{B}\)</span> — i.e., a projeção de <span class="math inline">\(\mathbf{a}\)</span> sobre o plano de <span class="math inline">\(\mathbf{B}\)</span> — é levada em consideração no cálculo da contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span>. Isto condiz com a idéia de produto interno, cujo valor aumenta à medida que o ângulo <span class="math inline">\(\theta\)</span> (com <span class="math inline">\(0 \leq \theta \leq \pi/2\)</span>) entre dois objetos aumenta.</p></li>
 <li><p>No caso extremo, se <span class="math inline">\(\mathbf{a}\)</span> for ortogonal a <span class="math inline">\(\mathbf{B}\)</span>, a contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span> será nula, como mostra a <a href="#fig-contr-nula">Figura&nbsp;<span>3.3</span></a>. De novo, é o esperado, uma vez que o produto interno deve ser nulo quando os objetos são ortogonais.</p>
 <div id="fig-contr-nula" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -493,9 +495,98 @@ Rotações em planos, não em torno de eixos
 </section>
 <section id="computing-the-contraction-explicitly" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="computing-the-contraction-explicitly"><span class="header-section-number">3.2.2</span> COMPUTING THE CONTRACTION EXPLICITLY</h3>
-
-
+<ul>
+<li><p>A contração à esquerda é uma função</p>
+<p><span class="math display">\[
+\rfloor: \bigwedge^k \mathbb{R}^n \;\times\; \bigwedge^l \mathbb{R}^n
+\;\to\; \bigwedge^{l-k} \mathbb{R}^n
+\]</span></p></li>
+<li><p>A contração à esquerda distribui sobre a adição e é bilinear:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  (\mathbf{A} + \mathbf{B}) &amp;= \mathbf{A} \rfloor\mathbf{C} + \mathbf{B} \rfloor\mathbf{C} \\
+  \mathbf{A} \rfloor(\mathbf{B} + \mathbf{C}) &amp;= \mathbf{A} \rfloor\mathbf{B} + \mathbf{A} \rfloor\mathbf{C} \\
+  (\alpha \mathbf{A}) \rfloor\mathbf{B} &amp;= \alpha(\mathbf{A} \rfloor\mathbf{B}) \\
+  &amp;= \mathbf{A} \rfloor(\alpha \mathbf{B})
+\end{aligned}
+\]</span></p>
+<p>onde <span class="math inline">\(\alpha\)</span> é um escalar.</p></li>
+<li><p>Além disso,</p>
+<p><span id="eq-ultima-3"><span class="math display">\[
+\begin{aligned}
+  \alpha \rfloor\mathbf{B} &amp;= \alpha \mathbf{B} \\
+  \mathbf{B} \rfloor\alpha &amp;= 0 \quad \text{se } \text{grau}(\mathbf{B}) &gt; 0 \\
+  \mathbf{a} \rfloor\mathbf{b} &amp;= \mathbf{a} \cdot \mathbf{b} \\
+  (\mathbf{A} \wedge \mathbf{B}) \rfloor\mathbf{C} &amp;= \mathbf{A} \rfloor(\mathbf{B} \rfloor\mathbf{C}) \\
+  \mathbf{a} \rfloor(\mathbf{B} \wedge \mathbf{C})
+  &amp;= (\mathbf{a} \rfloor\mathbf{B}) \wedge \mathbf{C} \;+\;
+    (-1)^{\text{grau}(\mathbf{B})} \mathbf{B} \wedge (\mathbf{a} \rfloor\mathbf{C})
+\end{aligned}
+\tag{3.1}\]</span></span></p></li>
+<li><p>Estas igualdades permitem calcular qualquer contração à esquerda recursivamente.</p></li>
+</ul>
 </section>
+<section id="algebraic-subtleties" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="algebraic-subtleties"><span class="header-section-number">3.2.3</span> ALGEBRAIC SUBTLETIES</h3>
+<ul>
+<li><p>A última igualdade do bloco (<a href="#eq-ultima-3"><span>3.1</span></a>) pode ser substituída por</p>
+<p><span id="eq-3-16"><span class="math display">\[
+\mathbf{x} \rfloor(\mathbf{a}_1 \wedge \mathbf{a}_2 \wedge \cdots \wedge \mathbf{a}_k)
+= \sum_{i=1}^k (-1)^{i-1}
+\mathbf{a}_1 \wedge \mathbf{a}_2 \wedge \cdots \wedge
+(\mathbf{x} \rfloor\mathbf{a}_i) \wedge \cdots \wedge \mathbf{a}_k
+\tag{3.2}\]</span></span></p>
+<p>o que reduz contrações de vetores sobre <em>blades</em> em contrações de vetores sobre vetores (que resultam em escalares).</p></li>
+</ul>
+</section>
+</section>
+<section id="geometric-interpretation-of-the-contraction" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="geometric-interpretation-of-the-contraction"><span class="header-section-number">3.3</span> GEOMETRIC INTERPRETATION OF THE CONTRACTION</h2>
+<ul>
+<li><p>Muito desta seção já foi comentado nos exemplos da <a href="#sec-implicit-def-contr"><span>Seção&nbsp;3.2.1</span></a> acima:</p>
+<ol type="1">
+<li><p><span class="math inline">\(\mathbf{A} \rfloor\mathbf{B}\)</span> é um <em>blade</em> quando <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> são <em>blades</em>.</p></li>
+<li><p><span class="math inline">\(\mathbf{A} \rfloor\mathbf{B}\)</span> é um subespaço contido em <span class="math inline">\(\mathbf{B}\)</span>:</p>
+<p><span class="math display">\[
+\mathbf{A} \rfloor\mathbf{B} = (\mathbf{A}' \wedge \mathbf{a}) \rfloor\mathbf{B} =
+\mathbf{A}' \rfloor(\mathbf{a} \rfloor\mathbf{B})
+\]</span></p>
+<p>O lado direito <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span> representa um subespaço contido em <span class="math inline">\(\mathbf{B}\)</span>, pois a <a href="#eq-3-16">Equação&nbsp;<span>3.2</span></a> só contém vetores de <span class="math inline">\(\mathbf{B}\)</span> no seu lado direito.</p></li>
+<li><p><span class="math inline">\(\mathbf{x} \rfloor\mathbf{A} = 0\)</span> significa que <span class="math inline">\(\mathbf{x}\)</span> é perpendicular a todos os vetores em <span class="math inline">\(\mathbf{A}\)</span>.</p>
+<p>De fato, a única maneira de o lado direito da <a href="#eq-3-16">Equação&nbsp;<span>3.2</span></a> ser zero é se <span class="math inline">\(\mathbf{x} \rfloor\mathbf{a}_i\)</span> for zero para todo <span class="math inline">\(i\)</span>.</p></li>
+<li><p>O resultado de <span class="math inline">\(\mathbf{A} \rfloor\mathbf{B}\)</span> é perpendicular a <span class="math inline">\(\mathbf{A}\)</span>:</p>
+<ul>
+<li>Tome qualquer vetor <span class="math inline">\(\mathbf{a} \in \mathbf{A}\)</span>.</li>
+<li>Então <span class="math inline">\(\mathbf{a} \wedge \mathbf{A} = 0\)</span>.</li>
+<li>Pela definição, <span class="math inline">\(\mathbf{a} \rfloor(\mathbf{A} \rfloor\mathbf{B}) = (\mathbf{a} \wedge \mathbf{A}) \rfloor\mathbf{B} = 0\rfloor\mathbf{B} = 0\)</span>.</li>
+<li>Isto significa que <span class="math inline">\(\mathbf{a}\)</span> é perpendicular a <span class="math inline">\(\mathbf{A} \rfloor\mathbf{B}\)</span>.</li>
+</ul></li>
+<li><p>A norma de <span class="math inline">\(\mathbf{A} \rfloor\mathbf{B}\)</span> é proporcional a <span class="math inline">\(||\mathbf{A}||\)</span>, a <span class="math inline">\(||\mathbf{B}||\)</span>, e ao cosseno do ângulo entre <span class="math inline">\(\mathbf{A}\)</span> e a projeção de <span class="math inline">\(\mathbf{A}\)</span> sobre <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
+<li><p><span class="math inline">\(\text{grau}(\mathbf{A} \rfloor\mathbf{B}) = \text{grau}(\mathbf{B}) - \text{grau}(\mathbf{A})\)</span>.</p></li>
+</ol></li>
+<li><p>Considere, por exemplo, um vetor <span class="math inline">\(\mathbf{x}\)</span> e um <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> definidos como</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \mathbf{x} &amp;= ||\mathbf{x}||\; (\cos \theta\; \mathbf{e}_{1} + \text{sen}\,\theta \; \mathbf{e}_{3}) \\
+  \mathbf{B}  &amp;= ||\mathbf{B}||\; \mathbf{e}_{1} \wedge \mathbf{e}_{2}
+\end{aligned}
+\]</span></p></li>
+<li><p>A <a href="#fig-contr-magn">Figura&nbsp;<span>3.6</span></a> mostra a situação.</p>
+<div id="fig-contr-magn" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/contr-angulo-magnitude.png" class="img-fluid figure-img" style="width:60.0%" alt="Contração mostrando projeção e magnitude"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.6: Contração <span class="math inline">\(\mathbf{x}\rfloor\mathbf{B}\)</span></figcaption>
+</figure>
+</div></li>
+<li><p>Observe que</p>
+<ul>
+<li>O vetor <span class="math inline">\(\mathbf{x}\)</span> está contido no plano de <span class="math inline">\(\mathbf{e}_{1} \wedge \mathbf{e}_{3}\)</span> (que não é mostrado na figura).</li>
+<li>O vetor <span class="math inline">\(\mathbf{x}\)</span> faz ângulo <span class="math inline">\(\theta\)</span> com sua projeção sobre <span class="math inline">\(\mathbf{e}_{1}\)</span>.</li>
+</ul></li>
+<li><p>Vamos calcular <span class="math inline">\(\mathbf{x} \rfloor\mathbf{B}\)</span>, mostrada em vermelho na <a href="#fig-contr-magn">Figura&nbsp;<span>3.6</span></a>:</p></li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->

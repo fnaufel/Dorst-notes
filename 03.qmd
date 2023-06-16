@@ -225,7 +225,7 @@ O produto escalar $\bl A * \bl B$ é definido como
   $$
 
 
-### IMPLICIT DEFINITION OF CONTRACTION $\lc$
+### IMPLICIT DEFINITION OF CONTRACTION $\lc$ {#sec-implicit-def-contr}
 
 * Um primeiro exemplo: 
 
@@ -276,7 +276,7 @@ show(r'''
     
   * O resultado continua sendo um vetor ortogonal a $\vet a$, contido no plano de $\bl B$, mas sua magnitude é menor do que na @fig-contr-vetor.
   
-  * Vamos ver, em breve, que apenas a componente de $\vet a$ paralela a $\bl B$ --- i.e., a projeção de $\vet a$ sobre o plano de $\bl B$ --- é levada em consideração no cálculo da contração $\vet a \lc \bl B$. Isto condiz com a idéia de produto interno, cujo valor aumenta à medida que o ângulo entre dois objetos aumenta.
+  * Vamos ver, em breve, que apenas a componente de $\vet a$ paralela a $\bl B$ --- i.e., a projeção de $\vet a$ sobre o plano de $\bl B$ --- é levada em consideração no cálculo da contração $\vet a \lc \bl B$. Isto condiz com a idéia de produto interno, cujo valor aumenta à medida que o ângulo $\theta$ (com $0 \leq \theta \leq \pi/2$) entre dois objetos aumenta.
   
   * No caso extremo, se $\vet a$ for ortogonal a $\bl B$, a contração $\vet a \lc \bl B$ será nula, como mostra a @fig-contr-nula. De novo, é o esperado, uma vez que o produto interno deve ser nulo quando os objetos são ortogonais.
   
@@ -301,5 +301,103 @@ show(r'''
 
 ### COMPUTING THE CONTRACTION EXPLICITLY
 
+* A contração à esquerda é uma função
+
+  $$
+  \lc : \bigwedge^k \reais^n \;\times\; \bigwedge^l \reais^n 
+  \;\to\; \bigwedge^{l-k} \reais^n
+  $$
+
+* A contração à esquerda distribui sobre a adição e é bilinear:
+
+  $$
+  \begin{aligned}
+    (\bl A + \bl B) &= \bl A \lc \bl C + \bl B \lc \bl C \\
+    \bl A \lc (\bl B + \bl C) &= \bl A \lc \bl B + \bl A \lc \bl C \\
+    (\alpha \bl A) \lc \bl B &= \alpha(\bl A \lc \bl B) \\
+    &= \bl A \lc (\alpha \bl B)
+  \end{aligned}
+  $$
+  
+  onde $\alpha$ é um escalar.
+  
+* Além disso,
+
+  $$
+  \begin{aligned}
+    \alpha \lc \bl B &= \alpha \bl B \\
+    \bl B \lc \alpha &= 0 \quad \text{se } \grau(\bl B) > 0 \\
+    \vet a \lc \vet b &= \vet a \cdot \vet b \\
+    (\bl A \wedge \bl B) \lc \bl C &= \bl A \lc (\bl B \lc \bl C) \\
+    \vet a \lc (\bl B \wedge \bl C)
+    &= (\vet a \lc \bl B) \wedge \bl C \;+\;
+      (-1)^{\grau(\bl B)} \bl B \wedge (\vet a \lc \bl C)
+  \end{aligned}
+  $$  {#eq-ultima-3}
+
+* Estas igualdades permitem calcular qualquer contração à esquerda recursivamente.
 
 
+### ALGEBRAIC SUBTLETIES
+
+* A última igualdade do bloco ([-@eq-ultima-3]) pode ser substituída por
+
+  $$
+  \vet x \lc (\vet a_1 \wedge \vet a_2 \wedge \cdots \wedge \vet a_k) 
+  = \sum_{i=1}^k (-1)^{i-1} 
+  \vet a_1 \wedge \vet a_2 \wedge \cdots \wedge
+  (\vet x \lc \vet a_i) \wedge \cdots \wedge \vet a_k
+  $$ {#eq-3-16}
+
+  o que reduz contrações de vetores sobre *blades* em contrações de vetores sobre vetores (que resultam em escalares).
+  
+  
+## GEOMETRIC INTERPRETATION OF THE CONTRACTION
+  
+* Muito desta seção já foi comentado nos exemplos da @sec-implicit-def-contr acima:
+
+  1. $\bl A \lc \bl B$ é um *blade* quando $\bl A$ e $\bl B$ são *blades*.
+  
+  1. $\bl A \lc \bl B$ é um subespaço contido em $\bl B$:
+  
+     $$
+     \bl A \lc \bl B = (\bl A' \wedge \vet a) \lc \bl B = 
+     \bl A' \lc (\vet a \lc \bl B)
+     $$
+     
+     O lado direito $\vet a \lc \bl B$ representa um subespaço contido em $\bl B$, pois a @eq-3-16 só contém vetores de $\bl B$ no seu lado direito.
+     
+  1. $\vet x \lc \bl A = 0$ significa que $\vet x$ é perpendicular a todos os vetores em $\bl A$. 
+  
+     De fato, a única maneira de o lado direito da @eq-3-16 ser zero é se $\vet x \lc \vet a_i$ for zero para todo $i$.
+  
+  1. O resultado de $\bl A \lc \bl B$ é perpendicular a $\bl A$:
+  
+     * Tome qualquer vetor $\vet a \in \bl A$.
+     * Então $\vet a \wedge \bl A = 0$.
+     * Pela definição, $\vet a \lc (\bl A \lc \bl B) = (\vet a \wedge \bl A) \lc \bl B = 0\lc \bl B = 0$.
+     * Isto significa que $\vet a$ é perpendicular a $\bl A \lc \bl B$.
+     
+  1. A norma de $\bl A \lc \bl B$ é proporcional a $||\bl A||$, a $||\bl B||$, e ao cosseno do ângulo entre $\bl A$ e a projeção de $\bl A$ sobre $\bl B$.
+  
+  1. $\grau(\bl A \lc \bl B) = \grau(\bl B) - \grau(\bl A)$.
+
+* Considere, por exemplo, um vetor $\vet x$ e um $2$-*blade* $\bl B$ definidos como
+
+  $$
+  \begin{aligned}
+    \vet x &= ||\vet x||\; (\cos \theta\; \ve1 + \sen \theta \; \ve3) \\
+    \bl B  &= ||\bl B||\; \ve1 \wedge \ve2 
+  \end{aligned}
+  $$
+  
+* A @fig-contr-magn mostra a situação.
+
+  ![Contração $\vet x\lc\bl B$](figures/contr-angulo-magnitude.png){fig-alt="Contração mostrando projeção e magnitude" #fig-contr-magn width=60% fig-align="center"}
+
+* Observe que 
+
+  * O vetor $\vet x$ está contido no plano de $\ve1 \wedge \ve3$ (que não é mostrado na figura).
+  * O vetor $\vet x$ faz ângulo $\theta$ com sua projeção sobre $\ve1$.
+
+* Vamos calcular $\vet x \lc \bl B$, mostrada em vermelho na @fig-contr-magn:
