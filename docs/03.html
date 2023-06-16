@@ -183,6 +183,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#algebraic-subtleties" id="toc-algebraic-subtleties" class="nav-link" data-scroll-target="#algebraic-subtleties"><span class="header-section-number">3.2.3</span> ALGEBRAIC SUBTLETIES</a></li>
   </ul></li>
   <li><a href="#geometric-interpretation-of-the-contraction" id="toc-geometric-interpretation-of-the-contraction" class="nav-link" data-scroll-target="#geometric-interpretation-of-the-contraction"><span class="header-section-number">3.3</span> GEOMETRIC INTERPRETATION OF THE CONTRACTION</a></li>
+  <li><a href="#the-other-contraction-lfloor" id="toc-the-other-contraction-lfloor" class="nav-link" data-scroll-target="#the-other-contraction-lfloor"><span class="header-section-number">3.4</span> THE OTHER CONTRACTION <span class="math inline">\(\lfloor\)</span></a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fnaufel/dorst-notes/edit/main/03.qmd" class="toc-action">Editar essa página</a></p></div></div></nav>
     </div>
@@ -583,7 +584,76 @@ Rotações em planos, não em torno de eixos
 <li>O vetor <span class="math inline">\(\mathbf{x}\)</span> está contido no plano de <span class="math inline">\(\mathbf{e}_{1} \wedge \mathbf{e}_{3}\)</span> (que não é mostrado na figura).</li>
 <li>O vetor <span class="math inline">\(\mathbf{x}\)</span> faz ângulo <span class="math inline">\(\theta\)</span> com sua projeção sobre <span class="math inline">\(\mathbf{e}_{1}\)</span>.</li>
 </ul></li>
-<li><p>Vamos calcular <span class="math inline">\(\mathbf{x} \rfloor\mathbf{B}\)</span>, mostrada em vermelho na <a href="#fig-contr-magn">Figura&nbsp;<span>3.6</span></a>:</p></li>
+<li><p>Vamos calcular a contração <span class="math inline">\(\mathbf{x} \rfloor\mathbf{B}\)</span>, mostrada em vermelho na <a href="#fig-contr-magn">Figura&nbsp;<span>3.6</span></a>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \mathbf{x} \rfloor\mathbf{B}
+  &amp;= ||\mathbf{x}||\; (\cos \theta\; \mathbf{e}_{1} + \text{sen}\,\theta \; \mathbf{e}_{3}) \;\rfloor\;
+    ||\mathbf{B}||\; \mathbf{e}_{1} \wedge \mathbf{e}_{2} \\
+  &amp;= ||\mathbf{x}||\;||\mathbf{B}||\;
+    [(\cos \theta\; \mathbf{e}_{1} + \text{sen}\,\theta \; \mathbf{e}_{3}) \;\rfloor\; (\mathbf{e}_{1} \wedge \mathbf{e}_{2})] \\
+  &amp;= ||\mathbf{x}||\;||\mathbf{B}||\;
+    [\cos \theta\; \mathbf{e}_{1} \;\rfloor\; (\mathbf{e}_{1} \wedge \mathbf{e}_{2}) \;+\;
+    \text{sen}\,\theta \; \mathbf{e}_{3} \;\rfloor\; (\mathbf{e}_{1} \wedge \mathbf{e}_{2})] \\
+  &amp;= ||\mathbf{x}||\;||\mathbf{B}||\;
+    [\cos \theta\; \mathbf{e}_{1} \cdot \mathbf{e}_{1} \wedge \mathbf{e}_{2}
+    - \mathbf{e}_{1} \wedge \cos \theta\; \mathbf{e}_{1} \cdot \mathbf{e}_{2}
+    + \text{sen}\,\theta \; \mathbf{e}_{3} \cdot \mathbf{e}_{1} \wedge \mathbf{e}_{2}
+    - \mathbf{e}_{1} \wedge \text{sen}\,\theta \; \mathbf{e}_{3} \cdot \mathbf{e}_{2}] \\
+  &amp;= ||\mathbf{x}||\;||\mathbf{B}||\; \cos \theta\; \mathbf{e}_{2} \\
+  &amp;= ||\mathbf{x}|| \cos \theta\; ||\mathbf{B}||\; \mathbf{e}_{2}
+\end{aligned}
+\]</span></p></li>
+<li><p>Isto mostra que a magnitude da contração <span class="math inline">\(\mathbf{x} \rfloor\mathbf{B}\)</span> é proporcional à projeção de <span class="math inline">\(\mathbf{x}\)</span> sobre <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
+<li><p>Assim como no produto escalar entre dois vetores, a magnitude do resultado da contração é uma indicação do quanto as atitudes e orientações de <span class="math inline">\(\mathbf{x}\)</span> e de <span class="math inline">\(\mathbf{B}\)</span> se “reforçam”.</p></li>
+</ul>
+</section>
+<section id="the-other-contraction-lfloor" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="the-other-contraction-lfloor"><span class="header-section-number">3.4</span> THE OTHER CONTRACTION <span class="math inline">\(\lfloor\)</span></h2>
+<ul>
+<li><p>Agora que precisamos pensar na contração à direita, fica clara a motivação, apresentada na seção 3.2.1, para definir a contração à esquerda.</p></li>
+<li><p>Lá, tínhamos dois <em>blades</em> de mesmo grau, <span class="math inline">\(\mathbf{Y}\)</span> e <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
+<li><p>Queríamos calcular o produto escalar <span class="math inline">\(\mathbf{Y} * \mathbf{B}\)</span>.</p></li>
+<li><p>Sabíamos que <span class="math inline">\(\mathbf{Y}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> têm, como fator comum, um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span>.</p></li>
+<li><p>Então, <span class="math inline">\(\mathbf{Y} = \mathbf{X} \wedge \mathbf{A}\)</span>.</p></li>
+<li><p>Observe que este é um <span class="hl">fator comum à direita de <span class="math inline">\(\mathbf{Y}\)</span></span>.</p></li>
+<li><p>Vimos que estes fatores comuns podem ser eliminados, sem afetar o resultado do produto escalar.</p></li>
+<li><p>A contração à esquerda é uma maneira de expressar o que resta do <em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> depois de eliminar o fator comum <span class="math inline">\(\mathbf{A}\)</span>:</p>
+<p><span id="eq-contr-esq-impl"><span class="math display">\[
+\begin{aligned}
+\mathbf{Y} * \mathbf{B}
+&amp;= (\mathbf{X} \wedge \mathbf{A}) * \mathbf{B} \\
+&amp;= \mathbf{X} * (\mathbf{A} \rfloor\mathbf{B})
+\end{aligned}
+\tag{3.3}\]</span></span></p></li>
+<li><p>A contração é, de certa forma, a operação inversa do produto exterior <span class="math inline">\(\wedge\)</span>, mas apenas no contexto do produto escalar.</p></li>
+<li><p>Das equações acima, temos que</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \text{grau}(\mathbf{Y}) &amp;= \text{grau}(\mathbf{B}) \\
+  \text{grau}(\mathbf{Y}) &amp;= \text{grau}(\mathbf{X}) + \text{grau}(\mathbf{A}) \\
+  \text{grau}(\mathbf{A} \rfloor\mathbf{B}) &amp;= \text{grau}(\mathbf{X})
+\end{aligned}
+\]</span></p>
+<p>o que tem como consequência que</p>
+<p><span class="math display">\[
+\text{grau}(\mathbf{A} \rfloor\mathbf{B}) = \text{grau}(\mathbf{B}) + \text{grau}(\mathbf{A})
+\]</span></p></li>
+<li><p>Agora, para a <span class="hl">contração à direita</span>, considere dois <em>blades</em> de mesmo grau, <span class="math inline">\(\mathbf{Y}\)</span> e <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
+<li><p>Queremos calcular o produto escalar <span class="math inline">\(\mathbf{Y} * \mathbf{B}\)</span>.</p></li>
+<li><p>Sabemos que <span class="math inline">\(\mathbf{Y}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> têm, como fator comum, um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span>.</p></li>
+<li><p>Então, <span class="math inline">\(\mathbf{Y} = \mathbf{A} \wedge \mathbf{X}\)</span>.</p></li>
+<li><p>Observe que este é um <span class="hl">fator comum à esquerda de <span class="math inline">\(\mathbf{Y}\)</span></span>.</p></li>
+<li><p>Vimos que estes fatores comuns podem ser eliminados, sem afetar o resultado do produto escalar.</p></li>
+<li><p>A contração à direita é uma maneira de expressar o que resta do <em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> depois de eliminar o fator comum <span class="math inline">\(\mathbf{A}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \mathbf{Y} * \mathbf{B}
+  &amp;= (\mathbf{A} \wedge \mathbf{X}) * \mathbf{B} \\
+  &amp;= \mathbf{X} * (\mathbf{B} \lfloor\mathbf{A})
+\end{aligned}
+\]</span></p>
+<p>Compare com as equações em <a href="#eq-contr-esq-impl"><span>3.3</span></a>.</p></li>
 </ul>
 
 

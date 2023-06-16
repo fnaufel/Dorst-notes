@@ -400,4 +400,99 @@ show(r'''
   * O vetor $\vet x$ está contido no plano de $\ve1 \wedge \ve3$ (que não é mostrado na figura).
   * O vetor $\vet x$ faz ângulo $\theta$ com sua projeção sobre $\ve1$.
 
-* Vamos calcular $\vet x \lc \bl B$, mostrada em vermelho na @fig-contr-magn:
+* Vamos calcular a contração $\vet x \lc \bl B$, mostrada em vermelho na @fig-contr-magn:
+
+  $$
+  \begin{aligned}
+    \vet x \lc \bl B
+    &= ||\vet x||\; (\cos \theta\; \ve1 + \sen \theta \; \ve3) \;\lc\;
+      ||\bl B||\; \ve1 \wedge \ve2 \\
+    &= ||\vet x||\;||\bl B||\; 
+      [(\cos \theta\; \ve1 + \sen \theta \; \ve3) \;\lc\; (\ve1 \wedge \ve2)] \\
+    &= ||\vet x||\;||\bl B||\; 
+      [\cos \theta\; \ve1 \;\lc\; (\ve1 \wedge \ve2) \;+\;
+      \sen \theta \; \ve3 \;\lc\; (\ve1 \wedge \ve2)] \\
+    &= ||\vet x||\;||\bl B||\; 
+      [\cos \theta\; \ve1 \cdot \ve1 \wedge \ve2
+      - \ve1 \wedge \cos \theta\; \ve1 \cdot \ve2
+      + \sen \theta \; \ve3 \cdot \ve1 \wedge \ve2
+      - \ve1 \wedge \sen \theta \; \ve3 \cdot \ve2] \\
+    &= ||\vet x||\;||\bl B||\; \cos \theta\; \ve2 \\
+    &= ||\vet x|| \cos \theta\; ||\bl B||\; \ve2
+  \end{aligned}
+  $$
+
+* Isto mostra que a magnitude da contração $\vet x \lc \bl B$ é proporcional à projeção de $\vet x$ sobre $\bl B$.
+
+* Assim como no produto escalar entre dois vetores, a magnitude do resultado da contração é uma indicação do quanto as atitudes e orientações de $\vet x$ e de $\bl B$ se "reforçam".
+
+
+## THE OTHER CONTRACTION $\rc$
+
+* Agora que precisamos pensar na contração à direita, fica clara a motivação, apresentada na seção 3.2.1, para definir a contração à esquerda.
+
+* Lá, tínhamos dois *blades* de mesmo grau, $\bl Y$ e $\bl B$.
+
+* Queríamos calcular o produto escalar $\bl Y * \bl B$.
+
+* Sabíamos que $\bl Y$ e $\bl B$ têm, como fator comum, um *blade* $\bl A$.
+
+* Então, $\bl Y = \bl X \wedge \bl A$. 
+
+* Observe que este é um [fator comum à direita de $\bl Y$]{.hl}.
+
+* Vimos que estes fatores comuns podem ser eliminados, sem afetar o resultado do produto escalar.
+
+* A contração à esquerda é uma maneira de expressar o que resta do *blade* $\bl B$ depois de eliminar o fator comum $\bl A$:
+
+  $$
+  \begin{aligned}
+  \bl Y * \bl B 
+  &= (\bl X \wedge \bl A) * \bl B \\
+  &= \bl X * (\bl A \lc \bl B)
+  \end{aligned}
+  $$ {#eq-contr-esq-impl}
+
+* A contração é, de certa forma, a operação inversa do produto exterior $\wedge$, mas apenas no contexto do produto escalar.
+
+* Das equações acima, temos que
+
+  $$
+  \begin{aligned}
+    \grau(\bl Y) &= \grau(\bl B) \\
+    \grau(\bl Y) &= \grau(\bl X) + \grau(\bl A) \\
+    \grau(\bl A \lc \bl B) &= \grau(\bl X)
+  \end{aligned}
+  $$
+  
+  o que tem como consequência que
+  
+  $$
+  \grau(\bl A \lc \bl B) = \grau(\bl B) + \grau(\bl A)
+  $$
+  
+* Agora, para a [contração à direita]{.hl}, considere dois *blades* de mesmo grau, $\bl Y$ e $\bl B$.
+
+* Queremos calcular o produto escalar $\bl Y * \bl B$.
+
+* Sabemos que $\bl Y$ e $\bl B$ têm, como fator comum, um *blade* $\bl A$.
+
+* Então, $\bl Y = \bl A \wedge \bl X$.
+
+* Observe que este é um [fator comum à esquerda de $\bl Y$]{.hl}.
+
+* Vimos que estes fatores comuns podem ser eliminados, sem afetar o resultado do produto escalar.
+
+* A contração à direita é uma maneira de expressar o que resta do *blade* $\bl B$ depois de eliminar o fator comum $\bl A$:
+
+  $$
+  \begin{aligned}
+    \bl Y * \bl B 
+    &= (\bl A \wedge \bl X) * \bl B \\
+    &= \bl X * (\bl B \rc \bl A)
+  \end{aligned}
+  $$
+
+  Compare com as equações em [-@eq-contr-esq-impl].
+  
+  
