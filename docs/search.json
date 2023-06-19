@@ -60,6 +60,55 @@
     "href": "03.html#the-other-contraction-lfloor",
     "title": "3  METRIC PRODUCTS OF SUBSPACES",
     "section": "3.4 THE OTHER CONTRACTION \\(\\lfloor\\)",
-    "text": "3.4 THE OTHER CONTRACTION \\(\\lfloor\\)\n\nAgora que precisamos pensar na contração à direita, fica clara a motivação, apresentada na seção 3.2.1, para definir a contração à esquerda.\nLá, tínhamos dois blades de mesmo grau, \\(\\mathbf{Y}\\) e \\(\\mathbf{B}\\).\nQueríamos calcular o produto escalar \\(\\mathbf{Y} * \\mathbf{B}\\).\nSabíamos que \\(\\mathbf{Y}\\) e \\(\\mathbf{B}\\) têm, como fator comum, um blade \\(\\mathbf{A}\\).\nEntão, \\(\\mathbf{Y} = \\mathbf{X} \\wedge \\mathbf{A}\\).\nObserve que este é um fator comum à direita de \\(\\mathbf{Y}\\).\nVimos que estes fatores comuns podem ser eliminados, sem afetar o resultado do produto escalar.\nA contração à esquerda é uma maneira de expressar o que resta do blade \\(\\mathbf{B}\\) depois de eliminar o fator comum \\(\\mathbf{A}\\):\n\\[\n\\begin{aligned}\n\\mathbf{Y} * \\mathbf{B}\n&= (\\mathbf{X} \\wedge \\mathbf{A}) * \\mathbf{B} \\\\\n&= \\mathbf{X} * (\\mathbf{A} \\rfloor\\mathbf{B})\n\\end{aligned}\n\\tag{3.3}\\]\nA contração é, de certa forma, a operação inversa do produto exterior \\(\\wedge\\), mas apenas no contexto do produto escalar.\nDas equações acima, temos que\n\\[\n\\begin{aligned}\n  \\text{grau}(\\mathbf{Y}) &= \\text{grau}(\\mathbf{B}) \\\\\n  \\text{grau}(\\mathbf{Y}) &= \\text{grau}(\\mathbf{X}) + \\text{grau}(\\mathbf{A}) \\\\\n  \\text{grau}(\\mathbf{A} \\rfloor\\mathbf{B}) &= \\text{grau}(\\mathbf{X})\n\\end{aligned}\n\\]\no que tem como consequência que\n\\[\n\\text{grau}(\\mathbf{A} \\rfloor\\mathbf{B}) = \\text{grau}(\\mathbf{B}) + \\text{grau}(\\mathbf{A})\n\\]\nAgora, para a contração à direita, considere dois blades de mesmo grau, \\(\\mathbf{Y}\\) e \\(\\mathbf{B}\\).\nQueremos calcular o produto escalar \\(\\mathbf{Y} * \\mathbf{B}\\).\nSabemos que \\(\\mathbf{Y}\\) e \\(\\mathbf{B}\\) têm, como fator comum, um blade \\(\\mathbf{A}\\).\nEntão, \\(\\mathbf{Y} = \\mathbf{A} \\wedge \\mathbf{X}\\).\nObserve que este é um fator comum à esquerda de \\(\\mathbf{Y}\\).\nVimos que estes fatores comuns podem ser eliminados, sem afetar o resultado do produto escalar.\nA contração à direita é uma maneira de expressar o que resta do blade \\(\\mathbf{B}\\) depois de eliminar o fator comum \\(\\mathbf{A}\\):\n\\[\n\\begin{aligned}\n  \\mathbf{Y} * \\mathbf{B}\n  &= (\\mathbf{A} \\wedge \\mathbf{X}) * \\mathbf{B} \\\\\n  &= \\mathbf{X} * (\\mathbf{B} \\lfloor\\mathbf{A})\n\\end{aligned}\n\\]\nCompare com as equações em 3.3."
+    "text": "3.4 THE OTHER CONTRACTION \\(\\lfloor\\)\n\nAgora que precisamos pensar na contração à direita, fica clara a motivação, apresentada na seção 3.2.1, para definir a contração à esquerda.\nLá, tínhamos dois blades de mesmo grau, \\(\\mathbf{Y}\\) e \\(\\mathbf{B}\\).\nQueríamos calcular o produto escalar \\(\\mathbf{Y} * \\mathbf{B}\\).\nSabíamos que \\(\\mathbf{Y}\\) e \\(\\mathbf{B}\\) têm, como fator comum, um blade \\(\\mathbf{A}\\).\nEntão, \\(\\mathbf{Y} = \\mathbf{X} \\wedge \\mathbf{A}\\).\nObserve que este é um fator comum à direita de \\(\\mathbf{Y}\\).\nVimos que estes fatores comuns podem ser eliminados, sem afetar o resultado do produto escalar.\nA contração à esquerda é uma maneira de expressar o que resta do blade \\(\\mathbf{B}\\) depois de eliminar o fator comum \\(\\mathbf{A}\\):\n\\[\n\\begin{aligned}\n\\mathbf{Y} * \\mathbf{B}\n&= (\\mathbf{X} \\wedge \\mathbf{A}) * \\mathbf{B} \\\\\n&= \\mathbf{X} * (\\mathbf{A} \\rfloor\\mathbf{B})\n\\end{aligned}\n\\tag{3.3}\\]\nA contração é, de certa forma, a operação inversa do produto exterior \\(\\wedge\\), mas apenas no contexto do produto escalar.\nDas equações acima, temos que\n\\[\n\\begin{aligned}\n  \\text{grau}(\\mathbf{Y}) &= \\text{grau}(\\mathbf{B}) \\\\\n  \\text{grau}(\\mathbf{Y}) &= \\text{grau}(\\mathbf{X}) + \\text{grau}(\\mathbf{A}) \\\\\n  \\text{grau}(\\mathbf{A} \\rfloor\\mathbf{B}) &= \\text{grau}(\\mathbf{X})\n\\end{aligned}\n\\]\no que tem como consequência que\n\\[\n\\text{grau}(\\mathbf{A} \\rfloor\\mathbf{B}) = \\text{grau}(\\mathbf{B}) + \\text{grau}(\\mathbf{A})\n\\]\nAgora, para a contração à direita, considere dois blades de mesmo grau, \\(\\mathbf{Y}\\) e \\(\\mathbf{B}\\).\nQueremos calcular o produto escalar \\(\\mathbf{Y} * \\mathbf{B}\\).\nSabemos que \\(\\mathbf{Y}\\) e \\(\\mathbf{B}\\) têm, como fator comum, um blade \\(\\mathbf{A}\\).\nEntão, \\(\\mathbf{Y} = \\mathbf{A} \\wedge \\mathbf{X}\\).\nObserve que este é um fator comum à esquerda de \\(\\mathbf{Y}\\).\nVimos que estes fatores comuns podem ser eliminados, sem afetar o resultado do produto escalar.\nA contração à direita é uma maneira de expressar o que resta do blade \\(\\mathbf{B}\\) depois de eliminar o fator comum \\(\\mathbf{A}\\):\n\\[\n\\begin{aligned}\n  \\mathbf{Y} * \\mathbf{B}\n  &= (\\mathbf{A} \\wedge \\mathbf{X}) * \\mathbf{B} \\\\\n  &= \\mathbf{X} * (\\mathbf{B} \\lfloor\\mathbf{A})\n\\end{aligned}\n\\]\nCompare com as equações em 3.3.\nA relação entre a contração à esquerda e a contração à direita é\n\n\n\n\n\nO livro traz \\((-1)^{a(b+1)}\\), conclusão de um raciocínio mais complexo envolvendo os reversos dos blades, mas a paridade é a mesma."
+  },
+  {
+    "objectID": "03.html#orthogonality-and-duality",
+    "href": "03.html#orthogonality-and-duality",
+    "title": "3  METRIC PRODUCTS OF SUBSPACES",
+    "section": "3.5 ORTHOGONALITY AND DUALITY",
+    "text": "3.5 ORTHOGONALITY AND DUALITY\n\n3.5.1 NONASSOCIATIVITY OF THE CONTRACTION\n\n\n3.5.2 THE INVERSE OF A BLADE\n\n\n3.5.3 ORTHOGONAL COMPLEMENT AND DUALITY\n\n\n3.5.4 THE DUALITY RELATIONSHIPS\n\n\n3.5.5 DUAL REPRESENTATION OF SUBSPACES"
+  },
+  {
+    "objectID": "03.html#orthogonal-projection-of-subspaces",
+    "href": "03.html#orthogonal-projection-of-subspaces",
+    "title": "3  METRIC PRODUCTS OF SUBSPACES",
+    "section": "3.6 ORTHOGONAL PROJECTION OF SUBSPACES",
+    "text": "3.6 ORTHOGONAL PROJECTION OF SUBSPACES"
+  },
+  {
+    "objectID": "03.html#the-3-d-cross-product",
+    "href": "03.html#the-3-d-cross-product",
+    "title": "3  METRIC PRODUCTS OF SUBSPACES",
+    "section": "3.7 THE 3-D CROSS PRODUCT",
+    "text": "3.7 THE 3-D CROSS PRODUCT\n\n3.7.1 USES OF THE CROSS PRODUCT\n\n\n3.7.2 THE CROSS PRODUCT INCORPORATED"
+  },
+  {
+    "objectID": "03.html#application-reciprocal-frames",
+    "href": "03.html#application-reciprocal-frames",
+    "title": "3  METRIC PRODUCTS OF SUBSPACES",
+    "section": "3.8 APPLICATION: RECIPROCAL FRAMES",
+    "text": "3.8 APPLICATION: RECIPROCAL FRAMES"
+  },
+  {
+    "objectID": "03.html#further-reading",
+    "href": "03.html#further-reading",
+    "title": "3  METRIC PRODUCTS OF SUBSPACES",
+    "section": "3.9 FURTHER READING",
+    "text": "3.9 FURTHER READING"
+  },
+  {
+    "objectID": "03.html#exercises",
+    "href": "03.html#exercises",
+    "title": "3  METRIC PRODUCTS OF SUBSPACES",
+    "section": "3.10 EXERCISES",
+    "text": "3.10 EXERCISES"
+  },
+  {
+    "objectID": "03.html#programming-examples-and-exercises",
+    "href": "03.html#programming-examples-and-exercises",
+    "title": "3  METRIC PRODUCTS OF SUBSPACES",
+    "section": "3.11 PROGRAMMING EXAMPLES AND EXERCISES",
+    "text": "3.11 PROGRAMMING EXAMPLES AND EXERCISES\n\n3.11.1 ORTHONORMALIZATION\n\n\n3.11.2 EXERCISE: IMPLEMENTING THE CROSS PRODUCT\n\n\n3.11.3 RECIPROCAL FRAMES\n\n\n3.11.4 COLOR SPACE CONVERSION"
   }
 ]

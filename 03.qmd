@@ -495,4 +495,48 @@ show(r'''
 
   Compare com as equações em [-@eq-contr-esq-impl].
   
-  
+* A relação entre a contração à esquerda e a contração à direita é
+
+  ![](figures/contracoes-dir-e-esq.jpg){fig-alt="."  width=90% fig-align="center"}
+
+* O livro traz $(-1)^{a(b+1)}$, conclusão de um raciocínio mais complexo envolvendo os reversos dos *blades*, mas a paridade é a mesma.
+
+
+## ORTHOGONALITY AND DUALITY
+
+### NONASSOCIATIVITY OF THE CONTRACTION
+
+### THE INVERSE OF A BLADE
+
+### ORTHOGONAL COMPLEMENT AND DUALITY
+
+### THE DUALITY RELATIONSHIPS
+
+### DUAL REPRESENTATION OF SUBSPACES
+
+## ORTHOGONAL PROJECTION OF SUBSPACES
+
+## THE 3-D CROSS PRODUCT
+
+### USES OF THE CROSS PRODUCT
+
+### THE CROSS PRODUCT INCORPORATED
+
+## APPLICATION: RECIPROCAL FRAMES
+
+## FURTHER READING
+
+## EXERCISES
+
+## PROGRAMMING EXAMPLES AND EXERCISES
+
+### ORTHONORMALIZATION
+
+### EXERCISE: IMPLEMENTING THE CROSS PRODUCT
+
+### RECIPROCAL FRAMES
+
+### COLOR SPACE CONVERSION
+
+
+
