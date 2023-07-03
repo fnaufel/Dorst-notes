@@ -24,7 +24,7 @@
   * O [cosseno do ângulo]{.hl} entre dois vetores $\vet a$ e $\vet b$ como
   
     $$
-    \cos \theta = \frac{\vet a \cdot \vet b}{|| \vet a ||\; ||\vet b ||}
+    \cos \theta = \frac{\vet a \cdot \vet b}{|| \vet a ||\, ||\vet b ||}
     $$
     
 * Este capítulo generaliza o produto interno para *blades* e multivetores.
@@ -81,7 +81,7 @@ O produto escalar $\bl A * \bl B$ é definido como
 * O [cosseno]{.hl} do ângulo entre dois *blades* $\bl A$ e $\bl B$ usa o produto escalar entre $\bl A$ e o [reverso]{.hl} $\rev{\bl B}$:
 
   $$
-  \cos \theta = \frac{\bl A * \rev{\bl B}}{||\bl A||\;||\bl B||}
+  \cos \theta = \frac{\bl A * \rev{\bl B}}{||\bl A||\,||\bl B||}
   $$
 
 * De novo, temos a semelhança com números complexos, onde o produto $z_1 \cdot \overline{z_2}$, tais que o argumento de $z_1$ é $\alpha$ e o argumento de $z_2$ é $\beta$, resulta em um número complexo $z_3$ cujo argumento é $\alpha - \beta$:
@@ -90,7 +90,7 @@ O produto escalar $\bl A * \bl B$ é definido como
 
   ![](figures/angulo-entre-complexos.svg){fig-align="center"}
 
-* Em $\reais^2$, no geral, para dois 2-*blades* $\bl A$ e $\bl B$, temos que $\bl A * \rev{\bl B} = ||\bl A||\;||\bl B||$, e o ângulo é sempre zero:
+* Em $\reais^2$, no geral, para dois 2-*blades* $\bl A$ e $\bl B$, temos que $\bl A * \rev{\bl B} = ||\bl A||\,||\bl B||$, e o ângulo é sempre zero:
 
   ![](figures/prod-escalar-blades-r2-geral.jpg){fig-align="center" width=60%}
 
@@ -133,8 +133,8 @@ O produto escalar $\bl A * \bl B$ é definido como
   $$
   \begin{aligned}
     A &= \ve1 \wedge \ve3 \\
-    B &= (\cos\alpha\;\ve1 - \sen\alpha\;\ve2) 
-      \wedge (\cos\beta\;\ve3 - \sen\beta\;\ve4)
+    B &= (\cos\alpha\,\ve1 - \sen\alpha\,\ve2) 
+      \wedge (\cos\beta\,\ve3 - \sen\beta\,\ve4)
   \end{aligned}
   $$
 
@@ -164,19 +164,19 @@ O produto escalar $\bl A * \bl B$ é definido como
     \begin{aligned}
       \bl A * \widetilde{\bl B}
       &= (\ve1 \wedge \ve3) * 
-        (\cos\alpha\;\ve1 - \sen\alpha\;\ve2) 
-        \wedge (\cos\beta\;\ve3 - \sen\beta\;\ve4) \\
+        (\cos\alpha\,\ve1 - \sen\alpha\,\ve2) 
+        \wedge (\cos\beta\,\ve3 - \sen\beta\,\ve4) \\
       &= \begin{vmatrix}
-         \ve1 \cdot (\cos\alpha\;\ve1 - \sen\alpha\;\ve2) &
-         \ve1 \cdot (\cos\beta\;\ve3 - \sen\beta\;\ve4) \\
-         \ve3 \cdot (\cos\alpha\;\ve1 - \sen\alpha\;\ve2) &
-         \ve3 \cdot (\cos\beta\;\ve3 - \sen\beta\;\ve4)
+         \ve1 \cdot (\cos\alpha\,\ve1 - \sen\alpha\,\ve2) &
+         \ve1 \cdot (\cos\beta\,\ve3 - \sen\beta\,\ve4) \\
+         \ve3 \cdot (\cos\alpha\,\ve1 - \sen\alpha\,\ve2) &
+         \ve3 \cdot (\cos\beta\,\ve3 - \sen\beta\,\ve4)
          \end{vmatrix} \\
       &= \begin{vmatrix}
          \cos\alpha & 0 \\
          0 & \cos\beta 
          \end{vmatrix} \\
-      &= \cos\alpha\;\cos\beta
+      &= \cos\alpha\,\cos\beta
     \end{aligned}
     $$
 
@@ -304,8 +304,8 @@ show(r'''
 * A contração à esquerda é uma função
 
   $$
-  \lc : \bigwedge^k \reais^n \;\times\; \bigwedge^l \reais^n 
-  \;\to\; \bigwedge^{l-k} \reais^n
+  \lc : \bigwedge^k \reais^n \,\times\, \bigwedge^l \reais^n 
+  \,\to\, \bigwedge^{l-k} \reais^n
   $$
 
 * A contração à esquerda distribui sobre a adição e é bilinear:
@@ -330,7 +330,7 @@ show(r'''
     \vet a \lc \vet b &= \vet a \cdot \vet b \\
     (\bl A \wedge \bl B) \lc \bl C &= \bl A \lc (\bl B \lc \bl C) \\
     \vet a \lc (\bl B \wedge \bl C)
-    &= (\vet a \lc \bl B) \wedge \bl C \;+\;
+    &= (\vet a \lc \bl B) \wedge \bl C \,+\,
       (-1)^{\grau(\bl B)} \bl B \wedge (\vet a \lc \bl C)
   \end{aligned}
   $$  {#eq-ultima-3}
@@ -386,8 +386,8 @@ show(r'''
 
   $$
   \begin{aligned}
-    \vet x &= ||\vet x||\; (\cos \theta\; \ve1 + \sen \theta \; \ve3) \\
-    \bl B  &= ||\bl B||\; \ve1 \wedge \ve2 
+    \vet x &= ||\vet x||\, (\cos \theta\, \ve1 + \sen \theta \, \ve3) \\
+    \bl B  &= ||\bl B||\, \ve1 \wedge \ve2 
   \end{aligned}
   $$
   
@@ -405,20 +405,20 @@ show(r'''
   $$
   \begin{aligned}
     \vet x \lc \bl B
-    &= ||\vet x||\; (\cos \theta\; \ve1 + \sen \theta \; \ve3) \;\lc\;
-      ||\bl B||\; \ve1 \wedge \ve2 \\
-    &= ||\vet x||\;||\bl B||\; 
-      [(\cos \theta\; \ve1 + \sen \theta \; \ve3) \;\lc\; (\ve1 \wedge \ve2)] \\
-    &= ||\vet x||\;||\bl B||\; 
-      [\cos \theta\; \ve1 \;\lc\; (\ve1 \wedge \ve2) \;+\;
-      \sen \theta \; \ve3 \;\lc\; (\ve1 \wedge \ve2)] \\
-    &= ||\vet x||\;||\bl B||\; 
-      [\cos \theta\; \ve1 \cdot \ve1 \wedge \ve2
-      - \ve1 \wedge \cos \theta\; \ve1 \cdot \ve2
-      + \sen \theta \; \ve3 \cdot \ve1 \wedge \ve2
-      - \ve1 \wedge \sen \theta \; \ve3 \cdot \ve2] \\
-    &= ||\vet x||\;||\bl B||\; \cos \theta\; \ve2 \\
-    &= ||\vet x|| \cos \theta\; ||\bl B||\; \ve2
+    &= ||\vet x||\, (\cos \theta\, \ve1 + \sen \theta \, \ve3) \,\lc\,
+      ||\bl B||\, \ve1 \wedge \ve2 \\
+    &= ||\vet x||\,||\bl B||\, 
+      [(\cos \theta\, \ve1 + \sen \theta \, \ve3) \,\lc\, (\ve1 \wedge \ve2)] \\
+    &= ||\vet x||\,||\bl B||\, 
+      [\cos \theta\, \ve1 \,\lc\, (\ve1 \wedge \ve2) \,+\,
+      \sen \theta \, \ve3 \,\lc\, (\ve1 \wedge \ve2)] \\
+    &= ||\vet x||\,||\bl B||\, 
+      [\cos \theta\, \ve1 \cdot \ve1 \wedge \ve2
+      - \ve1 \wedge \cos \theta\, \ve1 \cdot \ve2
+      + \sen \theta \, \ve3 \cdot \ve1 \wedge \ve2
+      - \ve1 \wedge \sen \theta \, \ve3 \cdot \ve2] \\
+    &= ||\vet x||\,||\bl B||\, \cos \theta\, \ve2 \\
+    &= ||\vet x|| \cos \theta\, ||\bl B||\, \ve2
   \end{aligned}
   $$
 
@@ -499,18 +499,173 @@ show(r'''
 
   ![](figures/contracoes-dir-e-esq.jpg){fig-alt="."  width=90% fig-align="center"}
 
-* O livro traz $(-1)^{a(b+1)}$, conclusão de um raciocínio mais complexo envolvendo os reversos dos *blades*, mas a paridade é a mesma.
+* O livro traz $(-1)^{a(b+1)}$, conclusão de um raciocínio envolvendo os reversos dos *blades*, mas a paridade é a mesma que a do meu resultado.
 
+  ![](figures/contr-prova-dorst.jpg){fig-alt="."  width=80% fig-align="center"}
+
+::: {.callout-caution}
+
+## Completar as provas {-}
+
+No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl D$, mas tanto a prova dele quanto a minha supõe que isto é verdade nesta situação.
+
+É preciso mostrar que isto é verdade neste caso específico.
+
+:::
 
 ## ORTHOGONALITY AND DUALITY
 
 ### NONASSOCIATIVITY OF THE CONTRACTION
 
+* Contrair $\bl A \wedge \bl B$ sobre $\bl c$ é o mesmo que 
+
+  1. Contrair $\bl B$ sobre $\bl C$, e depois
+  
+  1. Contrair $\bl A$ sobre o resultado.
+  
+* Esta é a interpretação de
+
+  $$
+  (\bl A \wedge \bl B) \lc \bl C = \bl A \lc (\bl B \lc \bl C)
+  $${#eq-dual1}
+
+* A outra maneira de agrupar os operandos é
+
+  $$
+  (\bl A \lc \bl B) \lc \bl C = \bl A \wedge (\bl B \lc \bl C)
+  $${#eq-dual2}
+  
+  mas [a igualdade só vale quando $\bl A \subseteq \bl C$]{.hl}.
+  
+* [Mais adiante](#sec-duality-rel), vamos usar as duas igualdades para calcular o dual de um objeto. Lá, $\bl C$ vai ser o pseudoescalar $\bl I$, e a condição $\bl A \subseteq \bl I$ é sempre verdade.
+
+
 ### THE INVERSE OF A BLADE
+
+* Dado um *blade* $\bl A$, queremos achar um *blade* $\bl B$ tal que
+
+  $$
+  \bl A \lc \bl B = 1
+  $$
+
+* Não existe um único $\bl B$ que satisfaça a igualdade. 
+
+* De fato, dado um *blade* $\bl B$ que satisfaça a igualdade, e dado qualquer *blade* $\bl C$ ortogonal a $\bl A$, temos que
+
+  $$
+  \bl A \lc (\bl B + \bl C) = \bl A \lc \bl B + \bl A \lc \bl C =
+  1 + 0 = 1
+  $$
+
+* Vamos definir o inverso de um *blade* $\bl A_k$, de grau $k$, como sendo
+
+  $$
+  \inv{\bl A_k} = \frac{\rev{\bl A_k}}{|| \bl A_k ||^2} =
+  (-1)^{k(k-1)/2} \frac{\bl A_k}{|| \bl A_k ||^2}  
+  $$
+
+* O inverso de $\bl A$ é um *blade* de mesmo grau que $\bl A$.
+
+* Para um vetor $\vet a \neq \bl 0$, temos que $\inv{\vet a} = \vet a / ||\vet a||^2$.
+
+* Um vetor unitário é seu próprio inverso.
+
+* Em uma métrica não-degenerada, o inverso do pseudoescalar unitário $\bl I$ é seu reverso $\rev{\bl I}$.
+
 
 ### ORTHOGONAL COMPLEMENT AND DUALITY
 
-### THE DUALITY RELATIONSHIPS
+* Dado um *blade* $\bl A_k$ de grau $k$, a operação de [dualização]{.hl} produz 
+
+  $$
+  \dual{\bl A_k} = \bl A_k \lc \inv {\bl I}
+  $$
+
+* No espaço $\reais^n$, o dual de $\bl A_k$ tem grau $n - k$.
+
+* Por exemplo, em $\reais^2$, o dual de um $2$-*blade* $\vet a \wedge \vet b$ é um escalar --- cujo valor é simplesmente a magnitude de $\vet a \wedge \vet b$:
+
+  $$
+  \begin{aligned}
+    \dual{(\vet a \wedge \vet b)}
+    &= (\vet a \wedge \vet b) \lc \inv{\bl I} \\
+    &= \vet a \lc (\vet b \lc \inv{\bl I}) \\
+    &= \vet a \lc (\vet b \lc (\ve2 \wedge \ve1)) \\
+    &= \vet a \lc 
+      ((\vet b \cdot \ve2) \wedge \ve1 -
+      \ve2 \wedge (\vet b \cdot \ve1)) \\
+    &= \vet a \lc ((\vet b \cdot \ve2) \wedge \ve1) -
+       \vet a \lc (\ve2 \wedge (\vet b \cdot \ve1)) \\
+    &= (\vet a \cdot \ve1)(\vet b \cdot \ve2) -
+       (\vet b \cdot \ve1)(\vet a \cdot \ve2) \\
+    &= ||\vet a|| \, ||\vet b||\,
+       [\cos(\vet a, \ve1)\cos(\vet b, \ve2) -
+        \cos(\vet b, \ve1)\cos(\vet a, \ve2)] \\
+    &= ||\vet a|| \, ||\vet b||\,
+       [\cos(\vet a, \ve1)\sen(\vet b, \ve1) -
+        \cos(\vet b, \ve1)\sen(\vet a, \ve1)] \\
+    &= ||\vet a|| \, ||\vet b||\, 
+       \sen[(\vet b, \ve1) - (\vet a, \ve1)] \\
+    &= ||\vet a|| \, ||\vet b||\, \sen(\vet a, \vet b) \\
+    &= || \vet a \wedge \vet b ||
+  \end{aligned}
+  $$
+
+* Ainda, em $\reais^2$, o dual de um vetor $\vet a$ é or resultado de rotacionar $\vet a$ $90$ graus no sentido horário:
+
+  $$
+  \begin{aligned}
+    \dual{\vet a}
+    &= \vet a \lc \inv{\bl I} \\
+    &= \vet a \lc \rev{\bl I} \\
+    &= \vet a \lc (\ve2 \wedge \ve1) \\
+    &= (\vet a \cdot \ve2) \ve1 - (\vet a \cdot \ve1) \ve2 \\
+    &= ||\vet a||\, 
+      [\cos(\vet a, \ve2)\ve1 - \cos(\vet a, \ve1)\ve2] \\
+    &= ||\vet a||\, 
+      [\cos(\vet a, \ve2)\ve1 - \sen(\vet a, \ve2)\ve2]
+  \end{aligned}
+  $$
+
+* Em $\reais^2$, o dual do dual não é o vetor original, mas sim o vetor original com o sentido invertido.
+
+* No geral, em $\reais^n$:
+
+  $$
+  \begin{aligned}
+    \dual{(\dual{\bl A})}
+    &= (\bl A \lc \inv{\bl I_n}) \lc \inv{\bl I_n} \\
+    &= \bl A \wedge (\inv{\bl I_n} \lc \inv{\bl I_n}) & (*)\\
+    &= \bl A \wedge (\rev{\bl I_n} \lc \rev{\bl I_n}) \\
+    &= (-1)^{n(n-1)/2}\, \bl A \wedge
+      (\bl I_n \lc \rev{\bl I_n}) \\
+    &= (-1)^{n(n-1)/2}\, \bl A \wedge 1 \\
+    &= (-1)^{n(n-1)/2}\, \bl A
+  \end{aligned}
+  $$
+
+  Em $(*)$, usamos a @eq-dual2.
+  
+* Para definir uma operação de [desdualização]{.hl} que valha em $\reais^n$, para todo $n$:
+
+  $$
+  \undual{\bl A} = \bl A \lc \bl I_n
+  $$
+
+* De fato,
+
+  $$
+  \begin{aligned}
+    \dual{\bl A} \lc \bl I_n
+    &= (-1)^{n(n-1)/2}\, \dual{\bl A} \lc \rev{\bl I_n} \\
+    &= (-1)^{n(n-1)/2}\, \dual{(\dual{\bl A})} \\
+    &= (-1)^{n(n-1)/2}\, (-1)^{n(n-1)/2}\, \bl A \\
+    &= (-1)^{n(n-1)} \bl A \\
+    &= \bl A
+  \end{aligned}
+  $$
+
+### THE DUALITY RELATIONSHIPS {#sec-duality-rel}
 
 ### DUAL REPRESENTATION OF SUBSPACES
 

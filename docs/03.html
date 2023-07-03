@@ -189,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#nonassociativity-of-the-contraction" id="toc-nonassociativity-of-the-contraction" class="nav-link" data-scroll-target="#nonassociativity-of-the-contraction"><span class="header-section-number">3.5.1</span> NONASSOCIATIVITY OF THE CONTRACTION</a></li>
   <li><a href="#the-inverse-of-a-blade" id="toc-the-inverse-of-a-blade" class="nav-link" data-scroll-target="#the-inverse-of-a-blade"><span class="header-section-number">3.5.2</span> THE INVERSE OF A BLADE</a></li>
   <li><a href="#orthogonal-complement-and-duality" id="toc-orthogonal-complement-and-duality" class="nav-link" data-scroll-target="#orthogonal-complement-and-duality"><span class="header-section-number">3.5.3</span> ORTHOGONAL COMPLEMENT AND DUALITY</a></li>
-  <li><a href="#the-duality-relationships" id="toc-the-duality-relationships" class="nav-link" data-scroll-target="#the-duality-relationships"><span class="header-section-number">3.5.4</span> THE DUALITY RELATIONSHIPS</a></li>
+  <li><a href="#sec-duality-rel" id="toc-sec-duality-rel" class="nav-link" data-scroll-target="#sec-duality-rel"><span class="header-section-number">3.5.4</span> THE DUALITY RELATIONSHIPS</a></li>
   <li><a href="#dual-representation-of-subspaces" id="toc-dual-representation-of-subspaces" class="nav-link" data-scroll-target="#dual-representation-of-subspaces"><span class="header-section-number">3.5.5</span> DUAL REPRESENTATION OF SUBSPACES</a></li>
   </ul></li>
   <li><a href="#orthogonal-projection-of-subspaces" id="toc-orthogonal-projection-of-subspaces" class="nav-link" data-scroll-target="#orthogonal-projection-of-subspaces"><span class="header-section-number">3.6</span> ORTHOGONAL PROJECTION OF SUBSPACES</a></li>
@@ -236,7 +236,10 @@ ul.task-list li input[type="checkbox"] {
 % vetor
 % vetor e_i
 % blade
-<p>% reverso % contração à esq % contração à dir % grau</p>
+% reverso (til em cima) \providecommand{}[1]{#1^{~}} % reverso (til à direita) % contração à esq % contração à dir % grau
+% inverso
+% dual
+<p>% undual</p>
 </div>
 <section id="resumo" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumo">Resumo</h2>
@@ -255,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
 \]</span></p></li>
 <li><p>O <span class="hl">cosseno do ângulo</span> entre dois vetores <span class="math inline">\(\mathbf{a}\)</span> e <span class="math inline">\(\mathbf{b}\)</span> como</p>
 <p><span class="math display">\[
-\cos \theta = \frac{\mathbf{a} \cdot \mathbf{b}}{|| \mathbf{a} ||\; ||\mathbf{b} ||}
+\cos \theta = \frac{\mathbf{a} \cdot \mathbf{b}}{|| \mathbf{a} ||\, ||\mathbf{b} ||}
 \]</span></p></li>
 </ul></li>
 <li><p>Este capítulo generaliza o produto interno para <em>blades</em> e multivetores.</p></li>
@@ -322,7 +325,7 @@ z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
 <ul>
 <li><p>O <span class="hl">cosseno</span> do ângulo entre dois <em>blades</em> <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> usa o produto escalar entre <span class="math inline">\(\mathbf{A}\)</span> e o <span class="hl">reverso</span> <span class="math inline">\(\widetilde{\mathbf{B}}\)</span>:</p>
 <p><span class="math display">\[
-\cos \theta = \frac{\mathbf{A} * \widetilde{\mathbf{B}}}{||\mathbf{A}||\;||\mathbf{B}||}
+\cos \theta = \frac{\mathbf{A} * \widetilde{\mathbf{B}}}{||\mathbf{A}||\,||\mathbf{B}||}
 \]</span></p></li>
 <li><p>De novo, temos a semelhança com números complexos, onde o produto <span class="math inline">\(z_1 \cdot \overline{z_2}\)</span>, tais que o argumento de <span class="math inline">\(z_1\)</span> é <span class="math inline">\(\alpha\)</span> e o argumento de <span class="math inline">\(z_2\)</span> é <span class="math inline">\(\beta\)</span>, resulta em um número complexo <span class="math inline">\(z_3\)</span> cujo argumento é <span class="math inline">\(\alpha - \beta\)</span>:</p>
 <div class="quarto-figure quarto-figure-center">
@@ -335,7 +338,7 @@ z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
 <p><img src="figures/angulo-entre-complexos.svg" class="img-fluid figure-img"></p>
 </figure>
 </div></li>
-<li><p>Em <span class="math inline">\(\mathbb{R}^2\)</span>, no geral, para dois 2-<em>blades</em> <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span>, temos que <span class="math inline">\(\mathbf{A} * \widetilde{\mathbf{B}} = ||\mathbf{A}||\;||\mathbf{B}||\)</span>, e o ângulo é sempre zero:</p>
+<li><p>Em <span class="math inline">\(\mathbb{R}^2\)</span>, no geral, para dois 2-<em>blades</em> <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span>, temos que <span class="math inline">\(\mathbf{A} * \widetilde{\mathbf{B}} = ||\mathbf{A}||\,||\mathbf{B}||\)</span>, e o ângulo é sempre zero:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/prod-escalar-blades-r2-geral.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
@@ -376,8 +379,8 @@ z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
 <p><span class="math display">\[
 \begin{aligned}
   A &amp;= \mathbf{e}_{1} \wedge \mathbf{e}_{3} \\
-  B &amp;= (\cos\alpha\;\mathbf{e}_{1} - \text{sen}\,\alpha\;\mathbf{e}_{2})
-    \wedge (\cos\beta\;\mathbf{e}_{3} - \text{sen}\,\beta\;\mathbf{e}_{4})
+  B &amp;= (\cos\alpha\,\mathbf{e}_{1} - \mathop{\mathrm{\text{sen}}}\alpha\,\mathbf{e}_{2})
+    \wedge (\cos\beta\,\mathbf{e}_{3} - \mathop{\mathrm{\text{sen}}}\beta\,\mathbf{e}_{4})
 \end{aligned}
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
@@ -403,19 +406,19 @@ z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
 \begin{aligned}
   \mathbf{A} * \widetilde{\mathbf{B}}
   &amp;= (\mathbf{e}_{1} \wedge \mathbf{e}_{3}) *
-    (\cos\alpha\;\mathbf{e}_{1} - \text{sen}\,\alpha\;\mathbf{e}_{2})
-    \wedge (\cos\beta\;\mathbf{e}_{3} - \text{sen}\,\beta\;\mathbf{e}_{4}) \\
+    (\cos\alpha\,\mathbf{e}_{1} - \mathop{\mathrm{\text{sen}}}\alpha\,\mathbf{e}_{2})
+    \wedge (\cos\beta\,\mathbf{e}_{3} - \mathop{\mathrm{\text{sen}}}\beta\,\mathbf{e}_{4}) \\
   &amp;= \begin{vmatrix}
-     \mathbf{e}_{1} \cdot (\cos\alpha\;\mathbf{e}_{1} - \text{sen}\,\alpha\;\mathbf{e}_{2}) &amp;
-     \mathbf{e}_{1} \cdot (\cos\beta\;\mathbf{e}_{3} - \text{sen}\,\beta\;\mathbf{e}_{4}) \\
-     \mathbf{e}_{3} \cdot (\cos\alpha\;\mathbf{e}_{1} - \text{sen}\,\alpha\;\mathbf{e}_{2}) &amp;
-     \mathbf{e}_{3} \cdot (\cos\beta\;\mathbf{e}_{3} - \text{sen}\,\beta\;\mathbf{e}_{4})
+     \mathbf{e}_{1} \cdot (\cos\alpha\,\mathbf{e}_{1} - \mathop{\mathrm{\text{sen}}}\alpha\,\mathbf{e}_{2}) &amp;
+     \mathbf{e}_{1} \cdot (\cos\beta\,\mathbf{e}_{3} - \mathop{\mathrm{\text{sen}}}\beta\,\mathbf{e}_{4}) \\
+     \mathbf{e}_{3} \cdot (\cos\alpha\,\mathbf{e}_{1} - \mathop{\mathrm{\text{sen}}}\alpha\,\mathbf{e}_{2}) &amp;
+     \mathbf{e}_{3} \cdot (\cos\beta\,\mathbf{e}_{3} - \mathop{\mathrm{\text{sen}}}\beta\,\mathbf{e}_{4})
      \end{vmatrix} \\
   &amp;= \begin{vmatrix}
      \cos\alpha &amp; 0 \\
      0 &amp; \cos\beta
      \end{vmatrix} \\
-  &amp;= \cos\alpha\;\cos\beta
+  &amp;= \cos\alpha\,\cos\beta
 \end{aligned}
 \]</span></p></li>
 <li><p>Se <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\beta\)</span> for <span class="math inline">\(90\)</span> graus, os <em>blades</em> <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> são considerados ortogonais.</p></li>
@@ -523,8 +526,8 @@ Rotações em planos, não em torno de eixos
 <ul>
 <li><p>A contração à esquerda é uma função</p>
 <p><span class="math display">\[
-\rfloor: \bigwedge^k \mathbb{R}^n \;\times\; \bigwedge^l \mathbb{R}^n
-\;\to\; \bigwedge^{l-k} \mathbb{R}^n
+\rfloor: \bigwedge^k \mathbb{R}^n \,\times\, \bigwedge^l \mathbb{R}^n
+\,\to\, \bigwedge^{l-k} \mathbb{R}^n
 \]</span></p></li>
 <li><p>A contração à esquerda distribui sobre a adição e é bilinear:</p>
 <p><span class="math display">\[
@@ -544,7 +547,7 @@ Rotações em planos, não em torno de eixos
   \mathbf{a} \rfloor\mathbf{b} &amp;= \mathbf{a} \cdot \mathbf{b} \\
   (\mathbf{A} \wedge \mathbf{B}) \rfloor\mathbf{C} &amp;= \mathbf{A} \rfloor(\mathbf{B} \rfloor\mathbf{C}) \\
   \mathbf{a} \rfloor(\mathbf{B} \wedge \mathbf{C})
-  &amp;= (\mathbf{a} \rfloor\mathbf{B}) \wedge \mathbf{C} \;+\;
+  &amp;= (\mathbf{a} \rfloor\mathbf{B}) \wedge \mathbf{C} \,+\,
     (-1)^{\text{grau}(\mathbf{B})} \mathbf{B} \wedge (\mathbf{a} \rfloor\mathbf{C})
 \end{aligned}
 \tag{3.1}\]</span></span></p></li>
@@ -592,8 +595,8 @@ Rotações em planos, não em torno de eixos
 <li><p>Considere, por exemplo, um vetor <span class="math inline">\(\mathbf{x}\)</span> e um <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> definidos como</p>
 <p><span class="math display">\[
 \begin{aligned}
-  \mathbf{x} &amp;= ||\mathbf{x}||\; (\cos \theta\; \mathbf{e}_{1} + \text{sen}\,\theta \; \mathbf{e}_{3}) \\
-  \mathbf{B}  &amp;= ||\mathbf{B}||\; \mathbf{e}_{1} \wedge \mathbf{e}_{2}
+  \mathbf{x} &amp;= ||\mathbf{x}||\, (\cos \theta\, \mathbf{e}_{1} + \mathop{\mathrm{\text{sen}}}\theta \, \mathbf{e}_{3}) \\
+  \mathbf{B}  &amp;= ||\mathbf{B}||\, \mathbf{e}_{1} \wedge \mathbf{e}_{2}
 \end{aligned}
 \]</span></p></li>
 <li><p>A <a href="#fig-contr-magn">Figura&nbsp;<span>3.6</span></a> mostra a situação.</p>
@@ -612,20 +615,20 @@ Rotações em planos, não em torno de eixos
 <p><span class="math display">\[
 \begin{aligned}
   \mathbf{x} \rfloor\mathbf{B}
-  &amp;= ||\mathbf{x}||\; (\cos \theta\; \mathbf{e}_{1} + \text{sen}\,\theta \; \mathbf{e}_{3}) \;\rfloor\;
-    ||\mathbf{B}||\; \mathbf{e}_{1} \wedge \mathbf{e}_{2} \\
-  &amp;= ||\mathbf{x}||\;||\mathbf{B}||\;
-    [(\cos \theta\; \mathbf{e}_{1} + \text{sen}\,\theta \; \mathbf{e}_{3}) \;\rfloor\; (\mathbf{e}_{1} \wedge \mathbf{e}_{2})] \\
-  &amp;= ||\mathbf{x}||\;||\mathbf{B}||\;
-    [\cos \theta\; \mathbf{e}_{1} \;\rfloor\; (\mathbf{e}_{1} \wedge \mathbf{e}_{2}) \;+\;
-    \text{sen}\,\theta \; \mathbf{e}_{3} \;\rfloor\; (\mathbf{e}_{1} \wedge \mathbf{e}_{2})] \\
-  &amp;= ||\mathbf{x}||\;||\mathbf{B}||\;
-    [\cos \theta\; \mathbf{e}_{1} \cdot \mathbf{e}_{1} \wedge \mathbf{e}_{2}
-    - \mathbf{e}_{1} \wedge \cos \theta\; \mathbf{e}_{1} \cdot \mathbf{e}_{2}
-    + \text{sen}\,\theta \; \mathbf{e}_{3} \cdot \mathbf{e}_{1} \wedge \mathbf{e}_{2}
-    - \mathbf{e}_{1} \wedge \text{sen}\,\theta \; \mathbf{e}_{3} \cdot \mathbf{e}_{2}] \\
-  &amp;= ||\mathbf{x}||\;||\mathbf{B}||\; \cos \theta\; \mathbf{e}_{2} \\
-  &amp;= ||\mathbf{x}|| \cos \theta\; ||\mathbf{B}||\; \mathbf{e}_{2}
+  &amp;= ||\mathbf{x}||\, (\cos \theta\, \mathbf{e}_{1} + \mathop{\mathrm{\text{sen}}}\theta \, \mathbf{e}_{3}) \,\rfloor\,
+    ||\mathbf{B}||\, \mathbf{e}_{1} \wedge \mathbf{e}_{2} \\
+  &amp;= ||\mathbf{x}||\,||\mathbf{B}||\,
+    [(\cos \theta\, \mathbf{e}_{1} + \mathop{\mathrm{\text{sen}}}\theta \, \mathbf{e}_{3}) \,\rfloor\, (\mathbf{e}_{1} \wedge \mathbf{e}_{2})] \\
+  &amp;= ||\mathbf{x}||\,||\mathbf{B}||\,
+    [\cos \theta\, \mathbf{e}_{1} \,\rfloor\, (\mathbf{e}_{1} \wedge \mathbf{e}_{2}) \,+\,
+    \mathop{\mathrm{\text{sen}}}\theta \, \mathbf{e}_{3} \,\rfloor\, (\mathbf{e}_{1} \wedge \mathbf{e}_{2})] \\
+  &amp;= ||\mathbf{x}||\,||\mathbf{B}||\,
+    [\cos \theta\, \mathbf{e}_{1} \cdot \mathbf{e}_{1} \wedge \mathbf{e}_{2}
+    - \mathbf{e}_{1} \wedge \cos \theta\, \mathbf{e}_{1} \cdot \mathbf{e}_{2}
+    + \mathop{\mathrm{\text{sen}}}\theta \, \mathbf{e}_{3} \cdot \mathbf{e}_{1} \wedge \mathbf{e}_{2}
+    - \mathbf{e}_{1} \wedge \mathop{\mathrm{\text{sen}}}\theta \, \mathbf{e}_{3} \cdot \mathbf{e}_{2}] \\
+  &amp;= ||\mathbf{x}||\,||\mathbf{B}||\, \cos \theta\, \mathbf{e}_{2} \\
+  &amp;= ||\mathbf{x}|| \cos \theta\, ||\mathbf{B}||\, \mathbf{e}_{2}
 \end{aligned}
 \]</span></p></li>
 <li><p>Isto mostra que a magnitude da contração <span class="math inline">\(\mathbf{x} \rfloor\mathbf{B}\)</span> é proporcional à projeção de <span class="math inline">\(\mathbf{x}\)</span> sobre <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
@@ -684,22 +687,156 @@ Rotações em planos, não em torno de eixos
 <p><img src="figures/contracoes-dir-e-esq.jpg" class="img-fluid figure-img" style="width:90.0%" alt="."></p>
 </figure>
 </div></li>
-<li><p>O livro traz <span class="math inline">\((-1)^{a(b+1)}\)</span>, conclusão de um raciocínio mais complexo envolvendo os reversos dos <em>blades</em>, mas a paridade é a mesma.</p></li>
+<li><p>O livro traz <span class="math inline">\((-1)^{a(b+1)}\)</span>, conclusão de um raciocínio envolvendo os reversos dos <em>blades</em>, mas a paridade é a mesma que a do meu resultado.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/contr-prova-dorst.jpg" class="img-fluid figure-img" style="width:80.0%" alt="."></p>
+</figure>
+</div></li>
 </ul>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Completar as provas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>No caso geral, <span class="math inline">\(\mathbf{X} * \mathbf{C} = \mathbf{X} * \mathbf{D}\)</span> <span class="hl">não implica</span> <span class="math inline">\(\mathbf{C} = \mathbf{D}\)</span>, mas tanto a prova dele quanto a minha supõe que isto é verdade nesta situação.</p>
+<p>É preciso mostrar que isto é verdade neste caso específico.</p>
+</div>
+</div>
 </section>
 <section id="orthogonality-and-duality" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="orthogonality-and-duality"><span class="header-section-number">3.5</span> ORTHOGONALITY AND DUALITY</h2>
 <section id="nonassociativity-of-the-contraction" class="level3" data-number="3.5.1">
 <h3 data-number="3.5.1" class="anchored" data-anchor-id="nonassociativity-of-the-contraction"><span class="header-section-number">3.5.1</span> NONASSOCIATIVITY OF THE CONTRACTION</h3>
+<ul>
+<li><p>Contrair <span class="math inline">\(\mathbf{A} \wedge \mathbf{B}\)</span> sobre <span class="math inline">\(\mathbf{c}\)</span> é o mesmo que</p>
+<ol type="1">
+<li><p>Contrair <span class="math inline">\(\mathbf{B}\)</span> sobre <span class="math inline">\(\mathbf{C}\)</span>, e depois</p></li>
+<li><p>Contrair <span class="math inline">\(\mathbf{A}\)</span> sobre o resultado.</p></li>
+</ol></li>
+<li><p>Esta é a interpretação de</p>
+<p><span id="eq-dual1"><span class="math display">\[
+(\mathbf{A} \wedge \mathbf{B}) \rfloor\mathbf{C} = \mathbf{A} \rfloor(\mathbf{B} \rfloor\mathbf{C})
+\tag{3.4}\]</span></span></p></li>
+<li><p>A outra maneira de agrupar os operandos é</p>
+<p><span id="eq-dual2"><span class="math display">\[
+(\mathbf{A} \rfloor\mathbf{B}) \rfloor\mathbf{C} = \mathbf{A} \wedge (\mathbf{B} \rfloor\mathbf{C})
+\tag{3.5}\]</span></span></p>
+<p>mas <span class="hl">a igualdade só vale quando <span class="math inline">\(\mathbf{A} \subseteq \mathbf{C}\)</span></span>.</p></li>
+<li><p><a href="#sec-duality-rel">Mais adiante</a>, vamos usar as duas igualdades para calcular o dual de um objeto. Lá, <span class="math inline">\(\mathbf{C}\)</span> vai ser o pseudoescalar <span class="math inline">\(\mathbf{I}\)</span>, e a condição <span class="math inline">\(\mathbf{A} \subseteq \mathbf{I}\)</span> é sempre verdade.</p></li>
+</ul>
 </section>
 <section id="the-inverse-of-a-blade" class="level3" data-number="3.5.2">
 <h3 data-number="3.5.2" class="anchored" data-anchor-id="the-inverse-of-a-blade"><span class="header-section-number">3.5.2</span> THE INVERSE OF A BLADE</h3>
+<ul>
+<li><p>Dado um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span>, queremos achar um <em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> tal que</p>
+<p><span class="math display">\[
+\mathbf{A} \rfloor\mathbf{B} = 1
+\]</span></p></li>
+<li><p>Não existe um único <span class="math inline">\(\mathbf{B}\)</span> que satisfaça a igualdade.</p></li>
+<li><p>De fato, dado um <em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> que satisfaça a igualdade, e dado qualquer <em>blade</em> <span class="math inline">\(\mathbf{C}\)</span> ortogonal a <span class="math inline">\(\mathbf{A}\)</span>, temos que</p>
+<p><span class="math display">\[
+\mathbf{A} \rfloor(\mathbf{B} + \mathbf{C}) = \mathbf{A} \rfloor\mathbf{B} + \mathbf{A} \rfloor\mathbf{C} =
+1 + 0 = 1
+\]</span></p></li>
+<li><p>Vamos definir o inverso de um <em>blade</em> <span class="math inline">\(\mathbf{A}_k\)</span>, de grau <span class="math inline">\(k\)</span>, como sendo</p>
+<p><span class="math display">\[
+\mathbf{A}_k^{-1} = \frac{\widetilde{\mathbf{A}_k}}{|| \mathbf{A}_k ||^2} =
+(-1)^{k(k-1)/2} \frac{\mathbf{A}_k}{|| \mathbf{A}_k ||^2}  
+\]</span></p></li>
+<li><p>O inverso de <span class="math inline">\(\mathbf{A}\)</span> é um <em>blade</em> de mesmo grau que <span class="math inline">\(\mathbf{A}\)</span>.</p></li>
+<li><p>Para um vetor <span class="math inline">\(\mathbf{a} \neq \mathbf{0}\)</span>, temos que <span class="math inline">\(\mathbf{a}^{-1} = \mathbf{a} / ||\mathbf{a}||^2\)</span>.</p></li>
+<li><p>Um vetor unitário é seu próprio inverso.</p></li>
+<li><p>Em uma métrica não-degenerada, o inverso do pseudoescalar unitário <span class="math inline">\(\mathbf{I}\)</span> é seu reverso <span class="math inline">\(\widetilde{\mathbf{I}}\)</span>.</p></li>
+</ul>
 </section>
 <section id="orthogonal-complement-and-duality" class="level3" data-number="3.5.3">
 <h3 data-number="3.5.3" class="anchored" data-anchor-id="orthogonal-complement-and-duality"><span class="header-section-number">3.5.3</span> ORTHOGONAL COMPLEMENT AND DUALITY</h3>
+<ul>
+<li><p>Dado um <em>blade</em> <span class="math inline">\(\mathbf{A}_k\)</span> de grau <span class="math inline">\(k\)</span>, a operação de <span class="hl">dualização</span> produz</p>
+<p><span class="math display">\[
+\mathbf{A}_k^{*} = \mathbf{A}_k \rfloor\mathbf{I}^{-1}
+\]</span></p></li>
+<li><p>No espaço <span class="math inline">\(\mathbb{R}^n\)</span>, o dual de <span class="math inline">\(\mathbf{A}_k\)</span> tem grau <span class="math inline">\(n - k\)</span>.</p></li>
+<li><p>Por exemplo, em <span class="math inline">\(\mathbb{R}^2\)</span>, o dual de um <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{a} \wedge \mathbf{b}\)</span> é um escalar — cujo valor é simplesmente a magnitude de <span class="math inline">\(\mathbf{a} \wedge \mathbf{b}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  (\mathbf{a} \wedge \mathbf{b})^{*}
+  &amp;= (\mathbf{a} \wedge \mathbf{b}) \rfloor\mathbf{I}^{-1} \\
+  &amp;= \mathbf{a} \rfloor(\mathbf{b} \rfloor\mathbf{I}^{-1}) \\
+  &amp;= \mathbf{a} \rfloor(\mathbf{b} \rfloor(\mathbf{e}_{2} \wedge \mathbf{e}_{1})) \\
+  &amp;= \mathbf{a} \rfloor
+    ((\mathbf{b} \cdot \mathbf{e}_{2}) \wedge \mathbf{e}_{1} -
+    \mathbf{e}_{2} \wedge (\mathbf{b} \cdot \mathbf{e}_{1})) \\
+  &amp;= \mathbf{a} \rfloor((\mathbf{b} \cdot \mathbf{e}_{2}) \wedge \mathbf{e}_{1}) -
+     \mathbf{a} \rfloor(\mathbf{e}_{2} \wedge (\mathbf{b} \cdot \mathbf{e}_{1})) \\
+  &amp;= (\mathbf{a} \cdot \mathbf{e}_{1})(\mathbf{b} \cdot \mathbf{e}_{2}) -
+     (\mathbf{b} \cdot \mathbf{e}_{1})(\mathbf{a} \cdot \mathbf{e}_{2}) \\
+  &amp;= ||\mathbf{a}|| \, ||\mathbf{b}||\,
+     [\cos(\mathbf{a}, \mathbf{e}_{1})\cos(\mathbf{b}, \mathbf{e}_{2}) -
+      \cos(\mathbf{b}, \mathbf{e}_{1})\cos(\mathbf{a}, \mathbf{e}_{2})] \\
+  &amp;= ||\mathbf{a}|| \, ||\mathbf{b}||\,
+     [\cos(\mathbf{a}, \mathbf{e}_{1})\mathop{\mathrm{\text{sen}}}(\mathbf{b}, \mathbf{e}_{1}) -
+      \cos(\mathbf{b}, \mathbf{e}_{1})\mathop{\mathrm{\text{sen}}}(\mathbf{a}, \mathbf{e}_{1})] \\
+  &amp;= ||\mathbf{a}|| \, ||\mathbf{b}||\,
+     \mathop{\mathrm{\text{sen}}}[(\mathbf{b}, \mathbf{e}_{1}) - (\mathbf{a}, \mathbf{e}_{1})] \\
+  &amp;= ||\mathbf{a}|| \, ||\mathbf{b}||\, \mathop{\mathrm{\text{sen}}}(\mathbf{a}, \mathbf{b}) \\
+  &amp;= || \mathbf{a} \wedge \mathbf{b} ||
+\end{aligned}
+\]</span></p></li>
+<li><p>Ainda, em <span class="math inline">\(\mathbb{R}^2\)</span>, o dual de um vetor <span class="math inline">\(\mathbf{a}\)</span> é or resultado de rotacionar <span class="math inline">\(\mathbf{a}\)</span> <span class="math inline">\(90\)</span> graus no sentido horário:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \mathbf{a}^{*}
+  &amp;= \mathbf{a} \rfloor\mathbf{I}^{-1} \\
+  &amp;= \mathbf{a} \rfloor\widetilde{\mathbf{I}} \\
+  &amp;= \mathbf{a} \rfloor(\mathbf{e}_{2} \wedge \mathbf{e}_{1}) \\
+  &amp;= (\mathbf{a} \cdot \mathbf{e}_{2}) \mathbf{e}_{1} - (\mathbf{a} \cdot \mathbf{e}_{1}) \mathbf{e}_{2} \\
+  &amp;= ||\mathbf{a}||\,
+    [\cos(\mathbf{a}, \mathbf{e}_{2})\mathbf{e}_{1} - \cos(\mathbf{a}, \mathbf{e}_{1})\mathbf{e}_{2}] \\
+  &amp;= ||\mathbf{a}||\,
+    [\cos(\mathbf{a}, \mathbf{e}_{2})\mathbf{e}_{1} - \mathop{\mathrm{\text{sen}}}(\mathbf{a}, \mathbf{e}_{2})\mathbf{e}_{2}]
+\end{aligned}
+\]</span></p></li>
+<li><p>Em <span class="math inline">\(\mathbb{R}^2\)</span>, o dual do dual não é o vetor original, mas sim o vetor original com o sentido invertido.</p></li>
+<li><p>No geral, em <span class="math inline">\(\mathbb{R}^n\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  (\mathbf{A}^{*})^{*}
+  &amp;= (\mathbf{A} \rfloor\mathbf{I}_n^{-1}) \rfloor\mathbf{I}_n^{-1} \\
+  &amp;= \mathbf{A} \wedge (\mathbf{I}_n^{-1} \rfloor\mathbf{I}_n^{-1}) &amp; (*)\\
+  &amp;= \mathbf{A} \wedge (\widetilde{\mathbf{I}_n} \rfloor\widetilde{\mathbf{I}_n}) \\
+  &amp;= (-1)^{n(n-1)/2}\, \mathbf{A} \wedge
+    (\mathbf{I}_n \rfloor\widetilde{\mathbf{I}_n}) \\
+  &amp;= (-1)^{n(n-1)/2}\, \mathbf{A} \wedge 1 \\
+  &amp;= (-1)^{n(n-1)/2}\, \mathbf{A}
+\end{aligned}
+\]</span></p>
+<p>Em <span class="math inline">\((*)\)</span>, usamos a <a href="#eq-dual2">Equação&nbsp;<span>3.5</span></a>.</p></li>
+<li><p>Para definir uma operação de <span class="hl">desdualização</span> que valha em <span class="math inline">\(\mathbb{R}^n\)</span>, para todo <span class="math inline">\(n\)</span>:</p>
+<p><span class="math display">\[
+\mathbf{A}^{-*} = \mathbf{A} \rfloor\mathbf{I}_n
+\]</span></p></li>
+<li><p>De fato,</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \mathbf{A}^{*} \rfloor\mathbf{I}_n
+  &amp;= (-1)^{n(n-1)/2}\, \mathbf{A}^{*} \rfloor\widetilde{\mathbf{I}_n} \\
+  &amp;= (-1)^{n(n-1)/2}\, (\mathbf{A}^{*})^{*} \\
+  &amp;= (-1)^{n(n-1)/2}\, (-1)^{n(n-1)/2}\, \mathbf{A} \\
+  &amp;= (-1)^{n(n-1)} \mathbf{A} \\
+  &amp;= \mathbf{A}
+\end{aligned}
+\]</span></p></li>
+</ul>
 </section>
-<section id="the-duality-relationships" class="level3" data-number="3.5.4">
-<h3 data-number="3.5.4" class="anchored" data-anchor-id="the-duality-relationships"><span class="header-section-number">3.5.4</span> THE DUALITY RELATIONSHIPS</h3>
+<section id="sec-duality-rel" class="level3" data-number="3.5.4">
+<h3 data-number="3.5.4" class="anchored" data-anchor-id="sec-duality-rel"><span class="header-section-number">3.5.4</span> THE DUALITY RELATIONSHIPS</h3>
 </section>
 <section id="dual-representation-of-subspaces" class="level3" data-number="3.5.5">
 <h3 data-number="3.5.5" class="anchored" data-anchor-id="dual-representation-of-subspaces"><span class="header-section-number">3.5.5</span> DUAL REPRESENTATION OF SUBSPACES</h3>

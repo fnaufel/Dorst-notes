@@ -192,3 +192,46 @@ batch magnitude_contr()
 
 
 }
+
+
+batch exemplor2()
+{
+	batch init();
+	function factored_bivector();
+
+	init(0);
+    grey_canvas(1);
+	set_point_size(0);
+    fontsizeinit(0);
+    camori = 1.00;
+    campos = 6.10*e3;
+
+    x = show(black(2*e1));
+    lx = 1.03*x;
+    label(lx, "\center{\eqn{\bold{x}}}");
+
+    a = show(black(e1 + e2));
+    la = 1.2*a - 0.2*e1;
+    label(la, "\center{\eqn{\bold{a}}}");
+    
+    eixo1 = show(black(-e1));
+    le1 = 1.2*eixo1;
+    label(le1, "\center{\eqn{-\bold{e_{1}}}}");
+    
+    eixo2 = show(black(e2));
+    le2 = 1.2*eixo2;
+    label(le2, "\center{\eqn{\bold{e_{2}}}}");
+
+    Y = show(alpha(dm3(blue(factored_bivector(x, a))),0.4));
+    lY = 0.5*a + 0.3*x;
+    label(lY, "\center{\eqn{\bold{Y} = \bold{x} \op \bold{a}}}");
+
+    B = show(alpha(dm3(green(factored_bivector(-e1, e2))), 0.4));
+    lB = 0.5*e2 + 0.8*(-e1);
+    label(lB, "\center{\eqn{\bold{B} =\ws -\bold{e_{1}} \op \bold{e_{2}}}}");
+
+    c = show(alpha(dm3(red(a.B)), 1));
+    lec = 1.05*c;
+    label(lec, "\center{\eqn{\bold{a \lc B}}}");
+    
+}

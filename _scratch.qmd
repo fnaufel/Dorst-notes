@@ -182,3 +182,68 @@
     \end{aligned}
     ''')
     ```
+
+
+# Exemplo {-}
+
+* Em $\reais^2$, considere
+
+  $$
+  \begin{aligned}
+    \vet x &= 2\ve1 \\
+    \vet a &= \ve1 + \ve2 \\
+    \bl Y &= \vet x \wedge \vet a = 2\ve1 \wedge (\ve1 + \ve2)
+    = 2 \ve1 \wedge \ve2 \\
+    \bl B &= -\ve1 \wedge \ve2
+  \end{aligned}
+  $$
+
+  O produto escalar $\bl Y * \rev{\bl B}$ é 
+  
+  $$
+  \bl Y * \rev{\bl B} = ||\bl Y|| \; ||\rev{\bl B}|| \;\cos \alpha = 2 \cdot 1 \cdot 1 = 2
+  $$
+  
+  (Como estamos em $\reais^2$, o produto escalar de $2$-*blades* vai ser simplesmente o produto de suas normas, pois o ângulo $\alpha$ entre eles é sempre zero.)
+  
+  Mas $\bl Y$ e $\bl B$ têm, como fator comum, $\vet a = \ve1 + \ve2$.
+  
+  Por isso, o produto escalar $\bl Y * \rev{\bl B}$ também é igual a 
+  
+  $$
+  \vet x * (\vet a \lc \rev{\bl B})
+  $$
+
+  A contração fica
+  
+  $$
+  \begin{aligned}
+    \vet a \lc \bl B 
+    &= (\ve1 + \ve2) \lc (-\ve1 \wedge \ve2) \\
+    &= \ve1 - \ve2
+  \end{aligned}
+  $$
+
+  E o produto escalar fica
+  
+  $$
+  \begin{aligned}
+    \vet x * (\vet a \lc \bl B) 
+    &= 2\ve1 * (\ve1 - \ve2) \\
+    &= 2
+  \end{aligned}
+  $$
+
+  A @fig-exemplor2 mostra a situação.
+  
+  ![Exemplo em $\reais^2$](figures/contr-exemplor2.png){fig-alt="exemplo" #fig-exemplor2 width=80% fig-align="center"}
+
+  Confira que 
+  
+  $$
+  \vet x * (\vet a \lc \bl B) = ||\vet x||\;||\vet a|| \cos \beta
+  = 2 \cdot \sqrt{2} \cdot \frac{\sqrt 2}{2} = 2
+  $$
+
+  onde $\beta$ é o ângulo entre $\vet x$ e $\vet a \lc \bl B$, que é de $45$ graus.
+  
