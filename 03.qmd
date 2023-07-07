@@ -537,7 +537,7 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
   
   mas [a igualdade só vale quando $\bl A \subseteq \bl C$]{.hl}.
   
-* [Mais adiante](#sec-duality-rel), vamos usar as duas igualdades para calcular o dual de um objeto. Lá, $\bl C$ vai ser o pseudoescalar $\bl I$, e a condição $\bl A \subseteq \bl I$ é sempre verdade.
+* [Mais adiante](#sec-duality-rel), vamos usar as duas igualdades para calcular o dual de um objeto. Lá, $\bl C$ vai ser um múltiplo do pseudoescalar $\bl I$, e a condição $\bl A \subseteq \bl I$ é sempre verdade.
 
 
 ### THE INVERSE OF A BLADE
@@ -627,7 +627,7 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
   \end{aligned}
   $$
 
-* Em $\reais^2$, o dual do dual não é o vetor original, mas sim o vetor original com o sentido invertido.
+* Em $\reais^2$, [o dual do dual]{.hl} não é o vetor original, mas sim o vetor original com o sentido invertido.
 
 * No geral, em $\reais^n$:
 
@@ -644,9 +644,9 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
   \end{aligned}
   $$
 
-  Em $(*)$, usamos a @eq-dual2.
+  Em $(*)$, usamos a @eq-dual2, pois $\bl A \subseteq \inv{\bl I_n}$.
   
-* Para definir uma operação de [desdualização]{.hl} que valha em $\reais^n$, para todo $n$:
+* []{#desdualizacao} Para definir uma operação de [desdualização]{.hl} que valha em $\reais^n$, para todo $n$:
 
   $$
   \undual{\bl A} = \bl A \lc \bl I_n
@@ -667,15 +667,193 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
 
 ### THE DUALITY RELATIONSHIPS {#sec-duality-rel}
 
+* Usando as Equações [-@eq-dual1] e [-@eq-dual2], com $\inv{\bl I}$ no lugar de $\bl C$, temos
+
+  $$
+  \begin{aligned}
+    \dual{(\bl A \wedge \bl B)}
+    &= (\bl A \wedge \bl B) \lc \inv{\bl I} \\
+    &= \bl A \lc (\bl B \lc \inv{\bl I}) \\
+    &= \bl A \lc (\dual{\bl B}) \\
+  \end{aligned}
+  $$
+
+  e
+
+  $$
+  \begin{aligned}
+    \dual{(\bl A \lc \bl B)}
+    &= (\bl A \lc \bl B) \lc \inv{\bl I} \\
+    &= \bl A \wedge (\bl B \lc \inv{\bl I}) \\
+    &= \bl A \wedge (\dual{\bl B})
+  \end{aligned}
+  $$
+  
+* No caso de $\dual{(\bl A \lc \bl B)}$, a @eq-dual2 vale, pois é sempre verdade que $\bl A \subseteq \inv{\bl I}$.
+
+
 ### DUAL REPRESENTATION OF SUBSPACES
 
+* A representação [OPNS]{.hl} (**outer product null space**, também chamada de representação [direta]{.hl}) é aquela em que um *blade* $\bl A$ representa o conjunto de todos os vetores $\vet x$ que satisfazem
+
+  $$
+  \vet x \wedge \bl A = 0
+  $$
+
+* A representação [IPNS]{.hl} (**inner product null space**, também chamada de representação [dual]{.hl}) é aquela em que um *blade* $\bl A$ representa o conjunto de todos os vetores $\vet x$ que satisfazem
+
+  $$
+  \vet x \lc \bl A = 0
+  $$
+
+* O *blade* $\dual{\bl A}$ representa diretamente (OPNS) o complemento ortogonal da representação dual (IPNS) de $\bl A$.
+
+* Por exemplo, em Álgebra Linear, um vetor normal $\vet n$ representa (IPNS) um plano homogêneo pela equação
+
+  $$
+  \vet x \cdot \vet n = 0
+  $$
+
+
 ## ORTHOGONAL PROJECTION OF SUBSPACES
+
+* Com a contração e o inverso, podemos computar a projeção ortogonal de um *blade* sobre outro.
+
+* Para projetar um *blade* $\bl X$ sobre um *blade* $\bl B$, supondo que $\inv{\bl B}$ existe, fazemos
+
+  $$
+  \proj{\bl X}{\bl B} = (\bl X \lc \bl B) \lc \inv{\bl B}
+  $$
+
+* A primeira contração constrói o complemento ortogonal de $\bl X$ em $\bl B$. 
+
+* Esse complemento ortogonal tamém é perpendicular à projeção procurada.
+
+* A segunda contração (uma espécie de dual no contexto de $\bl B$) rotaciona o complemento ortogonal de forma a fazê-lo coincidir com a projeção.
+
+* A @fig-proj-dorst mostra um vetor $\vet v$ sendo projetado sobre um $2$-*blade* $\bl B$.
+
+  ![Projeção de um vetor sobre um $2$-*blade*](figures/projecao-dorst.png){fig-alt="projeção" #fig-proj-dorst width=60% fig-align="center"}
+
+* Podemos verificar que a projeção é idempotente, como deveria ser:
+
+  $$
+  \begin{aligned}
+    \proj{\proj{\bl X}{\bl B}}{\bl B}
+    &= \proj{(\bl X \lc \bl B) \lc \inv{\bl B}}{\bl B} \\
+    &= \Bigl( 
+        \bigl(
+        (\bl X \lc \bl B) \lc \inv{\bl B}
+        \bigr)
+        \lc \bl B
+       \Bigr) 
+      \lc \inv{\bl B} \\
+    &= \Bigl( 
+        \bigl(
+        \bl X \wedge (\bl B \lc \inv{\bl B})
+        \bigr)
+        \lc \bl B
+       \Bigr) 
+      \lc \inv{\bl B} \\
+    &= \bigl(
+        (\bl X \wedge 1)
+        \lc \bl B
+        \bigr)
+      \lc \inv{\bl B} \\
+    &= (\bl X \lc \bl B) \lc \inv{\bl B} \\
+    &= \proj{\bl X}{\bl B}
+  \end{aligned}
+  $$
+
+* A projeção também pode ser definida como
+
+  $$
+  \proj{\bl X}{\bl B} = (\bl X \lc \inv{\bl B}) \lc \bl B
+  $$
+
+  mas, em métricas degeneradas, a definição original e esta podem não coincidir.
+
 
 ## THE 3-D CROSS PRODUCT
 
 ### USES OF THE CROSS PRODUCT
 
+* Em $\reais^3$, o produto vetorial é usado para construir vetores normais a um plano, para calcular velocidades angulares e para construir retas que são interseções de dois planos.
+
+* Vamos usar o produto exterior e a contração para generalizar estes usos do produto vetorial para todas as dimensões.
+
+
 ### THE CROSS PRODUCT INCORPORATED
+
+* Para calcular um vetor normal a um plano:
+
+  * O plano é definido pelo *blade* $\vet a \wedge \vet b$.
+  
+  * O complemento ortogonal deste plano com relação ao pseudoescalar $\bl I_n$ é
+  
+    $$
+    \dual{(\vet a \wedge \vet b)} = 
+    (\vet a \wedge \vet b) \lc \inv{\bl I_n}
+    $$
+
+* Em $\reais^3$, o inverso do pseudoescalar, $\inv{\bl I_3}$, é igual a $-\bl I_3$. O vetor normal a um plano $\vet a \wedge \vet b$ é 
+
+  $$
+  \dual{(\vet a \wedge \vet b)} = 
+  (\vet a \wedge \vet b) \lc \inv{\bl I_3} = 
+  (\vet b \wedge \vet a) \lc \bl I_3 =
+  \vet a \times \vet b
+  $$
+
+* Vamos tratar a interseção de dois planos em $\reais^3$:
+
+  * Um plano é representado pelo $2$-*blade* $\bl A$. Vamos trabalhar com seu vetor normal $\vet a$:
+  
+    $$
+    \vet a = \dual{\bl A} = \bl A \lc \inv{\bl I}
+    $$
+  
+  * O outro plano é representado pelo $2$-*blade* $\bl B$. Vamos trabalhar com seu vetor normal $\vet b$:
+  
+    $$
+    \vet b = \dual{\bl B} = \bl B \lc \inv{\bl I}
+    $$
+  
+  * Para calcular a reta correspondente à interseção dos dois planos, vamos escrever
+  
+    $$
+    \vet a \wedge \vet b = \bl A \lc \inv{\bl I} \,\wedge\, 
+    \bl B \lc \inv{\bl I}
+    $$
+
+  * Agora podemos desenvolver:
+  
+    $$
+    \begin{aligned}
+      \vet a \times \vet b
+      &= \dual{(\vet a \wedge \vet b)} \\
+      &= \dual{(\bl A \lc \inv{\bl I} \,\wedge\, 
+        \bl B \lc \inv{\bl I})} \\
+      &= (\bl A \lc \inv{\bl I} \,\wedge\, 
+        \bl B \lc \inv{\bl I}) \lc \inv{\bl I} \\
+      &= (\bl B \lc \inv{\bl I} \,\wedge\, 
+        \bl A \lc \inv{\bl I}) \lc \bl I \\
+      &= (\bl B \lc \inv{\bl I}) \lc 
+        \bigl( (\bl A \lc \inv{\bl I}) \lc \bl I \bigr) \\
+      &= (\bl B \lc \inv{\bl I}) \lc \bl A & (*)\\
+      &= (\dual{\bl B}) \lc \bl A
+    \end{aligned}
+    $$
+
+    Na linha $(*)$, usamos a [definição de desdualização](#desdualizacao):
+    
+    $$
+    (\bl A \lc \inv{\bl I}) \lc \bl I = 
+    \undual{(\bl A \lc \inv{\bl I})} = \bl A
+    $$
+    
+  * Mais adiante, vamos ver que $(\dual{\bl B}) \lc \bl A$ é o *meet* de $\bl B$ com $\bl A$, e é a maneira de representar a incidência de subespaços.
+  
 
 ## APPLICATION: RECIPROCAL FRAMES
 

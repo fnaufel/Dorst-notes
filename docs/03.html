@@ -239,7 +239,8 @@ ul.task-list li input[type="checkbox"] {
 % reverso (til em cima) \providecommand{}[1]{#1^{~}} % reverso (til à direita) % contração à esq % contração à dir % grau
 % inverso
 % dual
-<p>% undual</p>
+% undual
+<p>% projeção</p>
 </div>
 <section id="resumo" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumo">Resumo</h2>
@@ -728,7 +729,7 @@ Completar as provas
 (\mathbf{A} \rfloor\mathbf{B}) \rfloor\mathbf{C} = \mathbf{A} \wedge (\mathbf{B} \rfloor\mathbf{C})
 \tag{3.5}\]</span></span></p>
 <p>mas <span class="hl">a igualdade só vale quando <span class="math inline">\(\mathbf{A} \subseteq \mathbf{C}\)</span></span>.</p></li>
-<li><p><a href="#sec-duality-rel">Mais adiante</a>, vamos usar as duas igualdades para calcular o dual de um objeto. Lá, <span class="math inline">\(\mathbf{C}\)</span> vai ser o pseudoescalar <span class="math inline">\(\mathbf{I}\)</span>, e a condição <span class="math inline">\(\mathbf{A} \subseteq \mathbf{I}\)</span> é sempre verdade.</p></li>
+<li><p><a href="#sec-duality-rel">Mais adiante</a>, vamos usar as duas igualdades para calcular o dual de um objeto. Lá, <span class="math inline">\(\mathbf{C}\)</span> vai ser um múltiplo do pseudoescalar <span class="math inline">\(\mathbf{I}\)</span>, e a condição <span class="math inline">\(\mathbf{A} \subseteq \mathbf{I}\)</span> é sempre verdade.</p></li>
 </ul>
 </section>
 <section id="the-inverse-of-a-blade" class="level3" data-number="3.5.2">
@@ -803,7 +804,7 @@ Completar as provas
     [\cos(\mathbf{a}, \mathbf{e}_{2})\mathbf{e}_{1} - \mathop{\mathrm{\text{sen}}}(\mathbf{a}, \mathbf{e}_{2})\mathbf{e}_{2}]
 \end{aligned}
 \]</span></p></li>
-<li><p>Em <span class="math inline">\(\mathbb{R}^2\)</span>, o dual do dual não é o vetor original, mas sim o vetor original com o sentido invertido.</p></li>
+<li><p>Em <span class="math inline">\(\mathbb{R}^2\)</span>, <span class="hl">o dual do dual</span> não é o vetor original, mas sim o vetor original com o sentido invertido.</p></li>
 <li><p>No geral, em <span class="math inline">\(\mathbb{R}^n\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -817,8 +818,8 @@ Completar as provas
   &amp;= (-1)^{n(n-1)/2}\, \mathbf{A}
 \end{aligned}
 \]</span></p>
-<p>Em <span class="math inline">\((*)\)</span>, usamos a <a href="#eq-dual2">Equação&nbsp;<span>3.5</span></a>.</p></li>
-<li><p>Para definir uma operação de <span class="hl">desdualização</span> que valha em <span class="math inline">\(\mathbb{R}^n\)</span>, para todo <span class="math inline">\(n\)</span>:</p>
+<p>Em <span class="math inline">\((*)\)</span>, usamos a <a href="#eq-dual2">Equação&nbsp;<span>3.5</span></a>, pois <span class="math inline">\(\mathbf{A} \subseteq \mathbf{I}_n^{-1}\)</span>.</p></li>
+<li><p><span id="desdualizacao"></span> Para definir uma operação de <span class="hl">desdualização</span> que valha em <span class="math inline">\(\mathbb{R}^n\)</span>, para todo <span class="math inline">\(n\)</span>:</p>
 <p><span class="math display">\[
 \mathbf{A}^{-*} = \mathbf{A} \rfloor\mathbf{I}_n
 \]</span></p></li>
@@ -837,21 +838,168 @@ Completar as provas
 </section>
 <section id="sec-duality-rel" class="level3" data-number="3.5.4">
 <h3 data-number="3.5.4" class="anchored" data-anchor-id="sec-duality-rel"><span class="header-section-number">3.5.4</span> THE DUALITY RELATIONSHIPS</h3>
+<ul>
+<li><p>Usando as Equações <a href="#eq-dual1"><span>3.4</span></a> e <a href="#eq-dual2"><span>3.5</span></a>, com <span class="math inline">\(\mathbf{I}^{-1}\)</span> no lugar de <span class="math inline">\(\mathbf{C}\)</span>, temos</p>
+<p><span class="math display">\[
+\begin{aligned}
+  (\mathbf{A} \wedge \mathbf{B})^{*}
+  &amp;= (\mathbf{A} \wedge \mathbf{B}) \rfloor\mathbf{I}^{-1} \\
+  &amp;= \mathbf{A} \rfloor(\mathbf{B} \rfloor\mathbf{I}^{-1}) \\
+  &amp;= \mathbf{A} \rfloor(\mathbf{B}^{*}) \\
+\end{aligned}
+\]</span></p>
+<p>e</p>
+<p><span class="math display">\[
+\begin{aligned}
+  (\mathbf{A} \rfloor\mathbf{B})^{*}
+  &amp;= (\mathbf{A} \rfloor\mathbf{B}) \rfloor\mathbf{I}^{-1} \\
+  &amp;= \mathbf{A} \wedge (\mathbf{B} \rfloor\mathbf{I}^{-1}) \\
+  &amp;= \mathbf{A} \wedge (\mathbf{B}^{*})
+\end{aligned}
+\]</span></p></li>
+<li><p>No caso de <span class="math inline">\((\mathbf{A} \rfloor\mathbf{B})^{*}\)</span>, a <a href="#eq-dual2">Equação&nbsp;<span>3.5</span></a> vale, pois é sempre verdade que <span class="math inline">\(\mathbf{A} \subseteq \mathbf{I}^{-1}\)</span>.</p></li>
+</ul>
 </section>
 <section id="dual-representation-of-subspaces" class="level3" data-number="3.5.5">
 <h3 data-number="3.5.5" class="anchored" data-anchor-id="dual-representation-of-subspaces"><span class="header-section-number">3.5.5</span> DUAL REPRESENTATION OF SUBSPACES</h3>
+<ul>
+<li><p>A representação <span class="hl">OPNS</span> (<strong>outer product null space</strong>, também chamada de representação <span class="hl">direta</span>) é aquela em que um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span> representa o conjunto de todos os vetores <span class="math inline">\(\mathbf{x}\)</span> que satisfazem</p>
+<p><span class="math display">\[
+\mathbf{x} \wedge \mathbf{A} = 0
+\]</span></p></li>
+<li><p>A representação <span class="hl">IPNS</span> (<strong>inner product null space</strong>, também chamada de representação <span class="hl">dual</span>) é aquela em que um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span> representa o conjunto de todos os vetores <span class="math inline">\(\mathbf{x}\)</span> que satisfazem</p>
+<p><span class="math display">\[
+\mathbf{x} \rfloor\mathbf{A} = 0
+\]</span></p></li>
+<li><p>O <em>blade</em> <span class="math inline">\(\mathbf{A}^{*}\)</span> representa diretamente (OPNS) o complemento ortogonal da representação dual (IPNS) de <span class="math inline">\(\mathbf{A}\)</span>.</p></li>
+<li><p>Por exemplo, em Álgebra Linear, um vetor normal <span class="math inline">\(\mathbf{n}\)</span> representa (IPNS) um plano homogêneo pela equação</p>
+<p><span class="math display">\[
+\mathbf{x} \cdot \mathbf{n} = 0
+\]</span></p></li>
+</ul>
 </section>
 </section>
 <section id="orthogonal-projection-of-subspaces" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="orthogonal-projection-of-subspaces"><span class="header-section-number">3.6</span> ORTHOGONAL PROJECTION OF SUBSPACES</h2>
+<ul>
+<li><p>Com a contração e o inverso, podemos computar a projeção ortogonal de um <em>blade</em> sobre outro.</p></li>
+<li><p>Para projetar um <em>blade</em> <span class="math inline">\(\mathbf{X}\)</span> sobre um <em>blade</em> <span class="math inline">\(\mathbf{B}\)</span>, supondo que <span class="math inline">\(\mathbf{B}^{-1}\)</span> existe, fazemos</p>
+<p><span class="math display">\[
+\textsf{P}_{\mathbf{B}}[\mathbf{X}] = (\mathbf{X} \rfloor\mathbf{B}) \rfloor\mathbf{B}^{-1}
+\]</span></p></li>
+<li><p>A primeira contração constrói o complemento ortogonal de <span class="math inline">\(\mathbf{X}\)</span> em <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
+<li><p>Esse complemento ortogonal tamém é perpendicular à projeção procurada.</p></li>
+<li><p>A segunda contração (uma espécie de dual no contexto de <span class="math inline">\(\mathbf{B}\)</span>) rotaciona o complemento ortogonal de forma a fazê-lo coincidir com a projeção.</p></li>
+<li><p>A <a href="#fig-proj-dorst">Figura&nbsp;<span>3.7</span></a> mostra um vetor <span class="math inline">\(\mathbf{v}\)</span> sendo projetado sobre um <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{B}\)</span>.</p>
+<div id="fig-proj-dorst" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/projecao-dorst.png" class="img-fluid figure-img" style="width:60.0%" alt="projeção"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.7: Projeção de um vetor sobre um <span class="math inline">\(2\)</span>-<em>blade</em></figcaption>
+</figure>
+</div></li>
+<li><p>Podemos verificar que a projeção é idempotente, como deveria ser:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \textsf{P}_{\mathbf{B}}[\textsf{P}_{\mathbf{B}}[\mathbf{X}]]
+  &amp;= \textsf{P}_{\mathbf{B}}[(\mathbf{X} \rfloor\mathbf{B}) \rfloor\mathbf{B}^{-1}] \\
+  &amp;= \Bigl(
+      \bigl(
+      (\mathbf{X} \rfloor\mathbf{B}) \rfloor\mathbf{B}^{-1}
+      \bigr)
+      \rfloor\mathbf{B}
+     \Bigr)
+    \rfloor\mathbf{B}^{-1} \\
+  &amp;= \Bigl(
+      \bigl(
+      \mathbf{X} \wedge (\mathbf{B} \rfloor\mathbf{B}^{-1})
+      \bigr)
+      \rfloor\mathbf{B}
+     \Bigr)
+    \rfloor\mathbf{B}^{-1} \\
+  &amp;= \bigl(
+      (\mathbf{X} \wedge 1)
+      \rfloor\mathbf{B}
+      \bigr)
+    \rfloor\mathbf{B}^{-1} \\
+  &amp;= (\mathbf{X} \rfloor\mathbf{B}) \rfloor\mathbf{B}^{-1} \\
+  &amp;= \textsf{P}_{\mathbf{B}}[\mathbf{X}]
+\end{aligned}
+\]</span></p></li>
+<li><p>A projeção também pode ser definida como</p>
+<p><span class="math display">\[
+\textsf{P}_{\mathbf{B}}[\mathbf{X}] = (\mathbf{X} \rfloor\mathbf{B}^{-1}) \rfloor\mathbf{B}
+\]</span></p>
+<p>mas, em métricas degeneradas, a definição original e esta podem não coincidir.</p></li>
+</ul>
 </section>
 <section id="the-3-d-cross-product" class="level2" data-number="3.7">
 <h2 data-number="3.7" class="anchored" data-anchor-id="the-3-d-cross-product"><span class="header-section-number">3.7</span> THE 3-D CROSS PRODUCT</h2>
 <section id="uses-of-the-cross-product" class="level3" data-number="3.7.1">
 <h3 data-number="3.7.1" class="anchored" data-anchor-id="uses-of-the-cross-product"><span class="header-section-number">3.7.1</span> USES OF THE CROSS PRODUCT</h3>
+<ul>
+<li><p>Em <span class="math inline">\(\mathbb{R}^3\)</span>, o produto vetorial é usado para construir vetores normais a um plano, para calcular velocidades angulares e para construir retas que são interseções de dois planos.</p></li>
+<li><p>Vamos usar o produto exterior e a contração para generalizar estes usos do produto vetorial para todas as dimensões.</p></li>
+</ul>
 </section>
 <section id="the-cross-product-incorporated" class="level3" data-number="3.7.2">
 <h3 data-number="3.7.2" class="anchored" data-anchor-id="the-cross-product-incorporated"><span class="header-section-number">3.7.2</span> THE CROSS PRODUCT INCORPORATED</h3>
+<ul>
+<li><p>Para calcular um vetor normal a um plano:</p>
+<ul>
+<li><p>O plano é definido pelo <em>blade</em> <span class="math inline">\(\mathbf{a} \wedge \mathbf{b}\)</span>.</p></li>
+<li><p>O complemento ortogonal deste plano com relação ao pseudoescalar <span class="math inline">\(\mathbf{I}_n\)</span> é</p>
+<p><span class="math display">\[
+(\mathbf{a} \wedge \mathbf{b})^{*} =
+(\mathbf{a} \wedge \mathbf{b}) \rfloor\mathbf{I}_n^{-1}
+\]</span></p></li>
+</ul></li>
+<li><p>Em <span class="math inline">\(\mathbb{R}^3\)</span>, o inverso do pseudoescalar, <span class="math inline">\(\mathbf{I}_3^{-1}\)</span>, é igual a <span class="math inline">\(-\mathbf{I}_3\)</span>. O vetor normal a um plano <span class="math inline">\(\mathbf{a} \wedge \mathbf{b}\)</span> é</p>
+<p><span class="math display">\[
+(\mathbf{a} \wedge \mathbf{b})^{*} =
+(\mathbf{a} \wedge \mathbf{b}) \rfloor\mathbf{I}_3^{-1} =
+(\mathbf{b} \wedge \mathbf{a}) \rfloor\mathbf{I}_3 =
+\mathbf{a} \times \mathbf{b}
+\]</span></p></li>
+<li><p>Vamos tratar a interseção de dois planos em <span class="math inline">\(\mathbb{R}^3\)</span>:</p>
+<ul>
+<li><p>Um plano é representado pelo <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{A}\)</span>. Vamos trabalhar com seu vetor normal <span class="math inline">\(\mathbf{a}\)</span>:</p>
+<p><span class="math display">\[
+\mathbf{a} = \mathbf{A}^{*} = \mathbf{A} \rfloor\mathbf{I}^{-1}
+\]</span></p></li>
+<li><p>O outro plano é representado pelo <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{B}\)</span>. Vamos trabalhar com seu vetor normal <span class="math inline">\(\mathbf{b}\)</span>:</p>
+<p><span class="math display">\[
+\mathbf{b} = \mathbf{B}^{*} = \mathbf{B} \rfloor\mathbf{I}^{-1}
+\]</span></p></li>
+<li><p>Para calcular a reta correspondente à interseção dos dois planos, vamos escrever</p>
+<p><span class="math display">\[
+\mathbf{a} \wedge \mathbf{b} = \mathbf{A} \rfloor\mathbf{I}^{-1} \,\wedge\,
+\mathbf{B} \rfloor\mathbf{I}^{-1}
+\]</span></p></li>
+<li><p>Agora podemos desenvolver:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \mathbf{a} \times \mathbf{b}
+  &amp;= (\mathbf{a} \wedge \mathbf{b})^{*} \\
+  &amp;= (\mathbf{A} \rfloor\mathbf{I}^{-1} \,\wedge\,
+    \mathbf{B} \rfloor\mathbf{I}^{-1})^{*} \\
+  &amp;= (\mathbf{A} \rfloor\mathbf{I}^{-1} \,\wedge\,
+    \mathbf{B} \rfloor\mathbf{I}^{-1}) \rfloor\mathbf{I}^{-1} \\
+  &amp;= (\mathbf{B} \rfloor\mathbf{I}^{-1} \,\wedge\,
+    \mathbf{A} \rfloor\mathbf{I}^{-1}) \rfloor\mathbf{I} \\
+  &amp;= (\mathbf{B} \rfloor\mathbf{I}^{-1}) \rfloor
+    \bigl( (\mathbf{A} \rfloor\mathbf{I}^{-1}) \rfloor\mathbf{I} \bigr) \\
+  &amp;= (\mathbf{B} \rfloor\mathbf{I}^{-1}) \rfloor\mathbf{A} &amp; (*)\\
+  &amp;= (\mathbf{B}^{*}) \rfloor\mathbf{A}
+\end{aligned}
+\]</span></p>
+<p>Na linha <span class="math inline">\((*)\)</span>, usamos a <a href="#desdualizacao">definição de desdualização</a>:</p>
+<p><span class="math display">\[
+(\mathbf{A} \rfloor\mathbf{I}^{-1}) \rfloor\mathbf{I} =
+(\mathbf{A} \rfloor\mathbf{I}^{-1})^{-*} = \mathbf{A}
+\]</span></p></li>
+<li><p>Mais adiante, vamos ver que <span class="math inline">\((\mathbf{B}^{*}) \rfloor\mathbf{A}\)</span> é o <em>meet</em> de <span class="math inline">\(\mathbf{B}\)</span> com <span class="math inline">\(\mathbf{A}\)</span>, e é a maneira de representar a incidência de subespaços.</p></li>
+</ul></li>
+</ul>
 </section>
 </section>
 <section id="application-reciprocal-frames" class="level2" data-number="3.8">

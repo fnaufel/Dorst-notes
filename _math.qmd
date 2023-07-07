@@ -13,4 +13,5 @@
 \providecommand{\inv}[1]{#1^{-1}}             % inverso
 \providecommand{\dual}[1]{#1^{*}}             % dual
 \providecommand{\undual}[1]{#1^{-*}}          % undual
+\providecommand{\proj}[2]{\textsf{P}_{#2}[#1]}    % projeção
 :::
