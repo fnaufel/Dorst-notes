@@ -4,21 +4,21 @@
     "href": "index.html",
     "title": "Geometric Algebra for Computer Science",
     "section": "",
-    "text": "% reais % seno\n% vetor\n% vetor e_i\n% blade\n% reverso (til em cima) \\providecommand{}[1]{#1^{~}} % reverso (til à direita) % contração à esq % contração à dir % grau\n% inverso\n% dual\n% undual\n\n\nApresentação\nAnotações sobre Dorst, Fontijne, e Mann (2007).\n\n\n\n\nDorst, Leo, Daniel Fontijne, e Stephen Mann. 2007. Geometric Algebra for Computer Science: an Object-oriented Approach to Geometry. The Morgan Kaufmann Series em Computer Graphics. Morgan Kaufmann. https://geometricalgebra.org/."
+    "text": "% reais % seno\n% vetor\n% vetor e_i\n% blade\n% reverso (til em cima) \\providecommand{}[1]{#1^{~}} % reverso (til à direita) % contração à esq % contração à dir % grau\n% inverso\n% dual\n% undual\n% projeção\n\n\nApresentação\nAnotações sobre Dorst, Fontijne, e Mann (2007).\n\n\n\n\nDorst, Leo, Daniel Fontijne, e Stephen Mann. 2007. Geometric Algebra for Computer Science: an Object-oriented Approach to Geometry. The Morgan Kaufmann Series em Computer Graphics. Morgan Kaufmann. https://geometricalgebra.org/."
   },
   {
     "objectID": "01.html",
     "href": "01.html",
     "title": "1  WHY GEOMETRIC ALGEBRA?",
     "section": "",
-    "text": "% reais % seno\n% vetor\n% vetor e_i\n% blade\n% reverso (til em cima) \\providecommand{}[1]{#1^{~}} % reverso (til à direita) % contração à esq % contração à dir % grau\n% inverso\n% dual\n% undual\n\n???"
+    "text": "% reais % seno\n% vetor\n% vetor e_i\n% blade\n% reverso (til em cima) \\providecommand{}[1]{#1^{~}} % reverso (til à direita) % contração à esq % contração à dir % grau\n% inverso\n% dual\n% undual\n% projeção\n\n???"
   },
   {
     "objectID": "02.html",
     "href": "02.html",
     "title": "2  SPANNING ORIENTED SUBSPACES",
     "section": "",
-    "text": "% reais % seno\n% vetor\n% vetor e_i\n% blade\n% reverso (til em cima) \\providecommand{}[1]{#1^{~}} % reverso (til à direita) % contração à esq % contração à dir % grau\n% inverso\n% dual\n% undual\n\n???"
+    "text": "% reais % seno\n% vetor\n% vetor e_i\n% blade\n% reverso (til em cima) \\providecommand{}[1]{#1^{~}} % reverso (til à direita) % contração à esq % contração à dir % grau\n% inverso\n% dual\n% undual\n% projeção\n\n???"
   },
   {
     "objectID": "03.html#resumo",
@@ -81,14 +81,14 @@
     "href": "03.html#application-reciprocal-frames",
     "title": "3  METRIC PRODUCTS OF SUBSPACES",
     "section": "3.8 APPLICATION: RECIPROCAL FRAMES",
-    "text": "3.8 APPLICATION: RECIPROCAL FRAMES"
+    "text": "3.8 APPLICATION: RECIPROCAL FRAMES\n\nConsidere uma base de \\(\\mathbb{R}^n\\) formada pelos vetores \\(\\{\\mathbf{b}_i\\}_{i=1}^n\\).\nQualquer vetor \\(\\mathbf{x}\\) pode ser expresso como\n\\[\n\\mathbf{x} = \\sum_{i=1}^n x_i\\mathbf{b}_i,\\quad x_i \\in \\mathbb{R}\n\\]\nSe a base for ortonormal, cada \\(x_i\\) é simplesmente \\(\\mathbf{x} \\cdot \\mathbf{b}_i\\).\nSe a base não for ortonormal, podemos achar uma base recíproca \\(\\{\\mathbf{b}^i\\}_{i=1}^n\\), tal que as coordenadas de \\(\\mathbf{x}\\) podem ser escritas como\n\\[\nx^i = \\mathbf{x} \\cdot \\mathbf{b}^i\n\\]\nObserve que os vetores da base recíproca são indexados com superescritos em vez de subscritos (\\(\\mathbf{b}^i\\) em vez de \\(\\mathbf{b}_i\\)).\nPara construir a base recíproca para \\(\\mathbb{R}^n\\) a partir de uma base \\(\\{\\mathbf{b}_i\\}_{i=1}^n\\), considerando o pseudoescalar \\(\\mathbf{I} = \\mathbf{b}_1 \\wedge \\mathbf{b}_2 \\wedge \\cdots \\wedge \\mathbf{b}_n\\), definimos, para cada \\(\\mathbf{b}_i\\), o vetor recíproco \\(\\mathbf{b}^i\\) como\n\\[\n\\mathbf{b}^i = (-1)^{i-1} \\Biggl(\\bigwedge_{j \\neq i} \\mathbf{b}_j \\Biggr) \\rfloor\\mathbf{I}_n^{-1}\n\\]\nCada \\(\\mathbf{b}^i\\) é o dual do \\((n-1)\\)-blade definido por todos os outros vetores da base original (i.e., exceto \\(\\mathbf{b}_i\\)).\nAs duas bases (a original e a recíproca) são mutuamente ortonormais:\n\\[\n\\mathbf{b}_i \\cdot \\mathbf{b}^j =\n\\begin{cases}\n  0 & \\text{se } i = j \\\\\n  1 & \\text{se } i \\neq j\n\\end{cases}\n\\]\nAo trabalhar com uma base não-ortonormal, vamos escrever as coordenadas com superescritos em vez de subscritos. Assim,\n\\[\n\\mathbf{x} = \\sum_{i=1}^n x^i\\mathbf{b}_i,\\quad x^i \\in \\mathbb{R}\n\\]\nMostrando que \\(x^i = \\mathbf{x} \\cdot \\mathbf{b}^i\\):\n\\[\n\\begin{aligned}\n  \\mathbf{x} \\cdot \\mathbf{b}^i\n  &= \\Biggl(\\sum_{j=1}^n x^j\\mathbf{b}_j \\Biggr) \\cdot \\mathbf{b}^i \\\\\n  &= \\sum_{j=1}^n (x^j\\mathbf{b}_j \\cdot \\mathbf{b}^i) \\\\\n  &= x^i \\mathbf{b}_i \\cdot \\mathbf{b}^i \\\\\n  &= x^i\n\\end{aligned}\n\\]\nNuma base ortonormal, cada vetor \\(\\mathbf{b}_i\\) tem a mesma magnitude e direção que seu recíproco \\(\\mathbf{b}^i\\). Na métrica euclidiana, o mesmo sentido também.\nEm Álgebra Linear, a base recíproca é construída usando determinantes (como?)."
   },
   {
     "objectID": "03.html#further-reading",
     "href": "03.html#further-reading",
     "title": "3  METRIC PRODUCTS OF SUBSPACES",
     "section": "3.9 FURTHER READING",
-    "text": "3.9 FURTHER READING"
+    "text": "3.9 FURTHER READING\n\nDorst (2002)."
   },
   {
     "objectID": "03.html#exercises",
@@ -102,13 +102,13 @@
     "href": "03.html#programming-examples-and-exercises",
     "title": "3  METRIC PRODUCTS OF SUBSPACES",
     "section": "3.11 PROGRAMMING EXAMPLES AND EXERCISES",
-    "text": "3.11 PROGRAMMING EXAMPLES AND EXERCISES\n\n3.11.1 ORTHONORMALIZATION\n\n\n3.11.2 EXERCISE: IMPLEMENTING THE CROSS PRODUCT\n\n\n3.11.3 RECIPROCAL FRAMES\n\n\n3.11.4 COLOR SPACE CONVERSION"
+    "text": "3.11 PROGRAMMING EXAMPLES AND EXERCISES\n\n3.11.1 ORTHONORMALIZATION\n\n\n3.11.2 EXERCISE: IMPLEMENTING THE CROSS PRODUCT\n\n\n3.11.3 RECIPROCAL FRAMES\n\n\n3.11.4 COLOR SPACE CONVERSION\n\n\n\n\nDorst, Leo. 2002. «The Inner Products of Geometric Algebra». Em Applications of Geometric Algebra in Computer Science and Engineering, editado por Leo Dorst, Chris Doran, e Joan Lasenby, 35–46. https://doi.org/10.1007/978-1-4612-0089-5_2."
   },
   {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referências",
     "section": "",
-    "text": "Dorst, Leo, Daniel Fontijne, and Stephen Mann. 2007. Geometric\nAlgebra for Computer Science: An Object-Oriented Approach to\nGeometry. The Morgan Kaufmann Series in Computer Graphics. Morgan\nKaufmann. https://geometricalgebra.org/."
+    "text": "Dorst, Leo. 2002. “The Inner Products of Geometric\nAlgebra.” In Applications of Geometric Algebra in Computer\nScience and Engineering, edited by Leo Dorst, Chris Doran, and Joan\nLasenby, 35–46. https://doi.org/10.1007/978-1-4612-0089-5_2.\n\n\nDorst, Leo, Daniel Fontijne, and Stephen Mann. 2007. Geometric\nAlgebra for Computer Science: An Object-Oriented Approach to\nGeometry. The Morgan Kaufmann Series in Computer Graphics. Morgan\nKaufmann. https://geometricalgebra.org/."
   }
 ]

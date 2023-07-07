@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -1004,9 +1023,54 @@ Completar as provas
 </section>
 <section id="application-reciprocal-frames" class="level2" data-number="3.8">
 <h2 data-number="3.8" class="anchored" data-anchor-id="application-reciprocal-frames"><span class="header-section-number">3.8</span> APPLICATION: RECIPROCAL FRAMES</h2>
+<ul>
+<li><p>Considere uma base de <span class="math inline">\(\mathbb{R}^n\)</span> formada pelos vetores <span class="math inline">\(\{\mathbf{b}_i\}_{i=1}^n\)</span>.</p></li>
+<li><p>Qualquer vetor <span class="math inline">\(\mathbf{x}\)</span> pode ser expresso como</p>
+<p><span class="math display">\[
+\mathbf{x} = \sum_{i=1}^n x_i\mathbf{b}_i,\quad x_i \in \mathbb{R}
+\]</span></p></li>
+<li><p>Se a base for ortonormal, cada <span class="math inline">\(x_i\)</span> é simplesmente <span class="math inline">\(\mathbf{x} \cdot \mathbf{b}_i\)</span>.</p></li>
+<li><p>Se a base <span class="hl">não for ortonormal</span>, podemos achar uma <span class="hl">base recíproca</span> <span class="math inline">\(\{\mathbf{b}^i\}_{i=1}^n\)</span>, tal que as coordenadas de <span class="math inline">\(\mathbf{x}\)</span> podem ser escritas como</p>
+<p><span class="math display">\[
+x^i = \mathbf{x} \cdot \mathbf{b}^i
+\]</span></p></li>
+<li><p>Observe que os vetores da base recíproca são indexados com superescritos em vez de subscritos (<span class="math inline">\(\mathbf{b}^i\)</span> em vez de <span class="math inline">\(\mathbf{b}_i\)</span>).</p></li>
+<li><p>Para construir a base recíproca para <span class="math inline">\(\mathbb{R}^n\)</span> a partir de uma base <span class="math inline">\(\{\mathbf{b}_i\}_{i=1}^n\)</span>, considerando o pseudoescalar <span class="math inline">\(\mathbf{I} = \mathbf{b}_1 \wedge \mathbf{b}_2 \wedge \cdots \wedge \mathbf{b}_n\)</span>, definimos, para cada <span class="math inline">\(\mathbf{b}_i\)</span>, o vetor recíproco <span class="math inline">\(\mathbf{b}^i\)</span> como</p>
+<p><span class="math display">\[
+\mathbf{b}^i = (-1)^{i-1} \Biggl(\bigwedge_{j \neq i} \mathbf{b}_j \Biggr) \rfloor\mathbf{I}_n^{-1}
+\]</span></p></li>
+<li><p>Cada <span class="math inline">\(\mathbf{b}^i\)</span> é o dual do <span class="math inline">\((n-1)\)</span>-<em>blade</em> definido por todos os outros vetores da base original (i.e., exceto <span class="math inline">\(\mathbf{b}_i\)</span>).</p></li>
+<li><p>As duas bases (a original e a recíproca) são mutuamente ortonormais:</p>
+<p><span class="math display">\[
+\mathbf{b}_i \cdot \mathbf{b}^j =
+\begin{cases}
+  0 &amp; \text{se } i = j \\
+  1 &amp; \text{se } i \neq j
+\end{cases}
+\]</span></p></li>
+<li><p>Ao trabalhar com uma base não-ortonormal, vamos escrever as coordenadas com superescritos em vez de subscritos. Assim,</p>
+<p><span class="math display">\[
+\mathbf{x} = \sum_{i=1}^n x^i\mathbf{b}_i,\quad x^i \in \mathbb{R}
+\]</span></p></li>
+<li><p>Mostrando que <span class="math inline">\(x^i = \mathbf{x} \cdot \mathbf{b}^i\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \mathbf{x} \cdot \mathbf{b}^i
+  &amp;= \Biggl(\sum_{j=1}^n x^j\mathbf{b}_j \Biggr) \cdot \mathbf{b}^i \\
+  &amp;= \sum_{j=1}^n (x^j\mathbf{b}_j \cdot \mathbf{b}^i) \\
+  &amp;= x^i \mathbf{b}_i \cdot \mathbf{b}^i \\
+  &amp;= x^i
+\end{aligned}
+\]</span></p></li>
+<li><p>Numa base ortonormal, cada vetor <span class="math inline">\(\mathbf{b}_i\)</span> tem a mesma magnitude e direção que seu recíproco <span class="math inline">\(\mathbf{b}^i\)</span>. Na métrica euclidiana, o mesmo sentido também.</p></li>
+<li><p>Em Álgebra Linear, a base recíproca é construída usando determinantes (como?).</p></li>
+</ul>
 </section>
 <section id="further-reading" class="level2" data-number="3.9">
 <h2 data-number="3.9" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">3.9</span> FURTHER READING</h2>
+<ul>
+<li><span class="citation" data-cites="dorst02:_inner_produc_geomet_algeb">Dorst (<a href="references.html#ref-dorst02:_inner_produc_geomet_algeb" role="doc-biblioref">2002</a>)</span>.</li>
+</ul>
 </section>
 <section id="exercises" class="level2" data-number="3.10">
 <h2 data-number="3.10" class="anchored" data-anchor-id="exercises"><span class="header-section-number">3.10</span> EXERCISES</h2>
@@ -1026,6 +1090,11 @@ Completar as provas
 <h3 data-number="3.11.4" class="anchored" data-anchor-id="color-space-conversion"><span class="header-section-number">3.11.4</span> COLOR SPACE CONVERSION</h3>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-dorst02:_inner_produc_geomet_algeb" class="csl-entry" role="listitem">
+Dorst, Leo. 2002. <span>«The Inner Products of Geometric Algebra»</span>. Em <em>Applications of Geometric Algebra in Computer Science and Engineering</em>, editado por Leo Dorst, Chris Doran, e Joan Lasenby, 35–46. <a href="https://doi.org/10.1007/978-1-4612-0089-5_2">https://doi.org/10.1007/978-1-4612-0089-5_2</a>.
+</div>
+</div>
 </section>
 </section>
 

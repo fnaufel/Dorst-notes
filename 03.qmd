@@ -857,7 +857,69 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
 
 ## APPLICATION: RECIPROCAL FRAMES
 
+* Considere uma base de $\reais^n$ formada pelos vetores $\{\vet b_i\}_{i=1}^n$.
+
+* Qualquer vetor $\vet x$ pode ser expresso como
+
+  $$
+  \vet x = \sum_{i=1}^n x_i\vet b_i,\quad x_i \in \reais
+  $$
+
+* Se a base for ortonormal, cada $x_i$ é simplesmente $\vet x \cdot \vet b_i$.
+
+* Se a base [não for ortonormal]{.hl}, podemos achar uma [base recíproca]{.hl} $\{\vet b^i\}_{i=1}^n$, tal que as coordenadas de $\vet x$ podem ser escritas como
+
+  $$
+  x^i = \vet x \cdot \vet b^i
+  $$
+
+* Observe que os vetores da base recíproca são indexados com superescritos em vez de subscritos ($\vet b^i$ em vez de $\vet b_i$).
+
+* Para construir a base recíproca para $\reais^n$ a partir de uma base $\{\vet b_i\}_{i=1}^n$, considerando o pseudoescalar $\bl I = \vet b_1 \wedge \vet b_2 \wedge \cdots \wedge \vet b_n$, definimos, para cada $\vet b_i$, o vetor recíproco $\vet b^i$ como
+
+  $$
+  \vet b^i = (-1)^{i-1} \Biggl(\bigwedge_{j \neq i} \vet b_j \Biggr) \lc \inv{\bl I_n}
+  $$
+
+* Cada $\vet b^i$ é o dual do $(n-1)$-*blade* definido por todos os outros vetores da base original (i.e., exceto $\vet b_i$).
+
+* As duas bases (a original e a recíproca) são mutuamente ortonormais:
+
+  $$
+  \vet b_i \cdot \vet b^j = 
+  \begin{cases}
+    0 & \text{se } i = j \\
+    1 & \text{se } i \neq j
+  \end{cases}
+  $$
+
+* Ao trabalhar com uma base não-ortonormal, vamos escrever as coordenadas com superescritos em vez de subscritos. Assim, 
+
+  $$
+  \vet x = \sum_{i=1}^n x^i\vet b_i,\quad x^i \in \reais
+  $$
+
+* Mostrando que $x^i = \vet x \cdot \vet b^i$:
+
+  $$
+  \begin{aligned}
+    \vet x \cdot \vet b^i 
+    &= \Biggl(\sum_{j=1}^n x^j\vet b_j \Biggr) \cdot \vet b^i \\
+    &= \sum_{j=1}^n (x^j\vet b_j \cdot \vet b^i) \\
+    &= x^i \vet b_i \cdot \vet b^i \\
+    &= x^i
+  \end{aligned}
+  $$
+
+* Numa base ortonormal, cada vetor $\vet b_i$ tem a mesma magnitude e direção que seu recíproco $\vet b^i$. Na métrica euclidiana, o mesmo sentido também.
+
+* Em Álgebra Linear, a base recíproca é construída usando determinantes (como?).
+
+
 ## FURTHER READING
+
+* @dorst02:_inner_produc_geomet_algeb.
+
 
 ## EXERCISES
 
