@@ -219,7 +219,11 @@ div.csl-indent {
   </ul></li>
   <li><a href="#application-reciprocal-frames" id="toc-application-reciprocal-frames" class="nav-link" data-scroll-target="#application-reciprocal-frames"><span class="header-section-number">3.8</span> APPLICATION: RECIPROCAL FRAMES</a></li>
   <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">3.9</span> FURTHER READING</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">3.10</span> EXERCISES</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">3.10</span> EXERCISES</a>
+  <ul class="collapse">
+  <li><a href="#drills" id="toc-drills" class="nav-link" data-scroll-target="#drills"><span class="header-section-number">3.10.1</span> DRILLS</a></li>
+  <li><a href="#structural-exercises" id="toc-structural-exercises" class="nav-link" data-scroll-target="#structural-exercises"><span class="header-section-number">3.10.2</span> STRUCTURAL EXERCISES</a></li>
+  </ul></li>
   <li><a href="#programming-examples-and-exercises" id="toc-programming-examples-and-exercises" class="nav-link" data-scroll-target="#programming-examples-and-exercises"><span class="header-section-number">3.11</span> PROGRAMMING EXAMPLES AND EXERCISES</a>
   <ul class="collapse">
   <li><a href="#orthonormalization" id="toc-orthonormalization" class="nav-link" data-scroll-target="#orthonormalization"><span class="header-section-number">3.11.1</span> ORTHONORMALIZATION</a></li>
@@ -263,7 +267,7 @@ div.csl-indent {
 </div>
 <section id="resumo" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumo">Resumo</h2>
-<p><img src="figures/inner-products-dorst.jpg" class="img-fluid"></p>
+<p><img src="figures/ch03/inner-products-dorst.jpg" class="img-fluid"></p>
 </section>
 <section id="sizing-up-subspaces" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="sizing-up-subspaces"><span class="header-section-number">3.1</span> SIZING UP SUBSPACES</h2>
@@ -287,7 +291,7 @@ div.csl-indent {
 <section id="definition-of-the-scalar-product" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="definition-of-the-scalar-product"><span class="header-section-number">3.1.2</span> DEFINITION OF THE SCALAR PRODUCT <span class="math inline">\(*\)</span></h3>
 <ul>
-<li><p>Por enquanto, vamos definir o produto interno de dois <em>blades</em> <span class="hl">de mesma graduação</span>.</p></li>
+<li><p>Por enquanto, vamos definir o produto interno de dois <em>blades</em> <span class="hl">de mesmo grau</span>.</p></li>
 <li><p>O resultado sempre vai ser um <span class="hl">escalar</span>.</p></li>
 <li><p>Generaliza o produto escalar de vetores (que, afinal, são 1-<em>blades</em>).</p></li>
 </ul>
@@ -311,7 +315,7 @@ Definição: produto interno de dois <span class="math inline">\(k\)</span>-<em>
 <p>O produto escalar <span class="math inline">\(\mathbf{A} * \mathbf{B}\)</span> é definido como</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/produto-escalar-k-blades.png" class="img-fluid figure-img"></p>
+<p><img src="figures/ch03/produto-escalar-k-blades.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -320,7 +324,7 @@ Definição: produto interno de dois <span class="math inline">\(k\)</span>-<em>
 <li><p>Exemplo:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/exemplo-prod-blades.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="figures/ch03/exemplo-prod-blades.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
 </figure>
 </div></li>
 </ul>
@@ -331,7 +335,7 @@ Definição: produto interno de dois <span class="math inline">\(k\)</span>-<em>
 <li><p>A <span class="hl">norma</span> de um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span> usa o produto escalar entre <span class="math inline">\(\mathbf{A}\)</span> e seu <span class="hl">reverso</span> <span class="math inline">\(\widetilde{\mathbf{A}}\)</span>:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/exemplo-norma-blade.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="figures/ch03/exemplo-norma-blade.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
 </figure>
 </div></li>
 <li><p>Parecido com o que acontece com números complexos, onde o quadrado da norma é o produto entre o número complexo <span class="hl">e seu conjugado</span>:</p>
@@ -350,18 +354,18 @@ z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
 <li><p>De novo, temos a semelhança com números complexos, onde o produto <span class="math inline">\(z_1 \cdot \overline{z_2}\)</span>, tais que o argumento de <span class="math inline">\(z_1\)</span> é <span class="math inline">\(\alpha\)</span> e o argumento de <span class="math inline">\(z_2\)</span> é <span class="math inline">\(\beta\)</span>, resulta em um número complexo <span class="math inline">\(z_3\)</span> cujo argumento é <span class="math inline">\(\alpha - \beta\)</span>:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/angulo-entre-complexos.jpg" class="img-fluid figure-img"></p>
+<p><img src="figures/ch03/angulo-entre-complexos.jpg" class="img-fluid figure-img"></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/angulo-entre-complexos.svg" class="img-fluid figure-img"></p>
+<p><img src="figures/ch03/angulo-entre-complexos.svg" class="img-fluid figure-img"></p>
 </figure>
 </div></li>
 <li><p>Em <span class="math inline">\(\mathbb{R}^2\)</span>, no geral, para dois 2-<em>blades</em> <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span>, temos que <span class="math inline">\(\mathbf{A} * \widetilde{\mathbf{B}} = ||\mathbf{A}||\,||\mathbf{B}||\)</span>, e o ângulo é sempre zero:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/prod-escalar-blades-r2-geral.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="figures/ch03/prod-escalar-blades-r2-geral.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
 </figure>
 </div></li>
 <li><p>Em <span class="math inline">\(\mathbb{R}^3\)</span>:</p>
@@ -376,13 +380,13 @@ z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
 <li><p>Situação atual:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/angulo-entre-blades-fig-dorst.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="figures/ch03/angulo-entre-blades-fig-dorst.png" class="img-fluid figure-img" style="width:60.0%"></p>
 </figure>
 </div></li>
 <li><p>Daí,</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/derivacao-angulo-dois-blades-r3.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<p><img src="figures/ch03/derivacao-angulo-dois-blades-r3.png" class="img-fluid figure-img" style="width:40.0%"></p>
 </figure>
 </div></li>
 </ul></li>
@@ -405,7 +409,7 @@ z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/exemplo-dorst-p-70.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="figures/ch03/exemplo-dorst-p-70.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <ul>
@@ -487,57 +491,57 @@ Rotações em planos, não em torno de eixos
 <li><p>Um primeiro exemplo:</p>
 <ul>
 <li><p><span class="math inline">\(\mathbf{B}\)</span> é um <span class="math inline">\(2\)</span>-<em>blade</em>;</p></li>
-<li><p><span class="math inline">\(\mathbf{a}\)</span> é um vetor no mesmo plano que <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathbf{a}\)</span> é um vetor <span class="hl">no mesmo plano</span> que <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
 <li><p>A contração de <span class="math inline">\(\mathbf{a}\)</span> sobre <span class="math inline">\(\mathbf{B}\)</span>, escrita como <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span>, é o vetor em vermelho na <a href="#fig-contr-vetor">Figura&nbsp;<span>3.1</span></a>.</p>
 <div id="fig-contr-vetor" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/contr_vetor_blade.png" class="img-fluid figure-img" style="width:50.0%" alt="Contração."></p>
+<p><img src="figures/ch03/contr_vetor_blade.png" class="img-fluid figure-img" style="width:50.0%" alt="Contração."></p>
 <figcaption class="figure-caption">Figura&nbsp;3.1: Contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span></figcaption>
 </figure>
 </div></li>
 <li><p>Imagine que o vetor <span class="math inline">\(\mathbf{a}\)</span> foi “contraído”, levando consigo, nesta contração, a dimensão de <span class="math inline">\(\mathbf{B}\)</span> correspondente à direção de <span class="math inline">\(\mathbf{a}\)</span>.</p></li>
-<li><p>O resultado é um vetor ortogonal a <span class="math inline">\(\mathbf{a}\)</span>, contido no plano de <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
+<li><p><span class="hl">O resultado é um vetor ortogonal a <span class="math inline">\(\mathbf{a}\)</span>, contido no plano de <span class="math inline">\(\mathbf{B}\)</span></span>.</p></li>
 <li><p>Informalmente, <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span> é o que resta em <span class="math inline">\(\mathbf{B}\)</span> depois que <span class="math inline">\(\mathbf{a}\)</span> é retirado.</p></li>
 <li><p>Em breve, vamos ver como calcular a magnitude de <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span>.</p></li>
 </ul></li>
-<li><p>Outro exemplo, onde agora <span class="math inline">\(\mathbf{a}\)</span> não está no plano de <span class="math inline">\(\mathbf{B}\)</span>:</p>
+<li><p>Outro exemplo, onde agora <span class="math inline">\(\mathbf{a}\)</span> <span class="hl">não está no plano de <span class="math inline">\(\mathbf{B}\)</span></span>:</p>
 <ul>
 <li><p>A <a href="#fig-contr-vetor-2">Figura&nbsp;<span>3.2</span></a> mostra a situação.</p>
 <div id="fig-contr-vetor-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/contr_vector_blade2.png" class="img-fluid figure-img" style="width:50.0%" alt="contração de vetor sobre blade"></p>
+<p><img src="figures/ch03/contr_vector_blade2.png" class="img-fluid figure-img" style="width:50.0%" alt="contração de vetor sobre blade"></p>
 <figcaption class="figure-caption">Figura&nbsp;3.2: Contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span></figcaption>
 </figure>
 </div></li>
 <li><p>O resultado continua sendo um vetor ortogonal a <span class="math inline">\(\mathbf{a}\)</span>, contido no plano de <span class="math inline">\(\mathbf{B}\)</span>, mas sua magnitude é menor do que na <a href="#fig-contr-vetor">Figura&nbsp;<span>3.1</span></a>.</p></li>
-<li><p>Vamos ver, em breve, que apenas a componente de <span class="math inline">\(\mathbf{a}\)</span> paralela a <span class="math inline">\(\mathbf{B}\)</span> — i.e., a projeção de <span class="math inline">\(\mathbf{a}\)</span> sobre o plano de <span class="math inline">\(\mathbf{B}\)</span> — é levada em consideração no cálculo da contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span>. Isto condiz com a idéia de produto interno, cujo valor aumenta à medida que o ângulo <span class="math inline">\(\theta\)</span> (com <span class="math inline">\(0 \leq \theta \leq \pi/2\)</span>) entre dois objetos aumenta.</p></li>
-<li><p>No caso extremo, se <span class="math inline">\(\mathbf{a}\)</span> for ortogonal a <span class="math inline">\(\mathbf{B}\)</span>, a contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span> será nula, como mostra a <a href="#fig-contr-nula">Figura&nbsp;<span>3.3</span></a>. De novo, é o esperado, uma vez que o produto interno deve ser nulo quando os objetos são ortogonais.</p>
+<li><p>Vamos ver, em breve, que <span class="hl">apenas a componente de <span class="math inline">\(\mathbf{a}\)</span> paralela a <span class="math inline">\(\mathbf{B}\)</span></span> — i.e., a projeção de <span class="math inline">\(\mathbf{a}\)</span> sobre o plano de <span class="math inline">\(\mathbf{B}\)</span> — <span class="hl">é levada em consideração no cálculo da contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span></span>. Isto condiz com a idéia de produto interno, cujo valor aumenta à medida que o ângulo <span class="math inline">\(\theta\)</span> (com <span class="math inline">\(0 \leq \theta \leq \pi/2\)</span>) entre dois objetos aumenta.</p></li>
+<li><p>No caso extremo, <span class="hl">se <span class="math inline">\(\mathbf{a}\)</span> for ortogonal a <span class="math inline">\(\mathbf{B}\)</span>, a contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span> será nula</span>, como mostra a <a href="#fig-contr-nula">Figura&nbsp;<span>3.3</span></a>. De novo, é o esperado, uma vez que o produto interno deve ser nulo quando os objetos são ortogonais.</p>
 <div id="fig-contr-nula" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/contr-nula.png" class="img-fluid figure-img" style="width:50.0%" alt="contração de vetor sobre blade"></p>
+<p><img src="figures/ch03/contr-nula.png" class="img-fluid figure-img" style="width:50.0%" alt="contração de vetor sobre blade"></p>
 <figcaption class="figure-caption">Figura&nbsp;3.3: Contração <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}= 0\)</span></figcaption>
 </figure>
 </div></li>
 </ul></li>
-<li><p>Mais um exemplo, agora em <span class="math inline">\(\mathbb{R}^3\)</span>: a <a href="#fig-2-on-3">Figura&nbsp;<span>3.4</span></a> mostra, em vermelho, o resultado da contração do <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> sobre o <span class="math inline">\(3\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{C}\)</span>.</p>
+<li><p>Mais um exemplo, <span class="hl">agora em <span class="math inline">\(\mathbb{R}^3\)</span></span>: a <a href="#fig-2-on-3">Figura&nbsp;<span>3.4</span></a> mostra, em vermelho, o resultado da contração do <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> sobre o <span class="math inline">\(3\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{C}\)</span>.</p>
 <div id="fig-2-on-3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/contr-2-blade-on-3-blade.png" class="img-fluid figure-img" style="width:60.0%" alt="contração de 2-blade sobre 3-blade"></p>
+<p><img src="figures/ch03/contr-2-blade-on-3-blade.png" class="img-fluid figure-img" style="width:60.0%" alt="contração de 2-blade sobre 3-blade"></p>
 <figcaption class="figure-caption">Figura&nbsp;3.4: Contração de <span class="math inline">\(2\)</span>-<em>blade</em> sobre <span class="math inline">\(3\)</span>-<em>blade</em></figcaption>
 </figure>
 </div></li>
 <li><p>Ainda em <span class="math inline">\(\mathbb{R}^3\)</span>, a <a href="#fig-1-on-3">Figura&nbsp;<span>3.5</span></a> mostra o resultado da contração do vetor <span class="math inline">\(\mathbf{a}\)</span> sobre o <span class="math inline">\(3\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{B}\)</span>.</p>
 <div id="fig-1-on-3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/contr-vector-on-3-blade.png" class="img-fluid figure-img" style="width:60.0%" alt="contração de vetor sobre 3-blade"></p>
+<p><img src="figures/ch03/contr-vector-on-3-blade.png" class="img-fluid figure-img" style="width:60.0%" alt="contração de vetor sobre 3-blade"></p>
 <figcaption class="figure-caption">Figura&nbsp;3.5: Contração de vetor sobre <span class="math inline">\(3\)</span>-<em>blade</em></figcaption>
 </figure>
 </div></li>
 <li><p>A partir destes exemplos, observe que</p>
 <ul>
-<li><p>O resultado da contração à esquerda sempre está contido no operando do lado direito.</p></li>
-<li><p>O resultado da contração à esquerda sempre é ortogonal ao operando do lado esquerdo.</p></li>
-<li><p>O resultado da contração à esquerda sempre tem o grau igual à diferença entre os graus dos operandos (grau do operando direito menos o grau do operando esquerdo).</p></li>
+<li><p>O resultado da contração à esquerda sempre <span class="hl">está contido</span> no operando do lado <span class="hl">direito</span>.</p></li>
+<li><p>O resultado da contração à esquerda sempre <span class="hl">é ortogonal</span> ao operando do lado <span class="hl">esquerdo</span>.</p></li>
+<li><p>O resultado da contração à esquerda sempre tem o grau igual à <span class="hl">diferença entre os graus dos operandos</span> (grau do operando direito menos o grau do operando esquerdo).</p></li>
 </ul></li>
 </ul>
 </section>
@@ -549,7 +553,7 @@ Rotações em planos, não em torno de eixos
 \rfloor: \bigwedge^k \mathbb{R}^n \,\times\, \bigwedge^l \mathbb{R}^n
 \,\to\, \bigwedge^{l-k} \mathbb{R}^n
 \]</span></p></li>
-<li><p>A contração à esquerda distribui sobre a adição e é bilinear:</p>
+<li><p>A contração à esquerda <span class="hl">distribui sobre a adição</span> e <span class="hl">é bilinear</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
   (\mathbf{A} + \mathbf{B}) &amp;= \mathbf{A} \rfloor\mathbf{C} + \mathbf{B} \rfloor\mathbf{C} \\
@@ -579,12 +583,17 @@ Rotações em planos, não em torno de eixos
 <ul>
 <li><p>A última igualdade do bloco (<a href="#eq-ultima-3"><span>3.1</span></a>) pode ser substituída por</p>
 <p><span id="eq-3-16"><span class="math display">\[
-\mathbf{x} \rfloor(\mathbf{a}_1 \wedge \mathbf{a}_2 \wedge \cdots \wedge \mathbf{a}_k)
-= \sum_{i=1}^k (-1)^{i-1}
+\begin{aligned}
+&amp;{} \mathbf{x} \rfloor(\mathbf{a}_1 \wedge \mathbf{a}_2 \wedge \cdots \wedge \mathbf{a}_k) \\
+&amp;= \sum_{i=1}^k (-1)^{i-1}
 \mathbf{a}_1 \wedge \mathbf{a}_2 \wedge \cdots \wedge
-(\mathbf{x} \rfloor\mathbf{a}_i) \wedge \cdots \wedge \mathbf{a}_k
+(\mathbf{x} \rfloor\mathbf{a}_i) \wedge \cdots \wedge \mathbf{a}_k \\
+&amp;= \sum_{i=1}^k (-1)^{i-1}
+\mathbf{a}_1 \wedge \mathbf{a}_2 \wedge \cdots \wedge
+(\mathbf{x} \cdot \mathbf{a}_i) \wedge \cdots \wedge \mathbf{a}_k
+\end{aligned}
 \tag{3.2}\]</span></span></p>
-<p>o que reduz contrações de vetores sobre <em>blades</em> em contrações de vetores sobre vetores (que resultam em escalares).</p></li>
+<p>o que reduz contrações de <span class="hl">vetores sobre <em>blades</em></span> em contrações de <span class="hl">vetores sobre vetores</span> (que resultam em <span class="hl">escalares</span>).</p></li>
 </ul>
 </section>
 </section>
@@ -594,22 +603,22 @@ Rotações em planos, não em torno de eixos
 <li><p>Muito desta seção já foi comentado nos exemplos da <a href="#sec-implicit-def-contr"><span>Seção&nbsp;3.2.1</span></a> acima:</p>
 <ol type="1">
 <li><p><span class="math inline">\(\mathbf{A} \rfloor\mathbf{B}\)</span> é um <em>blade</em> quando <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> são <em>blades</em>.</p></li>
-<li><p><span class="math inline">\(\mathbf{A} \rfloor\mathbf{B}\)</span> é um subespaço contido em <span class="math inline">\(\mathbf{B}\)</span>:</p>
+<li><p><span class="math inline">\(\mathbf{A} \rfloor\mathbf{B}\)</span> é um subespaço <span class="hl">contido em <span class="math inline">\(\mathbf{B}\)</span></span>:</p>
 <p><span class="math display">\[
 \mathbf{A} \rfloor\mathbf{B} = (\mathbf{A}' \wedge \mathbf{a}) \rfloor\mathbf{B} =
 \mathbf{A}' \rfloor(\mathbf{a} \rfloor\mathbf{B})
 \]</span></p>
 <p>O lado direito <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span> representa um subespaço contido em <span class="math inline">\(\mathbf{B}\)</span>, pois a <a href="#eq-3-16">Equação&nbsp;<span>3.2</span></a> só contém vetores de <span class="math inline">\(\mathbf{B}\)</span> no seu lado direito.</p></li>
-<li><p><span class="math inline">\(\mathbf{x} \rfloor\mathbf{A} = 0\)</span> significa que <span class="math inline">\(\mathbf{x}\)</span> é perpendicular a todos os vetores em <span class="math inline">\(\mathbf{A}\)</span>.</p>
+<li><p><span class="hl"><span class="math inline">\(\mathbf{x} \rfloor\mathbf{A} = 0\)</span></span> significa que <span class="math inline">\(\mathbf{x}\)</span> é <span class="hl">perpendicular a todos os vetores em <span class="math inline">\(\mathbf{A}\)</span></span>.</p>
 <p>De fato, a única maneira de o lado direito da <a href="#eq-3-16">Equação&nbsp;<span>3.2</span></a> ser zero é se <span class="math inline">\(\mathbf{x} \rfloor\mathbf{a}_i\)</span> for zero para todo <span class="math inline">\(i\)</span>.</p></li>
-<li><p>O resultado de <span class="math inline">\(\mathbf{A} \rfloor\mathbf{B}\)</span> é perpendicular a <span class="math inline">\(\mathbf{A}\)</span>:</p>
+<li><p>O resultado de <span class="math inline">\(\mathbf{A} \rfloor\mathbf{B}\)</span> é <span class="hl">perpendicular a <span class="math inline">\(\mathbf{A}\)</span></span>:</p>
 <ul>
 <li>Tome qualquer vetor <span class="math inline">\(\mathbf{a} \in \mathbf{A}\)</span>.</li>
 <li>Então <span class="math inline">\(\mathbf{a} \wedge \mathbf{A} = 0\)</span>.</li>
 <li>Pela definição, <span class="math inline">\(\mathbf{a} \rfloor(\mathbf{A} \rfloor\mathbf{B}) = (\mathbf{a} \wedge \mathbf{A}) \rfloor\mathbf{B} = 0\rfloor\mathbf{B} = 0\)</span>.</li>
 <li>Isto significa que <span class="math inline">\(\mathbf{a}\)</span> é perpendicular a <span class="math inline">\(\mathbf{A} \rfloor\mathbf{B}\)</span>.</li>
 </ul></li>
-<li><p>A norma de <span class="math inline">\(\mathbf{A} \rfloor\mathbf{B}\)</span> é proporcional a <span class="math inline">\(||\mathbf{A}||\)</span>, a <span class="math inline">\(||\mathbf{B}||\)</span>, e ao cosseno do ângulo entre <span class="math inline">\(\mathbf{A}\)</span> e a projeção de <span class="math inline">\(\mathbf{A}\)</span> sobre <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
+<li><p>A <span class="hl">norma</span> de <span class="math inline">\(\mathbf{A} \rfloor\mathbf{B}\)</span> é <span class="hl">proporcional</span> a <span class="hl"><span class="math inline">\(||\mathbf{A}||\)</span></span>, a <span class="hl"><span class="math inline">\(||\mathbf{B}||\)</span></span>, e ao <span class="hl">cosseno do ângulo entre <span class="math inline">\(\mathbf{A}\)</span> e a projeção</span> de <span class="math inline">\(\mathbf{A}\)</span> sobre <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
 <li><p><span class="math inline">\(\text{grau}(\mathbf{A} \rfloor\mathbf{B}) = \text{grau}(\mathbf{B}) - \text{grau}(\mathbf{A})\)</span>.</p></li>
 </ol></li>
 <li><p>Considere, por exemplo, um vetor <span class="math inline">\(\mathbf{x}\)</span> e um <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> definidos como</p>
@@ -622,7 +631,7 @@ Rotações em planos, não em torno de eixos
 <li><p>A <a href="#fig-contr-magn">Figura&nbsp;<span>3.6</span></a> mostra a situação.</p>
 <div id="fig-contr-magn" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/contr-angulo-magnitude.png" class="img-fluid figure-img" style="width:60.0%" alt="Contração mostrando projeção e magnitude"></p>
+<p><img src="figures/ch03/contr-angulo-magnitude.png" class="img-fluid figure-img" style="width:60.0%" alt="Contração mostrando projeção e magnitude"></p>
 <figcaption class="figure-caption">Figura&nbsp;3.6: Contração <span class="math inline">\(\mathbf{x}\rfloor\mathbf{B}\)</span></figcaption>
 </figure>
 </div></li>
@@ -658,14 +667,14 @@ Rotações em planos, não em torno de eixos
 <section id="the-other-contraction-lfloor" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="the-other-contraction-lfloor"><span class="header-section-number">3.4</span> THE OTHER CONTRACTION <span class="math inline">\(\lfloor\)</span></h2>
 <ul>
-<li><p>Agora que precisamos pensar na contração à direita, fica clara a motivação, apresentada na seção 3.2.1, para definir a contração à esquerda.</p></li>
-<li><p>Lá, tínhamos dois <em>blades</em> de mesmo grau, <span class="math inline">\(\mathbf{Y}\)</span> e <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
-<li><p>Queríamos calcular o produto escalar <span class="math inline">\(\mathbf{Y} * \mathbf{B}\)</span>.</p></li>
-<li><p>Sabíamos que <span class="math inline">\(\mathbf{Y}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> têm, como fator comum, um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span>.</p></li>
+<li><p>Agora que precisamos pensar na contração à direita, fica clara a motivação, <a href="#sec-implicit-def-contr">apresentada na seção 3.2.1</a>, para definir a contração à esquerda.</p></li>
+<li><p>Lá, tínhamos dois <em>blades</em> de <span class="hl">mesmo grau</span>, <span class="math inline">\(\mathbf{Y}\)</span> e <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
+<li><p>Queríamos calcular o <span class="hl">produto escalar</span> <span class="math inline">\(\mathbf{Y} * \mathbf{B}\)</span>.</p></li>
+<li><p>Sabíamos que <span class="math inline">\(\mathbf{Y}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> têm, como <span class="hl">fator comum</span>, um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span>.</p></li>
 <li><p>Então, <span class="math inline">\(\mathbf{Y} = \mathbf{X} \wedge \mathbf{A}\)</span>.</p></li>
 <li><p>Observe que este é um <span class="hl">fator comum à direita de <span class="math inline">\(\mathbf{Y}\)</span></span>.</p></li>
 <li><p>Vimos que estes fatores comuns podem ser eliminados, sem afetar o resultado do produto escalar.</p></li>
-<li><p>A contração à esquerda é uma maneira de expressar o que resta do <em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> depois de eliminar o fator comum <span class="math inline">\(\mathbf{A}\)</span>:</p>
+<li><p>A contração <span class="hl">à esquerda</span> é uma maneira de expressar o que resta do <em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> depois de eliminar o fator comum <span class="math inline">\(\mathbf{A}\)</span>:</p>
 <p><span id="eq-contr-esq-impl"><span class="math display">\[
 \begin{aligned}
 \mathbf{Y} * \mathbf{B}
@@ -673,7 +682,7 @@ Rotações em planos, não em torno de eixos
 &amp;= \mathbf{X} * (\mathbf{A} \rfloor\mathbf{B})
 \end{aligned}
 \tag{3.3}\]</span></span></p></li>
-<li><p>A contração é, de certa forma, a operação inversa do produto exterior <span class="math inline">\(\wedge\)</span>, mas apenas no contexto do produto escalar.</p></li>
+<li><p>A contração é, de certa forma, a operação inversa do produto exterior <span class="math inline">\(\wedge\)</span>, mas apenas no contexto do produto escalar.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p></li>
 <li><p>Das equações acima, temos que</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -684,15 +693,15 @@ Rotações em planos, não em torno de eixos
 \]</span></p>
 <p>o que tem como consequência que</p>
 <p><span class="math display">\[
-\text{grau}(\mathbf{A} \rfloor\mathbf{B}) = \text{grau}(\mathbf{B}) + \text{grau}(\mathbf{A})
+\text{grau}(\mathbf{A} \rfloor\mathbf{B}) = \text{grau}(\mathbf{B}) - \text{grau}(\mathbf{A})
 \]</span></p></li>
 <li><p>Agora, para a <span class="hl">contração à direita</span>, considere dois <em>blades</em> de mesmo grau, <span class="math inline">\(\mathbf{Y}\)</span> e <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
-<li><p>Queremos calcular o produto escalar <span class="math inline">\(\mathbf{Y} * \mathbf{B}\)</span>.</p></li>
-<li><p>Sabemos que <span class="math inline">\(\mathbf{Y}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> têm, como fator comum, um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span>.</p></li>
+<li><p>Queremos calcular o <span class="hl">produto escalar</span> <span class="math inline">\(\mathbf{Y} * \mathbf{B}\)</span>.</p></li>
+<li><p>Sabemos que <span class="math inline">\(\mathbf{Y}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> têm, como <span class="hl">fator comum</span>, um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span>.</p></li>
 <li><p>Então, <span class="math inline">\(\mathbf{Y} = \mathbf{A} \wedge \mathbf{X}\)</span>.</p></li>
 <li><p>Observe que este é um <span class="hl">fator comum à esquerda de <span class="math inline">\(\mathbf{Y}\)</span></span>.</p></li>
 <li><p>Vimos que estes fatores comuns podem ser eliminados, sem afetar o resultado do produto escalar.</p></li>
-<li><p>A contração à direita é uma maneira de expressar o que resta do <em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> depois de eliminar o fator comum <span class="math inline">\(\mathbf{A}\)</span>:</p>
+<li><p>A contração <span class="hl">à direita</span> é uma maneira de expressar o que resta do <em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> depois de eliminar o fator comum <span class="math inline">\(\mathbf{A}\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
   \mathbf{Y} * \mathbf{B}
@@ -701,16 +710,16 @@ Rotações em planos, não em torno de eixos
 \end{aligned}
 \]</span></p>
 <p>Compare com as equações em <a href="#eq-contr-esq-impl"><span>3.3</span></a>.</p></li>
-<li><p>A relação entre a contração à esquerda e a contração à direita é</p>
+<li><p>A <span class="hl">relação</span> entre a contração à esquerda e a contração à direita é</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/contracoes-dir-e-esq.jpg" class="img-fluid figure-img" style="width:90.0%" alt="."></p>
+<p><img src="figures/ch03/contracoes-dir-e-esq.jpg" class="img-fluid figure-img" style="width:90.0%" alt="."></p>
 </figure>
 </div></li>
-<li><p>O livro traz <span class="math inline">\((-1)^{a(b+1)}\)</span>, conclusão de um raciocínio envolvendo os reversos dos <em>blades</em>, mas a paridade é a mesma que a do meu resultado.</p>
+<li><p>O livro traz <span class="math inline">\((-1)^{a(b+1)}\)</span>, conclusão de um raciocínio envolvendo os reversos dos <em>blades</em>, mas a <span class="hl">paridade</span> é a mesma que a do meu resultado.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/contr-prova-dorst.jpg" class="img-fluid figure-img" style="width:80.0%" alt="."></p>
+<p><img src="figures/ch03/contr-prova-dorst.jpg" class="img-fluid figure-img" style="width:80.0%" alt="."></p>
 </figure>
 </div></li>
 </ul>
@@ -725,7 +734,7 @@ Completar as provas
 </div>
 <div class="callout-body-container callout-body">
 <p>No caso geral, <span class="math inline">\(\mathbf{X} * \mathbf{C} = \mathbf{X} * \mathbf{D}\)</span> <span class="hl">não implica</span> <span class="math inline">\(\mathbf{C} = \mathbf{D}\)</span>, mas tanto a prova dele quanto a minha supõe que isto é verdade nesta situação.</p>
-<p>É preciso mostrar que isto é verdade neste caso específico.</p>
+<p>É preciso mostrar que isto é verdade <span class="hl">neste caso específico</span>.</p>
 </div>
 </div>
 </section>
@@ -734,7 +743,7 @@ Completar as provas
 <section id="nonassociativity-of-the-contraction" class="level3" data-number="3.5.1">
 <h3 data-number="3.5.1" class="anchored" data-anchor-id="nonassociativity-of-the-contraction"><span class="header-section-number">3.5.1</span> NONASSOCIATIVITY OF THE CONTRACTION</h3>
 <ul>
-<li><p>Contrair <span class="math inline">\(\mathbf{A} \wedge \mathbf{B}\)</span> sobre <span class="math inline">\(\mathbf{c}\)</span> é o mesmo que</p>
+<li><p>Contrair <span class="math inline">\(\mathbf{A} \wedge \mathbf{B}\)</span> sobre <span class="math inline">\(\mathbf{C}\)</span> é o mesmo que</p>
 <ol type="1">
 <li><p>Contrair <span class="math inline">\(\mathbf{B}\)</span> sobre <span class="math inline">\(\mathbf{C}\)</span>, e depois</p></li>
 <li><p>Contrair <span class="math inline">\(\mathbf{A}\)</span> sobre o resultado.</p></li>
@@ -745,10 +754,10 @@ Completar as provas
 \tag{3.4}\]</span></span></p></li>
 <li><p>A outra maneira de agrupar os operandos é</p>
 <p><span id="eq-dual2"><span class="math display">\[
-(\mathbf{A} \rfloor\mathbf{B}) \rfloor\mathbf{C} = \mathbf{A} \wedge (\mathbf{B} \rfloor\mathbf{C})
+\mathbf{A} \wedge (\mathbf{B} \rfloor\mathbf{C}) = (\mathbf{A} \rfloor\mathbf{B}) \rfloor\mathbf{C}
 \tag{3.5}\]</span></span></p>
 <p>mas <span class="hl">a igualdade só vale quando <span class="math inline">\(\mathbf{A} \subseteq \mathbf{C}\)</span></span>.</p></li>
-<li><p><a href="#sec-duality-rel">Mais adiante</a>, vamos usar as duas igualdades para calcular o dual de um objeto. Lá, <span class="math inline">\(\mathbf{C}\)</span> vai ser um múltiplo do pseudoescalar <span class="math inline">\(\mathbf{I}\)</span>, e a condição <span class="math inline">\(\mathbf{A} \subseteq \mathbf{I}\)</span> é sempre verdade.</p></li>
+<li><p><a href="#sec-duality-rel">Mais adiante</a>, vamos usar as duas igualdades para calcular o <span class="hl">dual</span> de um objeto. Lá, <span class="math inline">\(\mathbf{C}\)</span> vai ser um múltiplo do pseudoescalar <span class="math inline">\(\mathbf{I}\)</span>, e a condição <span class="math inline">\(\mathbf{A} \subseteq \mathbf{I}\)</span> é sempre verdade.</p></li>
 </ul>
 </section>
 <section id="the-inverse-of-a-blade" class="level3" data-number="3.5.2">
@@ -758,21 +767,21 @@ Completar as provas
 <p><span class="math display">\[
 \mathbf{A} \rfloor\mathbf{B} = 1
 \]</span></p></li>
-<li><p>Não existe um único <span class="math inline">\(\mathbf{B}\)</span> que satisfaça a igualdade.</p></li>
-<li><p>De fato, dado um <em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> que satisfaça a igualdade, e dado qualquer <em>blade</em> <span class="math inline">\(\mathbf{C}\)</span> ortogonal a <span class="math inline">\(\mathbf{A}\)</span>, temos que</p>
+<li><p><span class="hl">Não existe um único <span class="math inline">\(\mathbf{B}\)</span></span> que satisfaça a igualdade.</p></li>
+<li><p>De fato, dado um <em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> que satisfaça a igualdade, e dado qualquer <em>blade</em> <span class="math inline">\(\mathbf{C}\)</span> <span class="hl">ortogonal a <span class="math inline">\(\mathbf{A}\)</span></span>, temos que</p>
 <p><span class="math display">\[
 \mathbf{A} \rfloor(\mathbf{B} + \mathbf{C}) = \mathbf{A} \rfloor\mathbf{B} + \mathbf{A} \rfloor\mathbf{C} =
 1 + 0 = 1
 \]</span></p></li>
-<li><p>Vamos definir o inverso de um <em>blade</em> <span class="math inline">\(\mathbf{A}_k\)</span>, de grau <span class="math inline">\(k\)</span>, como sendo</p>
+<li><p>Vamos definir o <span class="hl">inverso</span> de um <em>blade</em> <span class="math inline">\(\mathbf{A}_k\)</span>, de grau <span class="math inline">\(k\)</span>, como sendo</p>
 <p><span class="math display">\[
 \mathbf{A}_k^{-1} = \frac{\widetilde{\mathbf{A}_k}}{|| \mathbf{A}_k ||^2} =
 (-1)^{k(k-1)/2} \frac{\mathbf{A}_k}{|| \mathbf{A}_k ||^2}  
 \]</span></p></li>
 <li><p>O inverso de <span class="math inline">\(\mathbf{A}\)</span> é um <em>blade</em> de mesmo grau que <span class="math inline">\(\mathbf{A}\)</span>.</p></li>
 <li><p>Para um vetor <span class="math inline">\(\mathbf{a} \neq \mathbf{0}\)</span>, temos que <span class="math inline">\(\mathbf{a}^{-1} = \mathbf{a} / ||\mathbf{a}||^2\)</span>.</p></li>
-<li><p>Um vetor unitário é seu próprio inverso.</p></li>
-<li><p>Em uma métrica não-degenerada, o inverso do pseudoescalar unitário <span class="math inline">\(\mathbf{I}\)</span> é seu reverso <span class="math inline">\(\widetilde{\mathbf{I}}\)</span>.</p></li>
+<li><p>Um vetor unitário é <span class="hl">seu próprio inverso</span>.</p></li>
+<li><p>Em uma métrica <span class="hl">não-degenerada</span>, o <span class="hl">inverso do pseudoescalar unitário</span> <span class="math inline">\(\mathbf{I}\)</span> é seu <span class="hl">reverso</span> <span class="math inline">\(\widetilde{\mathbf{I}}\)</span>.</p></li>
 </ul>
 </section>
 <section id="orthogonal-complement-and-duality" class="level3" data-number="3.5.3">
@@ -782,7 +791,7 @@ Completar as provas
 <p><span class="math display">\[
 \mathbf{A}_k^{*} = \mathbf{A}_k \rfloor\mathbf{I}^{-1}
 \]</span></p></li>
-<li><p>No espaço <span class="math inline">\(\mathbb{R}^n\)</span>, o dual de <span class="math inline">\(\mathbf{A}_k\)</span> tem grau <span class="math inline">\(n - k\)</span>.</p></li>
+<li><p>No espaço <span class="math inline">\(\mathbb{R}^n\)</span>, <span class="hl">o dual de <span class="math inline">\(\mathbf{A}_k\)</span> tem grau <span class="math inline">\(n - k\)</span></span>.</p></li>
 <li><p>Por exemplo, em <span class="math inline">\(\mathbb{R}^2\)</span>, o dual de um <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{a} \wedge \mathbf{b}\)</span> é um escalar — cujo valor é simplesmente a magnitude de <span class="math inline">\(\mathbf{a} \wedge \mathbf{b}\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -809,7 +818,7 @@ Completar as provas
   &amp;= || \mathbf{a} \wedge \mathbf{b} ||
 \end{aligned}
 \]</span></p></li>
-<li><p>Ainda, em <span class="math inline">\(\mathbb{R}^2\)</span>, o dual de um vetor <span class="math inline">\(\mathbf{a}\)</span> é or resultado de rotacionar <span class="math inline">\(\mathbf{a}\)</span> <span class="math inline">\(90\)</span> graus no sentido horário:</p>
+<li><p>Ainda em <span class="math inline">\(\mathbb{R}^2\)</span>, o dual de um vetor <span class="math inline">\(\mathbf{a}\)</span> é o resultado de rotacionar o vetor <span class="math inline">\(90\)</span> graus no sentido <span class="hl">horário</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
   \mathbf{a}^{*}
@@ -882,16 +891,16 @@ Completar as provas
 <section id="dual-representation-of-subspaces" class="level3" data-number="3.5.5">
 <h3 data-number="3.5.5" class="anchored" data-anchor-id="dual-representation-of-subspaces"><span class="header-section-number">3.5.5</span> DUAL REPRESENTATION OF SUBSPACES</h3>
 <ul>
-<li><p>A representação <span class="hl">OPNS</span> (<strong>outer product null space</strong>, também chamada de representação <span class="hl">direta</span>) é aquela em que um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span> representa o conjunto de todos os vetores <span class="math inline">\(\mathbf{x}\)</span> que satisfazem</p>
+<li><p>A representação <span class="hl">OPNS</span> (<em>outer product null space</em>, também chamada de representação <span class="hl">direta</span>) é aquela em que um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span> representa o conjunto de todos os vetores <span class="math inline">\(\mathbf{x}\)</span> que satisfazem</p>
 <p><span class="math display">\[
 \mathbf{x} \wedge \mathbf{A} = 0
 \]</span></p></li>
-<li><p>A representação <span class="hl">IPNS</span> (<strong>inner product null space</strong>, também chamada de representação <span class="hl">dual</span>) é aquela em que um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span> representa o conjunto de todos os vetores <span class="math inline">\(\mathbf{x}\)</span> que satisfazem</p>
+<li><p>A representação <span class="hl">IPNS</span> (<em>inner product null space</em>, também chamada de representação <span class="hl">dual</span>) é aquela em que um <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span> representa o conjunto de todos os vetores <span class="math inline">\(\mathbf{x}\)</span> que satisfazem</p>
 <p><span class="math display">\[
 \mathbf{x} \rfloor\mathbf{A} = 0
 \]</span></p></li>
-<li><p>O <em>blade</em> <span class="math inline">\(\mathbf{A}^{*}\)</span> representa diretamente (OPNS) o complemento ortogonal da representação dual (IPNS) de <span class="math inline">\(\mathbf{A}\)</span>.</p></li>
-<li><p>Por exemplo, em Álgebra Linear, um vetor normal <span class="math inline">\(\mathbf{n}\)</span> representa (IPNS) um plano homogêneo pela equação</p>
+<li><p>O <em>blade</em> <span class="math inline">\(\mathbf{A}^{*}\)</span> representa <span class="hl">diretamente</span> (OPNS) o <span class="hl">complemento ortogonal</span> da representação <span class="hl">dual</span> (IPNS) de <span class="math inline">\(\mathbf{A}\)</span>.</p></li>
+<li><p>Algo semelhante acontece em Álgebra Linear, onde um vetor normal <span class="math inline">\(\mathbf{n}\)</span> representa (IPNS) um plano homogêneo pela equação</p>
 <p><span class="math display">\[
 \mathbf{x} \cdot \mathbf{n} = 0
 \]</span></p></li>
@@ -901,22 +910,22 @@ Completar as provas
 <section id="orthogonal-projection-of-subspaces" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="orthogonal-projection-of-subspaces"><span class="header-section-number">3.6</span> ORTHOGONAL PROJECTION OF SUBSPACES</h2>
 <ul>
-<li><p>Com a contração e o inverso, podemos computar a projeção ortogonal de um <em>blade</em> sobre outro.</p></li>
+<li><p>Com a contração e o inverso, podemos computar a <span class="hl">projeção ortogonal</span> de um <em>blade</em> sobre outro.</p></li>
 <li><p>Para projetar um <em>blade</em> <span class="math inline">\(\mathbf{X}\)</span> sobre um <em>blade</em> <span class="math inline">\(\mathbf{B}\)</span>, supondo que <span class="math inline">\(\mathbf{B}^{-1}\)</span> existe, fazemos</p>
 <p><span class="math display">\[
 \textsf{P}_{\mathbf{B}}[\mathbf{X}] = (\mathbf{X} \rfloor\mathbf{B}) \rfloor\mathbf{B}^{-1}
 \]</span></p></li>
-<li><p>A primeira contração constrói o complemento ortogonal de <span class="math inline">\(\mathbf{X}\)</span> em <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
-<li><p>Esse complemento ortogonal tamém é perpendicular à projeção procurada.</p></li>
-<li><p>A segunda contração (uma espécie de dual no contexto de <span class="math inline">\(\mathbf{B}\)</span>) rotaciona o complemento ortogonal de forma a fazê-lo coincidir com a projeção.</p></li>
-<li><p>A <a href="#fig-proj-dorst">Figura&nbsp;<span>3.7</span></a> mostra um vetor <span class="math inline">\(\mathbf{v}\)</span> sendo projetado sobre um <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{B}\)</span>.</p>
+<li><p>A <span class="hl">primeira</span> contração constrói o <span class="hl">complemento ortogonal</span> de <span class="math inline">\(\mathbf{X}\)</span> em <span class="math inline">\(\mathbf{B}\)</span>.</p></li>
+<li><p>Esse complemento ortogonal também é perpendicular à projeção procurada.</p></li>
+<li><p>A <span class="hl">segunda</span> contração (uma espécie de dual no contexto de <span class="math inline">\(\mathbf{B}\)</span>) <span class="hl">rotaciona</span> o complemento ortogonal de forma a fazê-lo coincidir com a projeção.</p></li>
+<li><p>A <a href="#fig-proj-dorst">Figura&nbsp;<span>3.7</span></a> mostra um vetor <span class="math inline">\(\mathbf{x}\)</span> sendo projetado sobre um <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{B}\)</span>.</p>
 <div id="fig-proj-dorst" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/projecao-dorst.png" class="img-fluid figure-img" style="width:60.0%" alt="projeção"></p>
+<p><img src="figures/ch03/projecao-dorst.png" class="img-fluid figure-img" style="width:60.0%" alt="projeção"></p>
 <figcaption class="figure-caption">Figura&nbsp;3.7: Projeção de um vetor sobre um <span class="math inline">\(2\)</span>-<em>blade</em></figcaption>
 </figure>
 </div></li>
-<li><p>Podemos verificar que a projeção é idempotente, como deveria ser:</p>
+<li><p>Podemos verificar que a projeção é <span class="hl">idempotente</span>, como deveria ser:</p>
 <p><span class="math display">\[
 \begin{aligned}
   \textsf{P}_{\mathbf{B}}[\textsf{P}_{\mathbf{B}}[\mathbf{X}]]
@@ -956,14 +965,14 @@ Completar as provas
 <section id="uses-of-the-cross-product" class="level3" data-number="3.7.1">
 <h3 data-number="3.7.1" class="anchored" data-anchor-id="uses-of-the-cross-product"><span class="header-section-number">3.7.1</span> USES OF THE CROSS PRODUCT</h3>
 <ul>
-<li><p>Em <span class="math inline">\(\mathbb{R}^3\)</span>, o produto vetorial é usado para construir vetores normais a um plano, para calcular velocidades angulares e para construir retas que são interseções de dois planos.</p></li>
-<li><p>Vamos usar o produto exterior e a contração para generalizar estes usos do produto vetorial para todas as dimensões.</p></li>
+<li><p><span class="hl">Em <span class="math inline">\(\mathbb{R}^3\)</span> (e apenas ali)</span>, o produto vetorial é usado para construir vetores normais a um plano, para calcular velocidades angulares e para construir retas que são interseções de dois planos.</p></li>
+<li><p>Vamos usar o produto exterior e a contração para <span class="hl">generalizar</span> estes usos do produto vetorial <span class="hl">para todas as dimensões</span>.</p></li>
 </ul>
 </section>
 <section id="the-cross-product-incorporated" class="level3" data-number="3.7.2">
 <h3 data-number="3.7.2" class="anchored" data-anchor-id="the-cross-product-incorporated"><span class="header-section-number">3.7.2</span> THE CROSS PRODUCT INCORPORATED</h3>
 <ul>
-<li><p>Para calcular um vetor normal a um plano:</p>
+<li><p>Para calcular um <span class="hl">vetor normal a um plano</span>:</p>
 <ul>
 <li><p>O plano é definido pelo <em>blade</em> <span class="math inline">\(\mathbf{a} \wedge \mathbf{b}\)</span>.</p></li>
 <li><p>O complemento ortogonal deste plano com relação ao pseudoescalar <span class="math inline">\(\mathbf{I}_n\)</span> é</p>
@@ -972,20 +981,20 @@ Completar as provas
 (\mathbf{a} \wedge \mathbf{b}) \rfloor\mathbf{I}_n^{-1}
 \]</span></p></li>
 </ul></li>
-<li><p>Em <span class="math inline">\(\mathbb{R}^3\)</span>, o inverso do pseudoescalar, <span class="math inline">\(\mathbf{I}_3^{-1}\)</span>, é igual a <span class="math inline">\(-\mathbf{I}_3\)</span>. O vetor normal a um plano <span class="math inline">\(\mathbf{a} \wedge \mathbf{b}\)</span> é</p>
+<li><p>Em <span class="math inline">\(\mathbb{R}^3\)</span>, o inverso do pseudoescalar, <span class="math inline">\(\mathbf{I}_3^{-1}\)</span>, é igual a <span class="math inline">\(-\mathbf{I}_3\)</span>. O vetor normal a um plano <span class="math inline">\(\mathbf{a} \wedge \mathbf{b}\)</span> é, então,</p>
 <p><span class="math display">\[
 (\mathbf{a} \wedge \mathbf{b})^{*} =
 (\mathbf{a} \wedge \mathbf{b}) \rfloor\mathbf{I}_3^{-1} =
 (\mathbf{b} \wedge \mathbf{a}) \rfloor\mathbf{I}_3 =
 \mathbf{a} \times \mathbf{b}
 \]</span></p></li>
-<li><p>Vamos tratar a interseção de dois planos em <span class="math inline">\(\mathbb{R}^3\)</span>:</p>
+<li><p>Para calcular a <span class="hl">interseção de dois planos</span>:</p>
 <ul>
-<li><p>Um plano é representado pelo <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{A}\)</span>. Vamos trabalhar com seu vetor normal <span class="math inline">\(\mathbf{a}\)</span>:</p>
+<li><p>Um plano é representado pelo <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{A}\)</span>. Vamos trabalhar com seu <span class="hl">vetor normal</span> <span class="math inline">\(\mathbf{a}\)</span>:</p>
 <p><span class="math display">\[
 \mathbf{a} = \mathbf{A}^{*} = \mathbf{A} \rfloor\mathbf{I}^{-1}
 \]</span></p></li>
-<li><p>O outro plano é representado pelo <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{B}\)</span>. Vamos trabalhar com seu vetor normal <span class="math inline">\(\mathbf{b}\)</span>:</p>
+<li><p>O outro plano é representado pelo <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{B}\)</span>. Vamos trabalhar com seu <span class="hl">vetor normal</span> <span class="math inline">\(\mathbf{b}\)</span>:</p>
 <p><span class="math display">\[
 \mathbf{b} = \mathbf{B}^{*} = \mathbf{B} \rfloor\mathbf{I}^{-1}
 \]</span></p></li>
@@ -1016,7 +1025,7 @@ Completar as provas
 (\mathbf{A} \rfloor\mathbf{I}^{-1}) \rfloor\mathbf{I} =
 (\mathbf{A} \rfloor\mathbf{I}^{-1})^{-*} = \mathbf{A}
 \]</span></p></li>
-<li><p>Mais adiante, vamos ver que <span class="math inline">\((\mathbf{B}^{*}) \rfloor\mathbf{A}\)</span> é o <em>meet</em> de <span class="math inline">\(\mathbf{B}\)</span> com <span class="math inline">\(\mathbf{A}\)</span>, e é a maneira de representar a incidência de subespaços.</p></li>
+<li><p>Mais adiante, vamos ver que <span class="math inline">\((\mathbf{B}^{*}) \rfloor\mathbf{A}\)</span> é o <em>meet</em> de <span class="math inline">\(\mathbf{B}\)</span> com <span class="math inline">\(\mathbf{A}\)</span>, e é a maneira de representar a <span class="hl">incidência</span> de subespaços em álgebras geométricas.</p></li>
 </ul></li>
 </ul>
 </section>
@@ -1024,23 +1033,23 @@ Completar as provas
 <section id="application-reciprocal-frames" class="level2" data-number="3.8">
 <h2 data-number="3.8" class="anchored" data-anchor-id="application-reciprocal-frames"><span class="header-section-number">3.8</span> APPLICATION: RECIPROCAL FRAMES</h2>
 <ul>
-<li><p>Considere uma base de <span class="math inline">\(\mathbb{R}^n\)</span> formada pelos vetores <span class="math inline">\(\{\mathbf{b}_i\}_{i=1}^n\)</span>.</p></li>
-<li><p>Qualquer vetor <span class="math inline">\(\mathbf{x}\)</span> pode ser expresso como</p>
+<li><p>Considere uma <span class="hl">base</span> de <span class="math inline">\(\mathbb{R}^n\)</span> formada pelos vetores <span class="math inline">\(\{\mathbf{b}_i\}_{i=1}^n\)</span>.</p></li>
+<li><p>Então, qualquer vetor <span class="math inline">\(\mathbf{x}\)</span> de <span class="math inline">\(\mathbb{R}^n\)</span> pode ser expresso como</p>
 <p><span class="math display">\[
 \mathbf{x} = \sum_{i=1}^n x_i\mathbf{b}_i,\quad x_i \in \mathbb{R}
 \]</span></p></li>
-<li><p>Se a base for ortonormal, cada <span class="math inline">\(x_i\)</span> é simplesmente <span class="math inline">\(\mathbf{x} \cdot \mathbf{b}_i\)</span>.</p></li>
+<li><p>Se a base for <span class="hl">ortonormal</span>, cada <span class="math inline">\(x_i\)</span> é simplesmente <span class="math inline">\(\mathbf{x} \cdot \mathbf{b}_i\)</span>.</p></li>
 <li><p>Se a base <span class="hl">não for ortonormal</span>, podemos achar uma <span class="hl">base recíproca</span> <span class="math inline">\(\{\mathbf{b}^i\}_{i=1}^n\)</span>, tal que as coordenadas de <span class="math inline">\(\mathbf{x}\)</span> podem ser escritas como</p>
 <p><span class="math display">\[
 x^i = \mathbf{x} \cdot \mathbf{b}^i
 \]</span></p></li>
-<li><p>Observe que os vetores da base recíproca são indexados com superescritos em vez de subscritos (<span class="math inline">\(\mathbf{b}^i\)</span> em vez de <span class="math inline">\(\mathbf{b}_i\)</span>).</p></li>
-<li><p>Para construir a base recíproca para <span class="math inline">\(\mathbb{R}^n\)</span> a partir de uma base <span class="math inline">\(\{\mathbf{b}_i\}_{i=1}^n\)</span>, considerando o pseudoescalar <span class="math inline">\(\mathbf{I} = \mathbf{b}_1 \wedge \mathbf{b}_2 \wedge \cdots \wedge \mathbf{b}_n\)</span>, definimos, para cada <span class="math inline">\(\mathbf{b}_i\)</span>, o vetor recíproco <span class="math inline">\(\mathbf{b}^i\)</span> como</p>
+<li><p>Observe que os vetores da base recíproca são indexados com <span class="hl">superescritos</span> em vez de subscritos (<span class="math inline">\(\mathbf{b}^i\)</span> em vez de <span class="math inline">\(\mathbf{b}_i\)</span>).</p></li>
+<li><p>Para construir a base recíproca para <span class="math inline">\(\mathbb{R}^n\)</span> a partir de uma base <span class="math inline">\(\{\mathbf{b}_i\}_{i=1}^n\)</span>, considerando o pseudoescalar <span class="math inline">\(\mathbf{I} = \mathbf{b}_1 \wedge \mathbf{b}_2 \wedge \cdots \wedge \mathbf{b}_n\)</span>, definimos, <span class="hl">para cada <span class="math inline">\(\mathbf{b}_i\)</span></span>, o <span class="hl">vetor recíproco <span class="math inline">\(\mathbf{b}^i\)</span></span> como</p>
 <p><span class="math display">\[
 \mathbf{b}^i = (-1)^{i-1} \Biggl(\bigwedge_{j \neq i} \mathbf{b}_j \Biggr) \rfloor\mathbf{I}_n^{-1}
 \]</span></p></li>
-<li><p>Cada <span class="math inline">\(\mathbf{b}^i\)</span> é o dual do <span class="math inline">\((n-1)\)</span>-<em>blade</em> definido por todos os outros vetores da base original (i.e., exceto <span class="math inline">\(\mathbf{b}_i\)</span>).</p></li>
-<li><p>As duas bases (a original e a recíproca) são mutuamente ortonormais:</p>
+<li><p>Cada <span class="math inline">\(\mathbf{b}^i\)</span> é o dual do <span class="math inline">\((n-1)\)</span>-<em>blade</em> definido por todos os <span class="hl">outros</span> vetores da base original (i.e., exceto <span class="math inline">\(\mathbf{b}_i\)</span>).</p></li>
+<li><p>As duas bases (a original e a recíproca) são <span class="hl">mutuamente ortonormais</span>:</p>
 <p><span class="math display">\[
 \mathbf{b}_i \cdot \mathbf{b}^j =
 \begin{cases}
@@ -1062,7 +1071,7 @@ x^i = \mathbf{x} \cdot \mathbf{b}^i
   &amp;= x^i
 \end{aligned}
 \]</span></p></li>
-<li><p>Numa base ortonormal, cada vetor <span class="math inline">\(\mathbf{b}_i\)</span> tem a mesma magnitude e direção que seu recíproco <span class="math inline">\(\mathbf{b}^i\)</span>. Na métrica euclidiana, o mesmo sentido também.</p></li>
+<li><p>Numa base <span class="hl">ortonormal</span>, cada vetor <span class="math inline">\(\mathbf{b}_i\)</span> tem a mesma magnitude e direção que seu recíproco <span class="math inline">\(\mathbf{b}^i\)</span>. Na métrica euclidiana, o mesmo sentido também.</p></li>
 <li><p>Em Álgebra Linear, a base recíproca é construída usando determinantes (como?).</p></li>
 </ul>
 </section>
@@ -1074,6 +1083,48 @@ x^i = \mathbf{x} \cdot \mathbf{b}^i
 </section>
 <section id="exercises" class="level2" data-number="3.10">
 <h2 data-number="3.10" class="anchored" data-anchor-id="exercises"><span class="header-section-number">3.10</span> EXERCISES</h2>
+<section id="drills" class="level3" data-number="3.10.1">
+<h3 data-number="3.10.1" class="anchored" data-anchor-id="drills"><span class="header-section-number">3.10.1</span> DRILLS</h3>
+<ol type="1">
+<li><p>OK.</p></li>
+<li><p>OK:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ch03/drill-3.10.1-2.jpg" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ch03/drill-3.10.1-2-cont.jpg" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div></li>
+<li><p>OK:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ch03/drill-3.10.1-3.jpg" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div></li>
+</ol>
+</section>
+<section id="structural-exercises" class="level3" data-number="3.10.2">
+<h3 data-number="3.10.2" class="anchored" data-anchor-id="structural-exercises"><span class="header-section-number">3.10.2</span> STRUCTURAL EXERCISES</h3>
+<ol type="1">
+<li><p>OK:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ch03/structural-3.10.2-1.jpg" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div></li>
+<li><p>Acima.</p></li>
+<li><p>…</p></li>
+<li><p>OK:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ch03/structural-3.10.2-4.jpg" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div></li>
+</ol>
+</section>
 </section>
 <section id="programming-examples-and-exercises" class="level2" data-number="3.11">
 <h2 data-number="3.11" class="anchored" data-anchor-id="programming-examples-and-exercises"><span class="header-section-number">3.11</span> PROGRAMMING EXAMPLES AND EXERCISES</h2>
@@ -1096,6 +1147,12 @@ Dorst, Leo. 2002. <span>«The Inner Products of Geometric Algebra»</span>. Em <
 </div>
 </div>
 </section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Em um apêndice, Dorst mostra que a contração é a <span class="hl">adjunção</span> do produto exteriorem relação ao produto escalar.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->

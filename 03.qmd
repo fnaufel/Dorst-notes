@@ -7,7 +7,7 @@
 
 ## Resumo {.unnumbered}
 
-![](figures/inner-products-dorst.jpg)
+![](figures/ch03/inner-products-dorst.jpg)
 
 ## SIZING UP SUBSPACES
 
@@ -32,7 +32,7 @@
 
 ### DEFINITION OF THE SCALAR PRODUCT $*$
 
-* Por enquanto, vamos definir o produto interno de dois *blades* [de mesma graduação]{.hl}.
+* Por enquanto, vamos definir o produto interno de dois *blades* [de mesmo grau]{.hl}.
 
 * O resultado sempre vai ser um [escalar]{.hl}.
 
@@ -53,21 +53,21 @@ $$
 
 O produto escalar $\bl A * \bl B$ é definido como
 
-![](figures/produto-escalar-k-blades.png){fig-align="center"}
+![](figures/ch03/produto-escalar-k-blades.png){fig-align="center"}
 
 :::
 
 
 * Exemplo:
 
-  ![](figures/exemplo-prod-blades.jpg){fig-align="center" width=60%}
+  ![](figures/ch03/exemplo-prod-blades.jpg){fig-align="center" width=60%}
 
 
 ### THE SQUARED NORM OF A SUBSPACE
 
 * A [norma]{.hl} de um *blade* $\bl A$ usa o produto escalar entre $\bl A$ e seu [reverso]{.hl} $\rev{\bl A}$:
 
-  ![](figures/exemplo-norma-blade.jpg){fig-align="center" width=60%}
+  ![](figures/ch03/exemplo-norma-blade.jpg){fig-align="center" width=60%}
 
 * Parecido com o que acontece com números complexos, onde o quadrado da norma é o produto entre o número complexo [e seu conjugado]{.hl}:
 
@@ -86,13 +86,13 @@ O produto escalar $\bl A * \bl B$ é definido como
 
 * De novo, temos a semelhança com números complexos, onde o produto $z_1 \cdot \overline{z_2}$, tais que o argumento de $z_1$ é $\alpha$ e o argumento de $z_2$ é $\beta$, resulta em um número complexo $z_3$ cujo argumento é $\alpha - \beta$:
 
-  ![](figures/angulo-entre-complexos.jpg){fig-align="center"}
+  ![](figures/ch03/angulo-entre-complexos.jpg){fig-align="center"}
 
-  ![](figures/angulo-entre-complexos.svg){fig-align="center"}
+  ![](figures/ch03/angulo-entre-complexos.svg){fig-align="center"}
 
 * Em $\reais^2$, no geral, para dois 2-*blades* $\bl A$ e $\bl B$, temos que $\bl A * \rev{\bl B} = ||\bl A||\,||\bl B||$, e o ângulo é sempre zero:
 
-  ![](figures/prod-escalar-blades-r2-geral.jpg){fig-align="center" width=60%}
+  ![](figures/ch03/prod-escalar-blades-r2-geral.jpg){fig-align="center" width=60%}
 
 * Em $\reais^3$:
 
@@ -112,11 +112,11 @@ O produto escalar $\bl A * \bl B$ é definido como
   
   * Situação atual:
   
-    ![](figures/angulo-entre-blades-fig-dorst.png){width=60% fig-align="center"}
+    ![](figures/ch03/angulo-entre-blades-fig-dorst.png){width=60% fig-align="center"}
   
   * Daí,
   
-    ![](figures/derivacao-angulo-dois-blades-r3.png){width=40% fig-align="center"}
+    ![](figures/ch03/derivacao-angulo-dois-blades-r3.png){width=40% fig-align="center"}
   
 * Em $\reais^n, n > 3$ (caso geral):
 
@@ -138,7 +138,7 @@ O produto escalar $\bl A * \bl B$ é definido como
   \end{aligned}
   $$
 
-  ![](figures/exemplo-dorst-p-70.jpg){width=80% fig-align="center"}
+  ![](figures/ch03/exemplo-dorst-p-70.jpg){width=80% fig-align="center"}
   
   * Como $\bl A \wedge \bl B$ tem grau $4$, com $\bl A$ e $\bl B$ ambos de grau $2$, [$\bl A$ e $\bl B$ são disjuntos]{.hl}.
   
@@ -231,15 +231,15 @@ O produto escalar $\bl A * \bl B$ é definido como
 
   * $\bl B$ é um $2$-*blade*;
   
-  * $\vet a$ é um vetor no mesmo plano que $\bl B$.
+  * $\vet a$ é um vetor [no mesmo plano]{.hl} que $\bl B$.
   
   * A contração de $\vet a$ sobre $\bl B$, escrita como $\vet a \lc \bl B$, é o vetor em vermelho na @fig-contr-vetor.
   
-    ![Contração $\vet a \lc \bl B$](figures/contr_vetor_blade.png){fig-alt="Contração." #fig-contr-vetor width=50% fig-align="center"}
+    ![Contração $\vet a \lc \bl B$](figures/ch03/contr_vetor_blade.png){fig-alt="Contração." #fig-contr-vetor width=50% fig-align="center"}
 
   * Imagine que o vetor $\vet a$ foi "contraído", levando consigo, nesta contração, a dimensão de $\bl B$ correspondente à direção de $\vet a$.
   
-  * O resultado é um vetor ortogonal a $\vet a$, contido no plano de $\bl B$.
+  * [O resultado é um vetor ortogonal a $\vet a$, contido no plano de $\bl B$]{.hl}.
   
   * Informalmente, $\vet a \lc \bl B$ é o que resta em $\bl B$ depois que $\vet a$ é retirado.
   
@@ -268,35 +268,35 @@ show(r'''
 ''')
 ```
 
-* Outro exemplo, onde agora $\vet a$ não está no plano de $\bl B$:
+* Outro exemplo, onde agora $\vet a$ [não está no plano de $\bl B$]{.hl}:
 
   * A @fig-contr-vetor-2 mostra a situação.
   
-    ![Contração $\vet a \lc \bl B$](figures/contr_vector_blade2.png){fig-alt="contração de vetor sobre blade" #fig-contr-vetor-2 width=50% fig-align="center"}
+    ![Contração $\vet a \lc \bl B$](figures/ch03/contr_vector_blade2.png){fig-alt="contração de vetor sobre blade" #fig-contr-vetor-2 width=50% fig-align="center"}
     
   * O resultado continua sendo um vetor ortogonal a $\vet a$, contido no plano de $\bl B$, mas sua magnitude é menor do que na @fig-contr-vetor.
   
-  * Vamos ver, em breve, que apenas a componente de $\vet a$ paralela a $\bl B$ --- i.e., a projeção de $\vet a$ sobre o plano de $\bl B$ --- é levada em consideração no cálculo da contração $\vet a \lc \bl B$. Isto condiz com a idéia de produto interno, cujo valor aumenta à medida que o ângulo $\theta$ (com $0 \leq \theta \leq \pi/2$) entre dois objetos aumenta.
+  * Vamos ver, em breve, que [apenas a componente de $\vet a$ paralela a $\bl B$]{.hl} --- i.e., a projeção de $\vet a$ sobre o plano de $\bl B$ --- [é levada em consideração no cálculo da contração $\vet a \lc \bl B$]{.hl}. Isto condiz com a idéia de produto interno, cujo valor aumenta à medida que o ângulo $\theta$ (com $0 \leq \theta \leq \pi/2$) entre dois objetos aumenta.
   
-  * No caso extremo, se $\vet a$ for ortogonal a $\bl B$, a contração $\vet a \lc \bl B$ será nula, como mostra a @fig-contr-nula. De novo, é o esperado, uma vez que o produto interno deve ser nulo quando os objetos são ortogonais.
+  * No caso extremo, [se $\vet a$ for ortogonal a $\bl B$, a contração $\vet a \lc \bl B$ será nula]{.hl}, como mostra a @fig-contr-nula. De novo, é o esperado, uma vez que o produto interno deve ser nulo quando os objetos são ortogonais.
   
-    ![Contração $\vet a \lc \bl B= 0$](figures/contr-nula.png){fig-alt="contração de vetor sobre blade" #fig-contr-nula width=50% fig-align="center"}
+    ![Contração $\vet a \lc \bl B= 0$](figures/ch03/contr-nula.png){fig-alt="contração de vetor sobre blade" #fig-contr-nula width=50% fig-align="center"}
 
-* Mais um exemplo, agora em $\reais^3$: a @fig-2-on-3 mostra, em vermelho, o resultado da contração do $2$-*blade* $\bl B$ sobre o $3$-*blade* $\bl C$.
+* Mais um exemplo, [agora em $\reais^3$]{.hl}: a @fig-2-on-3 mostra, em vermelho, o resultado da contração do $2$-*blade* $\bl B$ sobre o $3$-*blade* $\bl C$.
 
-  ![Contração de $2$-*blade* sobre $3$-*blade*](figures/contr-2-blade-on-3-blade.png){fig-alt="contração de 2-blade sobre 3-blade" #fig-2-on-3 width=60% fig-align="center"}
+  ![Contração de $2$-*blade* sobre $3$-*blade*](figures/ch03/contr-2-blade-on-3-blade.png){fig-alt="contração de 2-blade sobre 3-blade" #fig-2-on-3 width=60% fig-align="center"}
 
 * Ainda em $\reais^3$, a @fig-1-on-3 mostra o resultado da contração do vetor $\vet a$ sobre o $3$-*blade* $\bl B$.
 
-  ![Contração de vetor sobre $3$-*blade*](figures/contr-vector-on-3-blade.png){fig-alt="contração de vetor sobre 3-blade" #fig-1-on-3 width=60% fig-align="center"}
+  ![Contração de vetor sobre $3$-*blade*](figures/ch03/contr-vector-on-3-blade.png){fig-alt="contração de vetor sobre 3-blade" #fig-1-on-3 width=60% fig-align="center"}
 
 * A partir destes exemplos, observe que
 
-  * O resultado da contração à esquerda sempre está contido no operando do lado direito.
+  * O resultado da contração à esquerda sempre [está contido]{.hl} no operando do lado [direito]{.hl}.
 
-  * O resultado da contração à esquerda sempre é ortogonal ao operando do lado esquerdo.
+  * O resultado da contração à esquerda sempre [é ortogonal]{.hl} ao operando do lado [esquerdo]{.hl}.
   
-  * O resultado da contração à esquerda sempre tem o grau igual à diferença entre os graus dos operandos (grau do operando direito menos o grau do operando esquerdo).
+  * O resultado da contração à esquerda sempre tem o grau igual à [diferença entre os graus dos operandos]{.hl} (grau do operando direito menos o grau do operando esquerdo).
 
 
 ### COMPUTING THE CONTRACTION EXPLICITLY
@@ -308,7 +308,7 @@ show(r'''
   \,\to\, \bigwedge^{l-k} \reais^n
   $$
 
-* A contração à esquerda distribui sobre a adição e é bilinear:
+* A contração à esquerda [distribui sobre a adição]{.hl} e [é bilinear]{.hl}:
 
   $$
   \begin{aligned}
@@ -343,13 +343,18 @@ show(r'''
 * A última igualdade do bloco ([-@eq-ultima-3]) pode ser substituída por
 
   $$
-  \vet x \lc (\vet a_1 \wedge \vet a_2 \wedge \cdots \wedge \vet a_k) 
-  = \sum_{i=1}^k (-1)^{i-1} 
+  \begin{aligned}
+  &{} \vet x \lc (\vet a_1 \wedge \vet a_2 \wedge \cdots \wedge \vet a_k) \\
+  &= \sum_{i=1}^k (-1)^{i-1} 
   \vet a_1 \wedge \vet a_2 \wedge \cdots \wedge
-  (\vet x \lc \vet a_i) \wedge \cdots \wedge \vet a_k
+  (\vet x \lc \vet a_i) \wedge \cdots \wedge \vet a_k \\
+  &= \sum_{i=1}^k (-1)^{i-1} 
+  \vet a_1 \wedge \vet a_2 \wedge \cdots \wedge
+  (\vet x \cdot \vet a_i) \wedge \cdots \wedge \vet a_k
+  \end{aligned}
   $$ {#eq-3-16}
 
-  o que reduz contrações de vetores sobre *blades* em contrações de vetores sobre vetores (que resultam em escalares).
+  o que reduz contrações de [vetores sobre *blades*]{.hl} em contrações de [vetores sobre vetores]{.hl} (que resultam em [escalares]{.hl}).
   
   
 ## GEOMETRIC INTERPRETATION OF THE CONTRACTION
@@ -358,7 +363,7 @@ show(r'''
 
   1. $\bl A \lc \bl B$ é um *blade* quando $\bl A$ e $\bl B$ são *blades*.
   
-  1. $\bl A \lc \bl B$ é um subespaço contido em $\bl B$:
+  1. $\bl A \lc \bl B$ é um subespaço [contido em $\bl B$]{.hl}:
   
      $$
      \bl A \lc \bl B = (\bl A' \wedge \vet a) \lc \bl B = 
@@ -367,18 +372,18 @@ show(r'''
      
      O lado direito $\vet a \lc \bl B$ representa um subespaço contido em $\bl B$, pois a @eq-3-16 só contém vetores de $\bl B$ no seu lado direito.
      
-  1. $\vet x \lc \bl A = 0$ significa que $\vet x$ é perpendicular a todos os vetores em $\bl A$. 
+  1. [$\vet x \lc \bl A = 0$]{.hl} significa que $\vet x$ é [perpendicular a todos os vetores em $\bl A$]{.hl}. 
   
      De fato, a única maneira de o lado direito da @eq-3-16 ser zero é se $\vet x \lc \vet a_i$ for zero para todo $i$.
   
-  1. O resultado de $\bl A \lc \bl B$ é perpendicular a $\bl A$:
+  1. O resultado de $\bl A \lc \bl B$ é [perpendicular a $\bl A$]{.hl}:
   
      * Tome qualquer vetor $\vet a \in \bl A$.
      * Então $\vet a \wedge \bl A = 0$.
      * Pela definição, $\vet a \lc (\bl A \lc \bl B) = (\vet a \wedge \bl A) \lc \bl B = 0\lc \bl B = 0$.
      * Isto significa que $\vet a$ é perpendicular a $\bl A \lc \bl B$.
      
-  1. A norma de $\bl A \lc \bl B$ é proporcional a $||\bl A||$, a $||\bl B||$, e ao cosseno do ângulo entre $\bl A$ e a projeção de $\bl A$ sobre $\bl B$.
+  1. A [norma]{.hl} de $\bl A \lc \bl B$ é [proporcional]{.hl} a [$||\bl A||$]{.hl}, a [$||\bl B||$]{.hl}, e ao [cosseno do ângulo entre $\bl A$ e a projeção]{.hl} de $\bl A$ sobre $\bl B$.
   
   1. $\grau(\bl A \lc \bl B) = \grau(\bl B) - \grau(\bl A)$.
 
@@ -393,7 +398,7 @@ show(r'''
   
 * A @fig-contr-magn mostra a situação.
 
-  ![Contração $\vet x\lc\bl B$](figures/contr-angulo-magnitude.png){fig-alt="Contração mostrando projeção e magnitude" #fig-contr-magn width=60% fig-align="center"}
+  ![Contração $\vet x\lc\bl B$](figures/ch03/contr-angulo-magnitude.png){fig-alt="Contração mostrando projeção e magnitude" #fig-contr-magn width=60% fig-align="center"}
 
 * Observe que 
 
@@ -429,13 +434,13 @@ show(r'''
 
 ## THE OTHER CONTRACTION $\rc$
 
-* Agora que precisamos pensar na contração à direita, fica clara a motivação, apresentada na seção 3.2.1, para definir a contração à esquerda.
+* Agora que precisamos pensar na contração à direita, fica clara a motivação, [apresentada na seção 3.2.1](#sec-implicit-def-contr), para definir a contração à esquerda.
 
-* Lá, tínhamos dois *blades* de mesmo grau, $\bl Y$ e $\bl B$.
+* Lá, tínhamos dois *blades* de [mesmo grau]{.hl}, $\bl Y$ e $\bl B$.
 
-* Queríamos calcular o produto escalar $\bl Y * \bl B$.
+* Queríamos calcular o [produto escalar]{.hl} $\bl Y * \bl B$.
 
-* Sabíamos que $\bl Y$ e $\bl B$ têm, como fator comum, um *blade* $\bl A$.
+* Sabíamos que $\bl Y$ e $\bl B$ têm, como [fator comum]{.hl}, um *blade* $\bl A$.
 
 * Então, $\bl Y = \bl X \wedge \bl A$. 
 
@@ -443,7 +448,7 @@ show(r'''
 
 * Vimos que estes fatores comuns podem ser eliminados, sem afetar o resultado do produto escalar.
 
-* A contração à esquerda é uma maneira de expressar o que resta do *blade* $\bl B$ depois de eliminar o fator comum $\bl A$:
+* A contração [à esquerda]{.hl} é uma maneira de expressar o que resta do *blade* $\bl B$ depois de eliminar o fator comum $\bl A$:
 
   $$
   \begin{aligned}
@@ -453,7 +458,7 @@ show(r'''
   \end{aligned}
   $$ {#eq-contr-esq-impl}
 
-* A contração é, de certa forma, a operação inversa do produto exterior $\wedge$, mas apenas no contexto do produto escalar.
+* A contração é, de certa forma, a operação inversa do produto exterior $\wedge$, mas apenas no contexto do produto escalar.^[Em um apêndice, Dorst mostra que a contração é a [adjunção]{.hl} do produto exteriorem relação ao produto escalar.]
 
 * Das equações acima, temos que
 
@@ -468,14 +473,14 @@ show(r'''
   o que tem como consequência que
   
   $$
-  \grau(\bl A \lc \bl B) = \grau(\bl B) + \grau(\bl A)
+  \grau(\bl A \lc \bl B) = \grau(\bl B) - \grau(\bl A)
   $$
   
 * Agora, para a [contração à direita]{.hl}, considere dois *blades* de mesmo grau, $\bl Y$ e $\bl B$.
 
-* Queremos calcular o produto escalar $\bl Y * \bl B$.
+* Queremos calcular o [produto escalar]{.hl} $\bl Y * \bl B$.
 
-* Sabemos que $\bl Y$ e $\bl B$ têm, como fator comum, um *blade* $\bl A$.
+* Sabemos que $\bl Y$ e $\bl B$ têm, como [fator comum]{.hl}, um *blade* $\bl A$.
 
 * Então, $\bl Y = \bl A \wedge \bl X$.
 
@@ -483,7 +488,7 @@ show(r'''
 
 * Vimos que estes fatores comuns podem ser eliminados, sem afetar o resultado do produto escalar.
 
-* A contração à direita é uma maneira de expressar o que resta do *blade* $\bl B$ depois de eliminar o fator comum $\bl A$:
+* A contração [à direita]{.hl} é uma maneira de expressar o que resta do *blade* $\bl B$ depois de eliminar o fator comum $\bl A$:
 
   $$
   \begin{aligned}
@@ -495,13 +500,13 @@ show(r'''
 
   Compare com as equações em [-@eq-contr-esq-impl].
   
-* A relação entre a contração à esquerda e a contração à direita é
+* A [relação]{.hl} entre a contração à esquerda e a contração à direita é
 
-  ![](figures/contracoes-dir-e-esq.jpg){fig-alt="."  width=90% fig-align="center"}
+  ![](figures/ch03/contracoes-dir-e-esq.jpg){fig-alt="."  width=90% fig-align="center"}
 
-* O livro traz $(-1)^{a(b+1)}$, conclusão de um raciocínio envolvendo os reversos dos *blades*, mas a paridade é a mesma que a do meu resultado.
+* O livro traz $(-1)^{a(b+1)}$, conclusão de um raciocínio envolvendo os reversos dos *blades*, mas a [paridade]{.hl} é a mesma que a do meu resultado.
 
-  ![](figures/contr-prova-dorst.jpg){fig-alt="."  width=80% fig-align="center"}
+  ![](figures/ch03/contr-prova-dorst.jpg){fig-alt="."  width=80% fig-align="center"}
 
 ::: {.callout-caution}
 
@@ -509,7 +514,7 @@ show(r'''
 
 No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl D$, mas tanto a prova dele quanto a minha supõe que isto é verdade nesta situação.
 
-É preciso mostrar que isto é verdade neste caso específico.
+É preciso mostrar que isto é verdade [neste caso específico]{.hl}.
 
 :::
 
@@ -517,7 +522,7 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
 
 ### NONASSOCIATIVITY OF THE CONTRACTION
 
-* Contrair $\bl A \wedge \bl B$ sobre $\bl c$ é o mesmo que 
+* Contrair $\bl A \wedge \bl B$ sobre $\bl C$ é o mesmo que 
 
   1. Contrair $\bl B$ sobre $\bl C$, e depois
   
@@ -532,12 +537,12 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
 * A outra maneira de agrupar os operandos é
 
   $$
-  (\bl A \lc \bl B) \lc \bl C = \bl A \wedge (\bl B \lc \bl C)
+  \bl A \wedge (\bl B \lc \bl C) = (\bl A \lc \bl B) \lc \bl C
   $${#eq-dual2}
   
   mas [a igualdade só vale quando $\bl A \subseteq \bl C$]{.hl}.
   
-* [Mais adiante](#sec-duality-rel), vamos usar as duas igualdades para calcular o dual de um objeto. Lá, $\bl C$ vai ser um múltiplo do pseudoescalar $\bl I$, e a condição $\bl A \subseteq \bl I$ é sempre verdade.
+* [Mais adiante](#sec-duality-rel), vamos usar as duas igualdades para calcular o [dual]{.hl} de um objeto. Lá, $\bl C$ vai ser um múltiplo do pseudoescalar $\bl I$, e a condição $\bl A \subseteq \bl I$ é sempre verdade.
 
 
 ### THE INVERSE OF A BLADE
@@ -548,16 +553,16 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
   \bl A \lc \bl B = 1
   $$
 
-* Não existe um único $\bl B$ que satisfaça a igualdade. 
+* [Não existe um único $\bl B$]{.hl} que satisfaça a igualdade. 
 
-* De fato, dado um *blade* $\bl B$ que satisfaça a igualdade, e dado qualquer *blade* $\bl C$ ortogonal a $\bl A$, temos que
+* De fato, dado um *blade* $\bl B$ que satisfaça a igualdade, e dado qualquer *blade* $\bl C$ [ortogonal a $\bl A$]{.hl}, temos que
 
   $$
   \bl A \lc (\bl B + \bl C) = \bl A \lc \bl B + \bl A \lc \bl C =
   1 + 0 = 1
   $$
 
-* Vamos definir o inverso de um *blade* $\bl A_k$, de grau $k$, como sendo
+* Vamos definir o [inverso]{.hl} de um *blade* $\bl A_k$, de grau $k$, como sendo
 
   $$
   \inv{\bl A_k} = \frac{\rev{\bl A_k}}{|| \bl A_k ||^2} =
@@ -568,9 +573,9 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
 
 * Para um vetor $\vet a \neq \bl 0$, temos que $\inv{\vet a} = \vet a / ||\vet a||^2$.
 
-* Um vetor unitário é seu próprio inverso.
+* Um vetor unitário é [seu próprio inverso]{.hl}.
 
-* Em uma métrica não-degenerada, o inverso do pseudoescalar unitário $\bl I$ é seu reverso $\rev{\bl I}$.
+* Em uma métrica [não-degenerada]{.hl}, o [inverso do pseudoescalar unitário]{.hl} $\bl I$ é seu [reverso]{.hl} $\rev{\bl I}$.
 
 
 ### ORTHOGONAL COMPLEMENT AND DUALITY
@@ -581,7 +586,7 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
   \dual{\bl A_k} = \bl A_k \lc \inv {\bl I}
   $$
 
-* No espaço $\reais^n$, o dual de $\bl A_k$ tem grau $n - k$.
+* No espaço $\reais^n$, [o dual de $\bl A_k$ tem grau $n - k$]{.hl}.
 
 * Por exemplo, em $\reais^2$, o dual de um $2$-*blade* $\vet a \wedge \vet b$ é um escalar --- cujo valor é simplesmente a magnitude de $\vet a \wedge \vet b$:
 
@@ -611,7 +616,7 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
   \end{aligned}
   $$
 
-* Ainda, em $\reais^2$, o dual de um vetor $\vet a$ é or resultado de rotacionar $\vet a$ $90$ graus no sentido horário:
+* Ainda em $\reais^2$, o dual de um vetor $\vet a$ é o resultado de rotacionar o vetor $90$ graus no sentido [horário]{.hl}:
 
   $$
   \begin{aligned}
@@ -694,21 +699,21 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
 
 ### DUAL REPRESENTATION OF SUBSPACES
 
-* A representação [OPNS]{.hl} (**outer product null space**, também chamada de representação [direta]{.hl}) é aquela em que um *blade* $\bl A$ representa o conjunto de todos os vetores $\vet x$ que satisfazem
+* A representação [OPNS]{.hl} (*outer product null space*, também chamada de representação [direta]{.hl}) é aquela em que um *blade* $\bl A$ representa o conjunto de todos os vetores $\vet x$ que satisfazem
 
   $$
   \vet x \wedge \bl A = 0
   $$
 
-* A representação [IPNS]{.hl} (**inner product null space**, também chamada de representação [dual]{.hl}) é aquela em que um *blade* $\bl A$ representa o conjunto de todos os vetores $\vet x$ que satisfazem
+* A representação [IPNS]{.hl} (*inner product null space*, também chamada de representação [dual]{.hl}) é aquela em que um *blade* $\bl A$ representa o conjunto de todos os vetores $\vet x$ que satisfazem
 
   $$
   \vet x \lc \bl A = 0
   $$
 
-* O *blade* $\dual{\bl A}$ representa diretamente (OPNS) o complemento ortogonal da representação dual (IPNS) de $\bl A$.
+* O *blade* $\dual{\bl A}$ representa [diretamente]{.hl} (OPNS) o [complemento ortogonal]{.hl} da representação [dual]{.hl} (IPNS) de $\bl A$.
 
-* Por exemplo, em Álgebra Linear, um vetor normal $\vet n$ representa (IPNS) um plano homogêneo pela equação
+* Algo semelhante acontece em Álgebra Linear, onde um vetor normal $\vet n$ representa (IPNS) um plano homogêneo pela equação
 
   $$
   \vet x \cdot \vet n = 0
@@ -717,7 +722,7 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
 
 ## ORTHOGONAL PROJECTION OF SUBSPACES
 
-* Com a contração e o inverso, podemos computar a projeção ortogonal de um *blade* sobre outro.
+* Com a contração e o inverso, podemos computar a [projeção ortogonal]{.hl} de um *blade* sobre outro.
 
 * Para projetar um *blade* $\bl X$ sobre um *blade* $\bl B$, supondo que $\inv{\bl B}$ existe, fazemos
 
@@ -725,17 +730,17 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
   \proj{\bl X}{\bl B} = (\bl X \lc \bl B) \lc \inv{\bl B}
   $$
 
-* A primeira contração constrói o complemento ortogonal de $\bl X$ em $\bl B$. 
+* A [primeira]{.hl} contração constrói o [complemento ortogonal]{.hl} de $\bl X$ em $\bl B$. 
 
-* Esse complemento ortogonal tamém é perpendicular à projeção procurada.
+* Esse complemento ortogonal também é perpendicular à projeção procurada.
 
-* A segunda contração (uma espécie de dual no contexto de $\bl B$) rotaciona o complemento ortogonal de forma a fazê-lo coincidir com a projeção.
+* A [segunda]{.hl} contração (uma espécie de dual no contexto de $\bl B$) [rotaciona]{.hl} o complemento ortogonal de forma a fazê-lo coincidir com a projeção.
 
-* A @fig-proj-dorst mostra um vetor $\vet v$ sendo projetado sobre um $2$-*blade* $\bl B$.
+* A @fig-proj-dorst mostra um vetor $\vet x$ sendo projetado sobre um $2$-*blade* $\bl B$.
 
-  ![Projeção de um vetor sobre um $2$-*blade*](figures/projecao-dorst.png){fig-alt="projeção" #fig-proj-dorst width=60% fig-align="center"}
+  ![Projeção de um vetor sobre um $2$-*blade*](figures/ch03/projecao-dorst.png){fig-alt="projeção" #fig-proj-dorst width=60% fig-align="center"}
 
-* Podemos verificar que a projeção é idempotente, como deveria ser:
+* Podemos verificar que a projeção é [idempotente]{.hl}, como deveria ser:
 
   $$
   \begin{aligned}
@@ -778,14 +783,14 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
 
 ### USES OF THE CROSS PRODUCT
 
-* Em $\reais^3$, o produto vetorial é usado para construir vetores normais a um plano, para calcular velocidades angulares e para construir retas que são interseções de dois planos.
+* [Em $\reais^3$ (e apenas ali)]{.hl}, o produto vetorial é usado para construir vetores normais a um plano, para calcular velocidades angulares e para construir retas que são interseções de dois planos.
 
-* Vamos usar o produto exterior e a contração para generalizar estes usos do produto vetorial para todas as dimensões.
+* Vamos usar o produto exterior e a contração para [generalizar]{.hl} estes usos do produto vetorial [para todas as dimensões]{.hl}.
 
 
 ### THE CROSS PRODUCT INCORPORATED
 
-* Para calcular um vetor normal a um plano:
+* Para calcular um [vetor normal a um plano]{.hl}:
 
   * O plano é definido pelo *blade* $\vet a \wedge \vet b$.
   
@@ -796,7 +801,7 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
     (\vet a \wedge \vet b) \lc \inv{\bl I_n}
     $$
 
-* Em $\reais^3$, o inverso do pseudoescalar, $\inv{\bl I_3}$, é igual a $-\bl I_3$. O vetor normal a um plano $\vet a \wedge \vet b$ é 
+* Em $\reais^3$, o inverso do pseudoescalar, $\inv{\bl I_3}$, é igual a $-\bl I_3$. O vetor normal a um plano $\vet a \wedge \vet b$ é, então, 
 
   $$
   \dual{(\vet a \wedge \vet b)} = 
@@ -805,15 +810,15 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
   \vet a \times \vet b
   $$
 
-* Vamos tratar a interseção de dois planos em $\reais^3$:
+* Para calcular a [interseção de dois planos]{.hl}:
 
-  * Um plano é representado pelo $2$-*blade* $\bl A$. Vamos trabalhar com seu vetor normal $\vet a$:
+  * Um plano é representado pelo $2$-*blade* $\bl A$. Vamos trabalhar com seu [vetor normal]{.hl} $\vet a$:
   
     $$
     \vet a = \dual{\bl A} = \bl A \lc \inv{\bl I}
     $$
   
-  * O outro plano é representado pelo $2$-*blade* $\bl B$. Vamos trabalhar com seu vetor normal $\vet b$:
+  * O outro plano é representado pelo $2$-*blade* $\bl B$. Vamos trabalhar com seu [vetor normal]{.hl} $\vet b$:
   
     $$
     \vet b = \dual{\bl B} = \bl B \lc \inv{\bl I}
@@ -852,20 +857,20 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
     \undual{(\bl A \lc \inv{\bl I})} = \bl A
     $$
     
-  * Mais adiante, vamos ver que $(\dual{\bl B}) \lc \bl A$ é o *meet* de $\bl B$ com $\bl A$, e é a maneira de representar a incidência de subespaços.
+  * Mais adiante, vamos ver que $(\dual{\bl B}) \lc \bl A$ é o *meet* de $\bl B$ com $\bl A$, e é a maneira de representar a [incidência]{.hl} de subespaços em álgebras geométricas.
   
 
 ## APPLICATION: RECIPROCAL FRAMES
 
-* Considere uma base de $\reais^n$ formada pelos vetores $\{\vet b_i\}_{i=1}^n$.
+* Considere uma [base]{.hl} de $\reais^n$ formada pelos vetores $\{\vet b_i\}_{i=1}^n$.
 
-* Qualquer vetor $\vet x$ pode ser expresso como
+* Então, qualquer vetor $\vet x$ de $\reais^n$ pode ser expresso como
 
   $$
   \vet x = \sum_{i=1}^n x_i\vet b_i,\quad x_i \in \reais
   $$
 
-* Se a base for ortonormal, cada $x_i$ é simplesmente $\vet x \cdot \vet b_i$.
+* Se a base for [ortonormal]{.hl}, cada $x_i$ é simplesmente $\vet x \cdot \vet b_i$.
 
 * Se a base [não for ortonormal]{.hl}, podemos achar uma [base recíproca]{.hl} $\{\vet b^i\}_{i=1}^n$, tal que as coordenadas de $\vet x$ podem ser escritas como
 
@@ -873,17 +878,17 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
   x^i = \vet x \cdot \vet b^i
   $$
 
-* Observe que os vetores da base recíproca são indexados com superescritos em vez de subscritos ($\vet b^i$ em vez de $\vet b_i$).
+* Observe que os vetores da base recíproca são indexados com [superescritos]{.hl} em vez de subscritos ($\vet b^i$ em vez de $\vet b_i$).
 
-* Para construir a base recíproca para $\reais^n$ a partir de uma base $\{\vet b_i\}_{i=1}^n$, considerando o pseudoescalar $\bl I = \vet b_1 \wedge \vet b_2 \wedge \cdots \wedge \vet b_n$, definimos, para cada $\vet b_i$, o vetor recíproco $\vet b^i$ como
+* Para construir a base recíproca para $\reais^n$ a partir de uma base $\{\vet b_i\}_{i=1}^n$, considerando o pseudoescalar $\bl I = \vet b_1 \wedge \vet b_2 \wedge \cdots \wedge \vet b_n$, definimos, [para cada $\vet b_i$]{.hl}, o [vetor recíproco $\vet b^i$]{.hl} como
 
   $$
   \vet b^i = (-1)^{i-1} \Biggl(\bigwedge_{j \neq i} \vet b_j \Biggr) \lc \inv{\bl I_n}
   $$
 
-* Cada $\vet b^i$ é o dual do $(n-1)$-*blade* definido por todos os outros vetores da base original (i.e., exceto $\vet b_i$).
+* Cada $\vet b^i$ é o dual do $(n-1)$-*blade* definido por todos os [outros]{.hl} vetores da base original (i.e., exceto $\vet b_i$).
 
-* As duas bases (a original e a recíproca) são mutuamente ortonormais:
+* As duas bases (a original e a recíproca) são [mutuamente ortonormais]{.hl}:
 
   $$
   \vet b_i \cdot \vet b^j = 
@@ -911,7 +916,7 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
   \end{aligned}
   $$
 
-* Numa base ortonormal, cada vetor $\vet b_i$ tem a mesma magnitude e direção que seu recíproco $\vet b^i$. Na métrica euclidiana, o mesmo sentido também.
+* Numa base [ortonormal]{.hl}, cada vetor $\vet b_i$ tem a mesma magnitude e direção que seu recíproco $\vet b^i$. Na métrica euclidiana, o mesmo sentido também.
 
 * Em Álgebra Linear, a base recíproca é construída usando determinantes (como?).
 
@@ -922,6 +927,36 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
 
 
 ## EXERCISES
+
+### DRILLS
+
+1. OK.
+
+2. OK:
+
+   ![](figures/ch03/drill-3.10.1-2.jpg){ width=90% fig-align="center"}
+ 
+   ![](figures/ch03/drill-3.10.1-2-cont.jpg){ width=90% fig-align="center"}
+
+3. OK:
+
+   ![](figures/ch03/drill-3.10.1-3.jpg){ width=90% fig-align="center"}
+
+
+### STRUCTURAL EXERCISES
+
+1. OK:
+
+   ![](figures/ch03/structural-3.10.2-1.jpg){ width=90% fig-align="center"}
+
+2. Acima.
+
+3. ...
+
+4. OK:
+
+   ![](figures/ch03/structural-3.10.2-4.jpg){ width=90% fig-align="center"}
+
 
 ## PROGRAMMING EXAMPLES AND EXERCISES
 
