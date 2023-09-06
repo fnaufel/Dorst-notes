@@ -848,7 +848,7 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
       &= (\bl B \lc \inv{\bl I}) \lc \bl A & (*)\\
       &= (\dual{\bl B}) \lc \bl A
     \end{aligned}
-    $$
+    $${#eq-desdualizacao}
 
     Na linha $(*)$, usamos a [definição de desdualização](#desdualizacao):
     
@@ -945,7 +945,7 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
 
 ### STRUCTURAL EXERCISES
 
-1. OK:
+1. $\mbox{}$
 
    ![](figures/ch03/structural-3.10.2-1.jpg){ width=90% fig-align="center"}
 
@@ -953,23 +953,206 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
 
    ![](figures/ch03/ex-3.10.2-2.png){width=80% fig-align="center"}
 
+   ::: {.callout-note appearance="minimal"}
+
    Acima.
+   
+   :::
 
 3. ...
 
-4. OK:
+4. $\mbox{}$
 
    ![](figures/ch03/structural-3.10.2-4.jpg){ width=90% fig-align="center"}
 
-5. ...
+5. $\mbox{}$
 
-6. ...
+   ![](figures/ch03/ex-3.10.2-5.png){width=90% fig-align="center"}
 
-7. ...
+   ::: {.callout-note appearance="minimal"}
+   
+   O único vetor contido em $\alpha$ é o vetor $\vet 0$, que é perpendicular a todos os vetores.
 
-8. ...
+   :::
+   
+6. Verificar o significado geométrico de (3.7):
 
-9. ...
+   $$
+   \alpha \lc \bl B = \alpha \bl B
+   $$
+
+   ::: {.callout-note appearance="minimal"}
+
+   O escalar $\alpha$ denota a origem. $\bl B$ é um *blade*. Qualquer múltiplo de $\bl B$ está contido em $\bl B$, e a origem é perpendicular a todo *blade*, inclusive a qualquer múltiplo de $\bl B$.
+   
+   Ou seja:
+   
+   $$
+   \alpha \bl B \subseteq \bl B \iff \alpha \bl B \wedge \bl B = \vet 0
+   $$
+   
+   e
+   
+   $$
+   \alpha \bl B \perp \alpha \iff \alpha \bl B \lc \alpha = \vet 0   
+   $$
+
+   :::
+
+
+7. Duality in $1$-D Euclidean space should avoid the extra sign involved in double duality, as specified in @eq-desdualizacao:
+
+   $$
+  \dual{(\dual{\bl A})} = (-1)^{n(n-1)/2}\, \bl A
+   $$
+
+   Show this explicitly, by taking the dual of a vector $\vet a$ relative to a suitably chosen unit pseudoscalar for the $1$-D space and dualizing again.
+   
+   ::: {.callout-note appearance="minimal"}
+   
+   No espaço $1$-D, a base é $\{ 1, \ve1 \}$. O pseudoescalar é $\ve1$.
+   
+   Tomando um vetor $\vet a = \alpha \ve1$, temos
+   
+   $$
+   \begin{aligned}
+    \dual{\vet a} 
+    &= \vet a \lc \inv{\ve1} \\
+    &= \vet a \lc \ve1 \\
+    &= \alpha \ve1 \lc \ve1 \\
+    &= \alpha
+   \end{aligned}
+   $$
+
+   e
+   
+   $$
+   \begin{aligned}
+     \dual{(\dual{\vet a})} 
+     &= \dual \alpha \\
+     &= \alpha \lc \inv{\ve1} \\
+     &= \alpha \lc \ve1 \\
+     &= \alpha \ve1 \\
+     &= \vet a
+   \end{aligned}
+   $$
+
+   :::   
+
+8. $\mbox{}$
+
+   ![](figures/ch03/ex-3.10.2-8.png){width=90% fig-align="center"}
+
+   ::: {.callout-note appearance="minimal"}
+   
+   De fato, a magnitude do trivetor é o determinante da matriz:
+
+    ```{python}
+    #| echo=TRUE
+    xyz = (x, y, z) = symbols('x y z', real=True)
+    o3d = Ga('e_1 e_2 e_3', g=[1, 1, 1], coords=xyz)
+    e1, e2, e3 = o3d.mv()
+    I = e1 ^ e2 ^ e3
+    
+    a1, a2, a3 = symbols('a1:4', real=True)
+    b1, b2, b3 = symbols('b1:4', real=True)
+    c1, c2, c3 = symbols('c1:4', real=True)
+    
+    # Vetores a, b, c
+    a = a1*e1 + a2*e2 + a3*e3 
+    b = b1*e1 + b2*e2 + b3*e3 
+    c = c1*e1 + c2*e2 + c3*e3 
+    
+    # Trivetor
+    tv = a ^ b ^ c
+    show(r'a \wedge b \wedge c = $tv')
+    
+    # Matriz
+    M = Matrix([[a1, a2, a3], [b1, b2, b3], [c1, c2, c3]]).T
+    Md = M.det()
+    show(r'\text{Determinante} = $Md')
+    ```
+   
+   Vamos fazer passo a passo:
+   
+   1. A magnitude do trivetor (em $\reais^3$) é o dual do trivetor:
+   
+      $$
+      || \vet a \wedge \vet b \wedge \vet c || 
+      = \dual{(\vet a \wedge \vet b \wedge \vet c)}
+      $$
+
+   2. Calculando o dual:
+   
+      $$
+      \begin{aligned}
+        \dual{(\vet a \wedge \vet b \wedge \vet c)}
+        &= (\vet a \wedge \vet b \wedge \vet c) \lc \inv{\bl I} \\
+        &= \vet a \lc 
+           (\vet b \lc (\vet c \lc (\ve3 \wedge \ve2 \wedge \ve1)))
+      \end{aligned}
+      $$
+
+   3. Calculando a contração mais interna:
+   
+      ```{python}
+      #| echo=TRUE
+      cdual = c < I.inv()
+      show('$cdual')
+      ```
+      
+   4. Calculando a contração seguinte:
+   
+      ```{python}
+      #| echo=TRUE
+      bcontr = b < cdual
+      show('$bcontr')
+      ```
+      
+   5. Calculando o resultado final (o dual do trivetor) e conferindo com o determinante:
+   
+      ```{python}
+      #| echo=TRUE
+      dual_trivetor = a < bcontr
+      show('$dual_trivetor')
+      ```
+      
+      ```{python}
+      #| echo=TRUE
+      show('$Md')
+      ```
+
+      ```{python}
+      #| echo=TRUE
+      dual_trivetor - Md
+      ```
+      
+   :::
+
+9. $\mbox{}$
+
+   ![](figures/ch03/ex-3.10.2-9.png){width=90% fig-align="center"}
+   
+   ::: {.callout-note appearance="minimal"}
+   
+   No plano, a situação é
+   
+   ![](figures/ch03/ex-3.10.2-9a.png){width=90% fig-align="center"}
+   
+   e, se $\vet x = a \ve1 + b \ve2$, então $\vet x \lc \bl I = -b \ve1 + a \ve2$. Observe que a rotação é no mesmo sentido da orientação de $\bl I$.
+   
+   Agora, ignorando os eixos e rotacionando $\vet x$ de $\phi$ radianos, temos
+   
+   ![](figures/ch03/ex-3.10.2-9b.png){width=90% fig-align="center"}
+   
+   e, então, como $||\vet x|| = ||\vet x \lc \bl I|| = ||\vet{x'}||$, ocorre que
+   
+   $$
+   \vet{x'} = (\cos \phi)\,\vet x + (\sen \phi)\,\vet x \lc \bl I 
+   $$
+   
+   :::
+
 
 10. ...
 

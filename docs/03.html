@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -1006,7 +1040,7 @@ Completar as provas
 \mathbf{B} \rfloor\mathbf{I}^{-1}
 \]</span></p></li>
 <li><p>Agora podemos desenvolver:</p>
-<p><span class="math display">\[
+<p><span id="eq-desdualizacao"><span class="math display">\[
 \begin{aligned}
   \mathbf{a} \times \mathbf{b}
   &amp;= (\mathbf{a} \wedge \mathbf{b})^{*} \\
@@ -1021,7 +1055,7 @@ Completar as provas
   &amp;= (\mathbf{B} \rfloor\mathbf{I}^{-1}) \rfloor\mathbf{A} &amp; (*)\\
   &amp;= (\mathbf{B}^{*}) \rfloor\mathbf{A}
 \end{aligned}
-\]</span></p>
+\tag{3.6}\]</span></span></p>
 <p>Na linha <span class="math inline">\((*)\)</span>, usamos a <a href="#desdualizacao">definição de desdualização</a>:</p>
 <p><span class="math display">\[
 (\mathbf{A} \rfloor\mathbf{I}^{-1}) \rfloor\mathbf{I} =
@@ -1111,7 +1145,7 @@ x^i = \mathbf{x} \cdot \mathbf{b}^i
 <section id="structural-exercises" class="level3" data-number="3.10.2">
 <h3 data-number="3.10.2" class="anchored" data-anchor-id="structural-exercises"><span class="header-section-number">3.10.2</span> STRUCTURAL EXERCISES</h3>
 <ol type="1">
-<li><p>OK:</p>
+<li><p><span class="math inline">\(\mbox{}\)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/ch03/structural-3.10.2-1.jpg" class="img-fluid figure-img" style="width:90.0%"></p>
@@ -1123,19 +1157,201 @@ x^i = \mathbf{x} \cdot \mathbf{b}^i
 <p><img src="figures/ch03/ex-3.10.2-2.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
-<p>Acima.</p></li>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Acima.</p>
+</div>
+</div>
+</div></li>
 <li><p>…</p></li>
-<li><p>OK:</p>
+<li><p><span class="math inline">\(\mbox{}\)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/ch03/structural-3.10.2-4.jpg" class="img-fluid figure-img" style="width:90.0%"></p>
 </figure>
 </div></li>
-<li><p>…</p></li>
-<li><p>…</p></li>
-<li><p>…</p></li>
-<li><p>…</p></li>
-<li><p>…</p></li>
+<li><p><span class="math inline">\(\mbox{}\)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ch03/ex-3.10.2-5.png" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>O único vetor contido em <span class="math inline">\(\alpha\)</span> é o vetor <span class="math inline">\(\mathbf{0}\)</span>, que é perpendicular a todos os vetores.</p>
+</div>
+</div>
+</div></li>
+<li><p>Verificar o significado geométrico de (3.7):</p>
+<p><span class="math display">\[
+\alpha \rfloor\mathbf{B} = \alpha \mathbf{B}
+\]</span></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>O escalar <span class="math inline">\(\alpha\)</span> denota a origem. <span class="math inline">\(\mathbf{B}\)</span> é um <em>blade</em>. Qualquer múltiplo de <span class="math inline">\(\mathbf{B}\)</span> está contido em <span class="math inline">\(\mathbf{B}\)</span>, e a origem é perpendicular a todo <em>blade</em>, inclusive a qualquer múltiplo de <span class="math inline">\(\mathbf{B}\)</span>.</p>
+<p>Ou seja:</p>
+<p><span class="math display">\[
+\alpha \mathbf{B} \subseteq \mathbf{B} \iff \alpha \mathbf{B} \wedge \mathbf{B} = \mathbf{0}
+\]</span></p>
+<p>e</p>
+<p><span class="math display">\[
+\alpha \mathbf{B} \perp \alpha \iff \alpha \mathbf{B} \rfloor\alpha = \mathbf{0}   
+\]</span></p>
+</div>
+</div>
+</div></li>
+<li><p>Duality in <span class="math inline">\(1\)</span>-D Euclidean space should avoid the extra sign involved in double duality, as specified in <a href="#eq-desdualizacao">Equação&nbsp;<span>3.6</span></a>:</p>
+<p><span class="math display">\[
+  (\mathbf{A}^{*})^{*} = (-1)^{n(n-1)/2}\, \mathbf{A}
+\]</span></p>
+<p>Show this explicitly, by taking the dual of a vector <span class="math inline">\(\mathbf{a}\)</span> relative to a suitably chosen unit pseudoscalar for the <span class="math inline">\(1\)</span>-D space and dualizing again.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>No espaço <span class="math inline">\(1\)</span>-D, a base é <span class="math inline">\(\{ 1, \mathbf{e}_{1} \}\)</span>. O pseudoescalar é <span class="math inline">\(\mathbf{e}_{1}\)</span>.</p>
+<p>Tomando um vetor <span class="math inline">\(\mathbf{a} = \alpha \mathbf{e}_{1}\)</span>, temos</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathbf{a}^{*}
+&amp;= \mathbf{a} \rfloor\mathbf{e}_{1}^{-1} \\
+&amp;= \mathbf{a} \rfloor\mathbf{e}_{1} \\
+&amp;= \alpha \mathbf{e}_{1} \rfloor\mathbf{e}_{1} \\
+&amp;= \alpha
+\end{aligned}
+\]</span></p>
+<p>e</p>
+<p><span class="math display">\[
+\begin{aligned}
+  (\mathbf{a}^{*})^{*}
+  &amp;= \alpha ^{*}\\
+  &amp;= \alpha \rfloor\mathbf{e}_{1}^{-1} \\
+  &amp;= \alpha \rfloor\mathbf{e}_{1} \\
+  &amp;= \alpha \mathbf{e}_{1} \\
+  &amp;= \mathbf{a}
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div></li>
+<li><p><span class="math inline">\(\mbox{}\)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ch03/ex-3.10.2-8.png" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>De fato, a magnitude do trivetor é o determinante da matriz:</p>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>xyz <span class="op">=</span> (x, y, z) <span class="op">=</span> symbols(<span class="st">'x y z'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>o3d <span class="op">=</span> Ga(<span class="st">'e_1 e_2 e_3'</span>, g<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>], coords<span class="op">=</span>xyz)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>e1, e2, e3 <span class="op">=</span> o3d.mv()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>I <span class="op">=</span> e1 <span class="op">^</span> e2 <span class="op">^</span> e3</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>a1, a2, a3 <span class="op">=</span> symbols(<span class="st">'a1:4'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>b1, b2, b3 <span class="op">=</span> symbols(<span class="st">'b1:4'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>c1, c2, c3 <span class="op">=</span> symbols(<span class="st">'c1:4'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetores a, b, c</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> a1<span class="op">*</span>e1 <span class="op">+</span> a2<span class="op">*</span>e2 <span class="op">+</span> a3<span class="op">*</span>e3 </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> b1<span class="op">*</span>e1 <span class="op">+</span> b2<span class="op">*</span>e2 <span class="op">+</span> b3<span class="op">*</span>e3 </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> c1<span class="op">*</span>e1 <span class="op">+</span> c2<span class="op">*</span>e2 <span class="op">+</span> c3<span class="op">*</span>e3 </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Trivetor</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>tv <span class="op">=</span> a <span class="op">^</span> b <span class="op">^</span> c</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>show(<span class="vs">r'a \wedge b \wedge c = $tv'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[a \wedge b \wedge c = \left ( a_{1} b_{2} c_{3} - a_{1} b_{3} c_{2} - a_{2} b_{1} c_{3} + a_{2} b_{3} c_{1} + a_{3} b_{1} c_{2} - a_{3} b_{2} c_{1}\right ) \mathbf{e}_{1}\wedge \mathbf{e}_{2}\wedge \mathbf{e}_{3}\]</span></p>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matriz</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> Matrix([[a1, a2, a3], [b1, b2, b3], [c1, c2, c3]]).T</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Md <span class="op">=</span> M.det()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>show(<span class="vs">r'\text</span><span class="sc">{Determinante}</span><span class="vs"> = $Md'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[\text{Determinante} = a_{1} b_{2} c_{3} - a_{1} b_{3} c_{2} - a_{2} b_{1} c_{3} + a_{2} b_{3} c_{1} + a_{3} b_{1} c_{2} - a_{3} b_{2} c_{1}\]</span></p>
+<p>Vamos fazer passo a passo:</p>
+<ol type="1">
+<li><p>A magnitude do trivetor (em <span class="math inline">\(\mathbb{R}^3\)</span>) é o dual do trivetor:</p>
+<p><span class="math display">\[
+|| \mathbf{a} \wedge \mathbf{b} \wedge \mathbf{c} ||
+= (\mathbf{a} \wedge \mathbf{b} \wedge \mathbf{c})^{*}
+\]</span></p></li>
+<li><p>Calculando o dual:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  (\mathbf{a} \wedge \mathbf{b} \wedge \mathbf{c})^{*}
+  &amp;= (\mathbf{a} \wedge \mathbf{b} \wedge \mathbf{c}) \rfloor\mathbf{I}^{-1} \\
+  &amp;= \mathbf{a} \rfloor
+     (\mathbf{b} \rfloor(\mathbf{c} \rfloor(\mathbf{e}_{3} \wedge \mathbf{e}_{2} \wedge \mathbf{e}_{1})))
+\end{aligned}
+\]</span></p></li>
+<li><p>Calculando a contração mais interna:</p>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cdual <span class="op">=</span> c <span class="op">&lt;</span> I.inv()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>show(<span class="st">'$cdual'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[- c_{3} \mathbf{e}_{1}\wedge \mathbf{e}_{2} + c_{2} \mathbf{e}_{1}\wedge \mathbf{e}_{3} - c_{1} \mathbf{e}_{2}\wedge \mathbf{e}_{3}\]</span></p></li>
+<li><p>Calculando a contração seguinte:</p>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>bcontr <span class="op">=</span> b <span class="op">&lt;</span> cdual</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>show(<span class="st">'$bcontr'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[\left ( b_{2} c_{3} - b_{3} c_{2}\right ) \mathbf{e}_{1} + \left ( - b_{1} c_{3} + b_{3} c_{1}\right ) \mathbf{e}_{2} + \left ( b_{1} c_{2} - b_{2} c_{1}\right ) \mathbf{e}_{3}\]</span></p></li>
+<li><p>Calculando o resultado final (o dual do trivetor) e conferindo com o determinante:</p>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dual_trivetor <span class="op">=</span> a <span class="op">&lt;</span> bcontr</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>show(<span class="st">'$dual_trivetor'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[a_{1} b_{2} c_{3} - a_{1} b_{3} c_{2} - a_{2} b_{1} c_{3} + a_{2} b_{3} c_{1} + a_{3} b_{1} c_{2} - a_{3} b_{2} c_{1}\]</span></p>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>show(<span class="st">'$Md'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[a_{1} b_{2} c_{3} - a_{1} b_{3} c_{2} - a_{2} b_{1} c_{3} + a_{2} b_{3} c_{1} + a_{3} b_{1} c_{2} - a_{3} b_{2} c_{1}\]</span></p>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dual_trivetor <span class="op">-</span> Md</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>0</p></li>
+</ol>
+</div>
+</div>
+</div></li>
+<li><p><span class="math inline">\(\mbox{}\)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ch03/ex-3.10.2-9.png" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>No plano, a situação é</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ch03/ex-3.10.2-9a.png" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<p>e, se <span class="math inline">\(\mathbf{x} = a \mathbf{e}_{1} + b \mathbf{e}_{2}\)</span>, então <span class="math inline">\(\mathbf{x} \rfloor\mathbf{I} = -b \mathbf{e}_{1} + a \mathbf{e}_{2}\)</span>. Observe que a rotação é no mesmo sentido da orientação de <span class="math inline">\(\mathbf{I}\)</span>.</p>
+<p>Agora, ignorando os eixos e rotacionando <span class="math inline">\(\mathbf{x}\)</span> de <span class="math inline">\(\phi\)</span> radianos, temos</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ch03/ex-3.10.2-9b.png" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<p>e, então, como <span class="math inline">\(||\mathbf{x}|| = ||\mathbf{x} \rfloor\mathbf{I}|| = ||\mathbf{x'}||\)</span>, ocorre que</p>
+<p><span class="math display">\[
+\mathbf{x'} = (\cos \phi)\,\mathbf{x} + (\mathop{\mathrm{\text{sen}}}\phi)\,\mathbf{x} \rfloor\mathbf{I}
+\]</span></p>
+</div>
+</div>
+</div></li>
 <li><p>…</p></li>
 <li><p>…</p></li>
 <li><p>…</p></li>
