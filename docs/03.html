@@ -274,7 +274,7 @@ div.csl-indent {
 <section id="metrics-norms-and-angles" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="metrics-norms-and-angles"><span class="header-section-number">3.1.1</span> METRICS, NORMS, AND ANGLES</h3>
 <ul>
-<li><p>Dada a definição de um produto interno, podemos definir</p>
+<li><p>Dada a definição de um produto interno <span class="math inline">\(\mathbf{a} \cdot \mathbf{b}\)</span>, podemos definir</p>
 <ul>
 <li><p>A <span class="hl">norma</span> de um vetor <span class="math inline">\(\mathbf{a}\)</span> como</p>
 <p><span class="math display">\[
@@ -407,13 +407,15 @@ z\bar z = (a+bi)(a-bi) = a^2 -abi+abi -b^2i^2 = a^2 + b^2 = ||z||^2
     \wedge (\cos\beta\,\mathbf{e}_{3} - \mathop{\mathrm{\text{sen}}}\beta\,\mathbf{e}_{4})
 \end{aligned}
 \]</span></p>
+<ul>
+<li>Como <span class="math inline">\(\mathbf{A} \wedge \mathbf{B}\)</span> tem grau <span class="math inline">\(4\)</span>, com <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> ambos de grau <span class="math inline">\(2\)</span>, <span class="hl"><span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> são disjuntos</span>:</li>
+</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/ch03/exemplo-dorst-p-70.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <ul>
-<li><p>Como <span class="math inline">\(\mathbf{A} \wedge \mathbf{B}\)</span> tem grau <span class="math inline">\(4\)</span>, com <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> ambos de grau <span class="math inline">\(2\)</span>, <span class="hl"><span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> são disjuntos</span>.</p></li>
 <li><p>O <em>blade</em> <span class="math inline">\(\mathbf{A}\)</span> está no plano <span class="math inline">\(XZ\)</span>.</p></li>
 <li><p>O <em>blade</em> <span class="math inline">\(\mathbf{B}\)</span> é definido por dois vetores:</p>
 <p><span class="math display">\[
@@ -501,7 +503,7 @@ Rotações em planos, não em torno de eixos
 </div></li>
 <li><p>Imagine que o vetor <span class="math inline">\(\mathbf{a}\)</span> foi “contraído”, levando consigo, nesta contração, a dimensão de <span class="math inline">\(\mathbf{B}\)</span> correspondente à direção de <span class="math inline">\(\mathbf{a}\)</span>.</p></li>
 <li><p><span class="hl">O resultado é um vetor ortogonal a <span class="math inline">\(\mathbf{a}\)</span>, contido no plano de <span class="math inline">\(\mathbf{B}\)</span></span>.</p></li>
-<li><p>Informalmente, <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span> é o que resta em <span class="math inline">\(\mathbf{B}\)</span> depois que <span class="math inline">\(\mathbf{a}\)</span> é retirado.</p></li>
+<li><p>Informalmente, <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span> é o que resta em <span class="math inline">\(\mathbf{B}\)</span> depois que <span class="math inline">\(\mathbf{a}\)</span> é “retirado”.</p></li>
 <li><p>Em breve, vamos ver como calcular a magnitude de <span class="math inline">\(\mathbf{a} \rfloor\mathbf{B}\)</span>.</p></li>
 </ul></li>
 <li><p>Outro exemplo, onde agora <span class="math inline">\(\mathbf{a}\)</span> <span class="hl">não está no plano de <span class="math inline">\(\mathbf{B}\)</span></span>:</p>
@@ -556,7 +558,7 @@ Rotações em planos, não em torno de eixos
 <li><p>A contração à esquerda <span class="hl">distribui sobre a adição</span> e <span class="hl">é bilinear</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-  (\mathbf{A} + \mathbf{B}) &amp;= \mathbf{A} \rfloor\mathbf{C} + \mathbf{B} \rfloor\mathbf{C} \\
+  (\mathbf{A} + \mathbf{B}) \rfloor\mathbf{C} &amp;= \mathbf{A} \rfloor\mathbf{C} + \mathbf{B} \rfloor\mathbf{C} \\
   \mathbf{A} \rfloor(\mathbf{B} + \mathbf{C}) &amp;= \mathbf{A} \rfloor\mathbf{B} + \mathbf{A} \rfloor\mathbf{C} \\
   (\alpha \mathbf{A}) \rfloor\mathbf{B} &amp;= \alpha(\mathbf{A} \rfloor\mathbf{B}) \\
   &amp;= \mathbf{A} \rfloor(\alpha \mathbf{B})
@@ -733,7 +735,7 @@ Completar as provas
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>No caso geral, <span class="math inline">\(\mathbf{X} * \mathbf{C} = \mathbf{X} * \mathbf{D}\)</span> <span class="hl">não implica</span> <span class="math inline">\(\mathbf{C} = \mathbf{D}\)</span>, mas tanto a prova dele quanto a minha supõe que isto é verdade nesta situação.</p>
+<p>No caso geral, <span class="math inline">\(\mathbf{X} * \mathbf{C} = \mathbf{X} * \mathbf{D}\)</span> <span class="hl">não implica</span> <span class="math inline">\(\mathbf{C} = \mathbf{D}\)</span>, mas tanto a prova dele quanto a minha supõem que isto é verdade nesta situação.</p>
 <p>É preciso mostrar que isto é verdade <span class="hl">neste caso específico</span>.</p>
 </div>
 </div>
@@ -988,7 +990,7 @@ Completar as provas
 (\mathbf{b} \wedge \mathbf{a}) \rfloor\mathbf{I}_3 =
 \mathbf{a} \times \mathbf{b}
 \]</span></p></li>
-<li><p>Para calcular a <span class="hl">interseção de dois planos</span>:</p>
+<li><p>Para calcular a <span class="hl">interseção de dois planos</span> em <span class="math inline">\(\mathbb{R}^3\)</span>:</p>
 <ul>
 <li><p>Um plano é representado pelo <span class="math inline">\(2\)</span>-<em>blade</em> <span class="math inline">\(\mathbf{A}\)</span>. Vamos trabalhar com seu <span class="hl">vetor normal</span> <span class="math inline">\(\mathbf{a}\)</span>:</p>
 <p><span class="math display">\[
@@ -1115,7 +1117,13 @@ x^i = \mathbf{x} \cdot \mathbf{b}^i
 <p><img src="figures/ch03/structural-3.10.2-1.jpg" class="img-fluid figure-img" style="width:90.0%"></p>
 </figure>
 </div></li>
-<li><p>Acima.</p></li>
+<li><p><span class="math inline">\(\mbox{}\)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ch03/ex-3.10.2-2.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p>Acima.</p></li>
 <li><p>…</p></li>
 <li><p>OK:</p>
 <div class="quarto-figure quarto-figure-center">
@@ -1123,6 +1131,15 @@ x^i = \mathbf{x} \cdot \mathbf{b}^i
 <p><img src="figures/ch03/structural-3.10.2-4.jpg" class="img-fluid figure-img" style="width:90.0%"></p>
 </figure>
 </div></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
 </ol>
 </section>
 </section>
@@ -1151,7 +1168,7 @@ Dorst, Leo. 2002. <span>«The Inner Products of Geometric Algebra»</span>. Em <
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Em um apêndice, Dorst mostra que a contração é a <span class="hl">adjunção</span> do produto exteriorem relação ao produto escalar.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Em um apêndice, Dorst mostra que a contração é a <span class="hl">adjunção</span> do produto exterior em relação ao produto escalar.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

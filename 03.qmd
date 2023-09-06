@@ -13,7 +13,7 @@
 
 ### METRICS, NORMS, AND ANGLES
 
-* Dada a definição de um produto interno, podemos definir
+* Dada a definição de um produto interno $\vet a \cdot \vet b$, podemos definir
 
   * A [norma]{.hl} de um vetor $\vet a$ como
   
@@ -138,10 +138,10 @@ O produto escalar $\bl A * \bl B$ é definido como
   \end{aligned}
   $$
 
+  * Como $\bl A \wedge \bl B$ tem grau $4$, com $\bl A$ e $\bl B$ ambos de grau $2$, [$\bl A$ e $\bl B$ são disjuntos]{.hl}:
+  
   ![](figures/ch03/exemplo-dorst-p-70.jpg){width=80% fig-align="center"}
-  
-  * Como $\bl A \wedge \bl B$ tem grau $4$, com $\bl A$ e $\bl B$ ambos de grau $2$, [$\bl A$ e $\bl B$ são disjuntos]{.hl}.
-  
+
   * O *blade* $\bl A$ está no plano $XZ$.
   
   * O *blade* $\bl B$ é definido por dois vetores:
@@ -241,7 +241,7 @@ O produto escalar $\bl A * \bl B$ é definido como
   
   * [O resultado é um vetor ortogonal a $\vet a$, contido no plano de $\bl B$]{.hl}.
   
-  * Informalmente, $\vet a \lc \bl B$ é o que resta em $\bl B$ depois que $\vet a$ é retirado.
+  * Informalmente, $\vet a \lc \bl B$ é o que resta em $\bl B$ depois que $\vet a$ é "retirado".
   
   * Em breve, vamos ver como calcular a magnitude de $\vet a \lc \bl B$.
 
@@ -312,7 +312,7 @@ show(r'''
 
   $$
   \begin{aligned}
-    (\bl A + \bl B) &= \bl A \lc \bl C + \bl B \lc \bl C \\
+    (\bl A + \bl B) \lc \bl C &= \bl A \lc \bl C + \bl B \lc \bl C \\
     \bl A \lc (\bl B + \bl C) &= \bl A \lc \bl B + \bl A \lc \bl C \\
     (\alpha \bl A) \lc \bl B &= \alpha(\bl A \lc \bl B) \\
     &= \bl A \lc (\alpha \bl B)
@@ -458,7 +458,7 @@ show(r'''
   \end{aligned}
   $$ {#eq-contr-esq-impl}
 
-* A contração é, de certa forma, a operação inversa do produto exterior $\wedge$, mas apenas no contexto do produto escalar.^[Em um apêndice, Dorst mostra que a contração é a [adjunção]{.hl} do produto exteriorem relação ao produto escalar.]
+* A contração é, de certa forma, a operação inversa do produto exterior $\wedge$, mas apenas no contexto do produto escalar.^[Em um apêndice, Dorst mostra que a contração é a [adjunção]{.hl} do produto exterior em relação ao produto escalar.]
 
 * Das equações acima, temos que
 
@@ -512,7 +512,7 @@ show(r'''
 
 ## Completar as provas {-}
 
-No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl D$, mas tanto a prova dele quanto a minha supõe que isto é verdade nesta situação.
+No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl D$, mas tanto a prova dele quanto a minha supõem que isto é verdade nesta situação.
 
 É preciso mostrar que isto é verdade [neste caso específico]{.hl}.
 
@@ -810,7 +810,7 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
   \vet a \times \vet b
   $$
 
-* Para calcular a [interseção de dois planos]{.hl}:
+* Para calcular a [interseção de dois planos]{.hl} em $\reais^3$:
 
   * Um plano é representado pelo $2$-*blade* $\bl A$. Vamos trabalhar com seu [vetor normal]{.hl} $\vet a$:
   
@@ -949,13 +949,35 @@ No caso geral, $\bl X * \bl C = \bl X * \bl D$ [não implica]{.hl} $\bl C = \bl 
 
    ![](figures/ch03/structural-3.10.2-1.jpg){ width=90% fig-align="center"}
 
-2. Acima.
+2. $\mbox{}$
+
+   ![](figures/ch03/ex-3.10.2-2.png){width=80% fig-align="center"}
+
+   Acima.
 
 3. ...
 
 4. OK:
 
    ![](figures/ch03/structural-3.10.2-4.jpg){ width=90% fig-align="center"}
+
+5. ...
+
+6. ...
+
+7. ...
+
+8. ...
+
+9. ...
+
+10. ...
+
+11. ...
+
+12. ...
+
+13. ...
 
 
 ## PROGRAMMING EXAMPLES AND EXERCISES
